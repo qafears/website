@@ -95,21 +95,15 @@ const jsonLd = {
 
   <hr class="rule">
 
-  <!-- ============ STYLING ARCHIVE ============ -->
+  <!-- The full portfolio lives on The Archives; this is the pointer to it. -->
   <section class="section">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="eyebrow">{work.archive.eyebrow}</p>
-        <h2>{work.archive.heading}</h2>
-        <p>{work.archive.intro}</p>
+        <p class="eyebrow">The Archives</p>
+        <h2>A decade of execution.</h2>
+        <p>Celebrity, editorial, commercial, red carpet. The point of view above is earned, and the archive is the work it is built on.</p>
+        <p style="margin-top:1.75rem"><a class="btn btn--gold" href="archives">Open the archives <span class="btn__arrow">&rarr;</span></a></p>
       </div>
-      <div class="archive">
-        {work.archive.items.map((it) => (
-          <figure class="ph ph--tall reveal"><Picture src={it.src} alt={it.alt} loading="lazy" sizes="(min-width: 1000px) 23vw, (min-width: 680px) 31vw, 46vw" /><button type="button" class="ph-link" data-gallery={it.gallery} data-shoot={it.shoot || undefined} data-src={it.src} aria-label={it.shoot ? `Open the ${it.capSub} shoot` : `Open the ${galleryTitle(it.gallery)} gallery`}><span class="go">View</span></button><figcaption class="cap"><b>{it.capTitle}</b><span>{it.capSub}</span></figcaption></figure>
-        ))}
-      </div>
-      <p style="margin-top:2rem;color:var(--ink-faint);font-size:0.9rem" class="reveal">{work.archive.footnote}</p>
-
     </div>
   </section>
 

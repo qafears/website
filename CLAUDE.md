@@ -159,6 +159,40 @@ category keys and shoot slugs in sync with the YAML (CI checks the keys). Never 
 shoots from different categories into one set: Celebrity men and Celebrity women are
 separate categories, as they were on the old site.
 
+Note the Work page no longer carries the old archive tile strip; it links to The
+Archives instead. `galleries` still backs the Work case-study lightbox buttons.
+
+## The Archives page
+
+`/archives` ([src/pages/archives.astro](src/pages/archives.astro),
+`content/archives.yaml`) is the portfolio: `sections` of `{ key, title, intro,
+images[] }`, one section per area of work (Celebrity, Editorial, Commercial, Red
+carpet). It is the owner's front door for portfolio material, so it is the first
+place new work should land.
+
+- **Every photo is a real `<img>` on the page.** That is the point of the page, and
+  it is also the only reliable way image search sees the portfolio (the Work
+  lightbox builds its DOM from JSON, which no crawler executes).
+- **A section with no photos is skipped**, so an area of work can be defined in the
+  YAML before its images exist without shipping an empty grid.
+- **The lightbox is reused unchanged.** Each section is emitted as a one-shoot
+  category in `<script id="gallery-data">`, which `main.js` already treats as "open
+  that shoot directly", so a click opens the clicked frame and prev/next walk the
+  section.
+- **Budget: 5 to 10 photos per section**, picked for name recognition first and
+  dynamism second. Past that, adding means replacing.
+- **`clients.names` is a plain-text list of named clients.** Alt text alone is a weak
+  signal for a person's name; a real sentence naming them, plus `mentions` in the
+  page's JSON-LD, is what lets a search for a client's name reach this site. Keep
+  spellings exactly right, since a misspelling matches nothing.
+- Photos here may sit in `assets/img/gallery/`; `tools/optimize_images.py` covers
+  that subfolder, so run it after adding files or they ship unoptimized.
+
+**Only publish photos the owner has the rights to.** Press and agency comps
+(Getty, WireImage, Shutterstock) are watermarked and licensed for review, not for
+publication on a commercial site. If a supplied file carries a visible watermark or
+credit bug, do not ship it: ask for the clean, licensed copy.
+
 ## SEO layer
 
 The full technical-SEO layer is generated in code, not authored per page, so it stays
@@ -175,9 +209,39 @@ consistent. Editable per page: `seo.title`, `seo.description`, `seo.ogTitle`,
   `ProfilePage`, `ContactPage`, `CollectionPage`, or `WebPage`, plus a `BreadcrumbList`,
   on the others).
 - **Assets & crawl:** `public/assets/img/og-cover.jpg` (1200×630), favicons / PWA
-  icons via `public/site.webmanifest`, and `public/robots.txt` → `public/sitemap.xml`.
+  icons via `public/site.webmanifest`, and `public/robots.txt` →
+  [src/pages/sitemap.xml.ts](src/pages/sitemap.xml.ts).
 
 Everything is keyed to `https://quentinfears.com` as the single source of truth.
+
+### The sitemap is generated, and it is an image sitemap
+
+[src/pages/sitemap.xml.ts](src/pages/sitemap.xml.ts) builds `dist/sitemap.xml` at
+build time: the six page URLs, plus an `<image:image>` entry for every photo each
+page shows, collected by walking the same `content/*.yaml` the pages read. Adding or
+trimming a photo updates the sitemap on the next build, with nothing to keep in sync
+by hand.
+
+The image entries matter because most of the portfolio is invisible to crawlers
+otherwise: gallery photos only enter the DOM when the lightbox builds it from the
+JSON in `<script id="gallery-data">`, and a crawler never opens a gallery. An image
+sitemap is Google's supported way to declare exactly those images, so it is what
+gets the portfolio into Google Images. Do not replace it with a static
+`public/sitemap.xml` again.
+
+### Old Wix URLs redirect
+
+quentinfears.com was a Wix site before this one, with its portfolio on category
+pages (`/celebrity`, `/editorial`, `/about-me`, ...). Those URLs are still in
+Google's index, so [src/pages/[legacy].astro](src/pages/%5Blegacy%5D.astro) emits a
+stub at each one that declares the new page canonical and meta-refreshes to it;
+the map lives in
+[src/lib/legacy-redirects.ts](src/lib/legacy-redirects.ts). GitHub Pages cannot
+serve a 301, and a canonical plus a 0-second refresh is the redirect signal Google
+honours in its place. Stubs are deliberately out of the sitemap and the nav;
+`tools/seo_check.py` detects the meta refresh, skips the page-level SEO layer for
+them, and instead checks that the target resolves, the canonical matches it, and
+the stub is not `noindex`. To retire one, delete its line from the map.
 
 ## Analytics
 
@@ -227,7 +291,8 @@ contained.
    and a `jsonLd` graph (use `personMinimal` + `breadcrumb` from `src/lib/jsonld.ts`).
    `BaseLayout` supplies the rest of the `<head>` — do not hand-write it.
 3. Use exactly one `<h1>` and give every `<img>` an `alt`.
-4. Add the page's URL to [public/sitemap.xml](public/sitemap.xml).
+4. Add the page to `PAGES` in [src/pages/sitemap.xml.ts](src/pages/sitemap.xml.ts)
+   (its path plus the singleton to pull image entries from).
 5. Run `npm run build && npm run validate` and fix anything reported.
 
 ### When the domain changes
@@ -235,7 +300,7 @@ contained.
 `https://quentinfears.com` is the single source of truth. Update `SITE_ORIGIN` in
 [src/lib/content.ts](src/lib/content.ts), `BASE` in
 [tools/seo_check.py](tools/seo_check.py), and find-and-replace the domain in
-`public/robots.txt`, `public/sitemap.xml`, and `public/CNAME` (the Pages custom-domain
+`public/robots.txt` and `public/CNAME` (the Pages custom-domain
 pin, served verbatim as `dist/CNAME`). The public site is `https://quentinfears.com`;
 GitHub Pages publishes it at `https://qafears.github.io/website/` (the publish URL), and
 the canonical/`og:` URLs intentionally point at `quentinfears.com`.
@@ -390,11 +455,12 @@ Instagram tooling in `tools/` (stdlib-only except the authed one):
 Steady-state sizes — the signal to replace rather than append. These are ceilings
 for unattended growth, not targets to fill:
 
+- Archives sections (`content/archives.yaml` `sections[].images`): **5 to 10 each**
 - Gallery categories (`content/galleries.yaml`): **8 images each**, across that
   category's shoots
 - Ideas notes (`content/ideas.yaml` `notes.items`): **4–6** · Ideas reels
   (`reels.items`): **3–4**
-- Work cases (`content/work.yaml`): **4** · styling archive: **8**
+- Work cases (`content/work.yaml`): **4**
 
 ### Guardrails
 
@@ -425,7 +491,7 @@ Quick guardrail recap; the reasoning is in the sections above.
 - No external fonts, scripts, or CDNs (breaks the offline / CSP guarantee). Build-time deps are fine. The one sanctioned exception is Google Analytics (see "Analytics"); do not add others, and do not remove GA to "restore" the offline rule.
 - No root-absolute internal links or assets; keep them relative.
 - No em dashes in anything shipped to `dist/`; restructure instead. CI fails on them.
-- Do not hand-write or desync the `<head>`, JSON-LD, or sitemap; `BaseLayout` generates them.
+- Do not hand-write or desync the `<head>` and JSON-LD (`BaseLayout` generates them) or the sitemap (`src/pages/sitemap.xml.ts` does, image entries included).
 - No employer claim in metadata or any `seo.*` field.
 - Keep the public `npm run build` static and adapter-free; the Netlify adapter belongs only to `build:admin`.
 - Move or rename the crawl files or validators only alongside `tools/*.py` and `.github/workflows/` updates.

@@ -1,0 +1,170 @@
+---
+/**
+ * The Archives: the portfolio, grouped into sections (Celebrity, Editorial,
+ * Commercial, Red carpet).
+ *
+ * Unlike the Work page, which shows a handful of case studies and hides the
+ * rest of the photography behind the lightbox, every photo here is a real
+ * <img> in the page. That is the point of the page, and it also means image
+ * search can actually see the portfolio.
+ *
+ * The lightbox in public/assets/js/main.js is reused as-is. It reads
+ * <script id="gallery-data"> and treats a category with exactly one shoot as
+ * "open that shoot directly", so each section is emitted as a one-shoot
+ * category: clicking a tile opens that frame, and prev/next walk the section.
+ *
+ * A section with no photos is skipped entirely, so Red carpet stays off the
+ * page until its images land in content/archives.yaml.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Cta from '../components/Cta.astro';
+import Picture from '../components/Picture.astro';
+import { reader, SITE_ORIGIN } from '../lib/content';
+import { personMinimal, breadcrumb } from '../lib/jsonld';
+
+const archives = await reader.singletons.archives.readOrThrow();
+const O = SITE_ORIGIN;
+
+const filled = archives.sections.filter((s) => s.images.length > 0);
+
+const clientNames = (archives.clients?.names || '')
+  .split(',')
+  .map((n) => n.trim())
+  .filter(Boolean);
+
+// One lightbox category per section, each holding a single shoot, so a click
+// opens the viewer straight onto the clicked frame.
+const galleryJson = JSON.stringify(
+  Object.fromEntries(
+    filled.map((s) => [
+      s.key,
+      {
+        title: s.title,
+        shoots: [
+          {
+            slug: s.key,
+            title: s.title,
+            images: s.images.map((im) => ({ src: im.src, cap: im.cap })),
+          },
+        ],
+      },
+    ])
+  )
+);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${O}/archives#webpage`,
+      url: `${O}/archives`,
+      name: archives.seo.ogTitle,
+      isPartOf: { '@id': `${O}/#website` },
+      about: { '@id': `${O}/#person` },
+      inLanguage: 'en',
+      hasPart: filled.map((s) => ({
+        '@type': 'ImageGallery',
+        name: s.title,
+        description: s.intro,
+        image: s.images.map((im) => `${O}/${im.src}`),
+      })),
+      // Names the page is genuinely about, so a search engine can connect this
+      // page to each client as an entity rather than only as a string.
+      ...(clientNames.length
+        ? { mentions: clientNames.map((name) => ({ '@type': 'Person', name })) }
+        : {}),
+    },
+    personMinimal(),
+    breadcrumb([
+      { name: 'Home', item: `${O}/` },
+      { name: 'The Archives', item: `${O}/archives` },
+    ]),
+  ],
+};
+---
+<BaseLayout
+  pagePath="archives"
+  title={archives.seo.title}
+  description={archives.seo.description}
+  ogTitle={archives.seo.ogTitle}
+  ogDescription={archives.seo.ogDescription}
+  ogType={archives.seo.ogType}
+  navCurrent="archives"
+  jsonLd={jsonLd}
+>
+
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <p class="eyebrow">{archives.hero.eyebrow}</p>
+      <h1>{archives.hero.heading}</h1>
+      <p>{archives.hero.intro}</p>
+    </div>
+  </section>
+
+  {filled.map((s, si) => (
+    <Fragment>
+      {si > 0 && <hr class="rule">}
+      <section class="section" id={s.key} style={si === 0 ? 'padding-top:0' : undefined}>
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <p class="eyebrow">The Archives</p>
+            <h2>{s.title}</h2>
+            <p>{s.intro}</p>
+          </div>
+          <div class="archive archive--page">
+            {s.images.map((im) => (
+              <figure class="ph ph--tall reveal">
+                <Picture
+                  src={im.src}
+                  alt={im.alt}
+                  loading="lazy"
+                  sizes="(min-width: 1000px) 30vw, (min-width: 680px) 46vw, 92vw"
+                />
+                <button
+                  type="button"
+                  class="ph-link"
+                  data-gallery={s.key}
+                  data-shoot={s.key}
+                  data-src={im.src}
+                  aria-label={`Open ${im.cap} full size`}
+                ><span class="go">View</span></button>
+                <figcaption class="cap"><span>{im.cap}</span></figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+    </Fragment>
+  ))}
+
+  {/* Named clients as plain page text. Alt text alone is a weak signal for a
+      person's name; a real sentence naming them is what a search for that name
+      can actually match. */}
+  {archives.clients && archives.clients.names && (
+    <div class="wrap">
+      <div class="arch-clients reveal">
+        <p class="eyebrow">{archives.clients.label}</p>
+        <p>{archives.clients.names}</p>
+      </div>
+    </div>
+  )}
+
+  {archives.footnote && (
+    <div class="wrap">
+      <p class="arch-footnote reveal">{archives.footnote}</p>
+    </div>
+  )}
+
+  <Cta
+    heading={archives.cta.heading}
+    body={archives.cta.body}
+    buttonLabel={archives.cta.buttonLabel}
+    buttonHref={archives.cta.buttonHref}
+  />
+
+  <Fragment slot="after-footer">
+    <script id="gallery-data" type="application/json" is:inline set:html={galleryJson}></script>
+  </Fragment>
+
+</BaseLayout>
