@@ -1,0 +1,45 @@
+---
+/**
+ * Redirect stubs for the old Wix site's URLs (map in src/lib/legacy-redirects.ts).
+ *
+ * Those URLs are still in Google's index, which is why a search for the name
+ * turns up the old photos with nothing behind them. GitHub Pages cannot serve
+ * a 301, so each old URL gets a small page that declares the new one as
+ * canonical and forwards the visitor to it. Google treats a canonical plus a
+ * 0-second meta refresh as a redirect and folds the old URL's history into the
+ * new page, so the images keep their standing and the results stop dead-ending.
+ *
+ * These are not site pages: they are not in the nav or the sitemap, and both
+ * validators skip them (they detect the meta refresh).
+ */
+import { SITE_ORIGIN } from '../lib/content';
+import { LEGACY_REDIRECTS } from '../lib/legacy-redirects';
+
+export async function getStaticPaths() {
+  const { LEGACY_REDIRECTS } = await import('../lib/legacy-redirects');
+  return Object.keys(LEGACY_REDIRECTS).map((legacy) => ({ params: { legacy } }));
+}
+
+const { legacy } = Astro.params;
+const target = LEGACY_REDIRECTS[legacy as string];
+const targetUrl = `${SITE_ORIGIN}/${target}`;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moved | Quentin Fears</title>
+    <link rel="canonical" href={targetUrl} />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main style="max-width:40rem;margin:20vh auto;padding:0 1.5rem;text-align:center">
+      <p class="eyebrow">This page moved</p>
+      <p>
+        Quentin Fears' portfolio now lives at <a href={target}>quentinfears.com/{target}</a>.
+      </p>
+    </main>
+  </body>
+</html>

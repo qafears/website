@@ -175,9 +175,39 @@ consistent. Editable per page: `seo.title`, `seo.description`, `seo.ogTitle`,
   `ProfilePage`, `ContactPage`, `CollectionPage`, or `WebPage`, plus a `BreadcrumbList`,
   on the others).
 - **Assets & crawl:** `public/assets/img/og-cover.jpg` (1200×630), favicons / PWA
-  icons via `public/site.webmanifest`, and `public/robots.txt` → `public/sitemap.xml`.
+  icons via `public/site.webmanifest`, and `public/robots.txt` →
+  [src/pages/sitemap.xml.ts](src/pages/sitemap.xml.ts).
 
 Everything is keyed to `https://quentinfears.com` as the single source of truth.
+
+### The sitemap is generated, and it is an image sitemap
+
+[src/pages/sitemap.xml.ts](src/pages/sitemap.xml.ts) builds `dist/sitemap.xml` at
+build time: the six page URLs, plus an `<image:image>` entry for every photo each
+page shows, collected by walking the same `content/*.yaml` the pages read. Adding or
+trimming a photo updates the sitemap on the next build, with nothing to keep in sync
+by hand.
+
+The image entries matter because most of the portfolio is invisible to crawlers
+otherwise: gallery photos only enter the DOM when the lightbox builds it from the
+JSON in `<script id="gallery-data">`, and a crawler never opens a gallery. An image
+sitemap is Google's supported way to declare exactly those images, so it is what
+gets the portfolio into Google Images. Do not replace it with a static
+`public/sitemap.xml` again.
+
+### Old Wix URLs redirect
+
+quentinfears.com was a Wix site before this one, with its portfolio on category
+pages (`/celebrity`, `/editorial`, `/about-me`, ...). Those URLs are still in
+Google's index, so [src/pages/[legacy].astro](src/pages/%5Blegacy%5D.astro) emits a
+stub at each one that declares the new page canonical and meta-refreshes to it;
+the map lives in
+[src/lib/legacy-redirects.ts](src/lib/legacy-redirects.ts). GitHub Pages cannot
+serve a 301, and a canonical plus a 0-second refresh is the redirect signal Google
+honours in its place. Stubs are deliberately out of the sitemap and the nav;
+`tools/seo_check.py` detects the meta refresh, skips the page-level SEO layer for
+them, and instead checks that the target resolves, the canonical matches it, and
+the stub is not `noindex`. To retire one, delete its line from the map.
 
 ## Analytics
 
@@ -227,7 +257,8 @@ contained.
    and a `jsonLd` graph (use `personMinimal` + `breadcrumb` from `src/lib/jsonld.ts`).
    `BaseLayout` supplies the rest of the `<head>` — do not hand-write it.
 3. Use exactly one `<h1>` and give every `<img>` an `alt`.
-4. Add the page's URL to [public/sitemap.xml](public/sitemap.xml).
+4. Add the page to `PAGES` in [src/pages/sitemap.xml.ts](src/pages/sitemap.xml.ts)
+   (its path plus the singleton to pull image entries from).
 5. Run `npm run build && npm run validate` and fix anything reported.
 
 ### When the domain changes
@@ -235,7 +266,7 @@ contained.
 `https://quentinfears.com` is the single source of truth. Update `SITE_ORIGIN` in
 [src/lib/content.ts](src/lib/content.ts), `BASE` in
 [tools/seo_check.py](tools/seo_check.py), and find-and-replace the domain in
-`public/robots.txt`, `public/sitemap.xml`, and `public/CNAME` (the Pages custom-domain
+`public/robots.txt` and `public/CNAME` (the Pages custom-domain
 pin, served verbatim as `dist/CNAME`). The public site is `https://quentinfears.com`;
 GitHub Pages publishes it at `https://qafears.github.io/website/` (the publish URL), and
 the canonical/`og:` URLs intentionally point at `quentinfears.com`.
@@ -425,7 +456,7 @@ Quick guardrail recap; the reasoning is in the sections above.
 - No external fonts, scripts, or CDNs (breaks the offline / CSP guarantee). Build-time deps are fine. The one sanctioned exception is Google Analytics (see "Analytics"); do not add others, and do not remove GA to "restore" the offline rule.
 - No root-absolute internal links or assets; keep them relative.
 - No em dashes in anything shipped to `dist/`; restructure instead. CI fails on them.
-- Do not hand-write or desync the `<head>`, JSON-LD, or sitemap; `BaseLayout` generates them.
+- Do not hand-write or desync the `<head>` and JSON-LD (`BaseLayout` generates them) or the sitemap (`src/pages/sitemap.xml.ts` does, image entries included).
 - No employer claim in metadata or any `seo.*` field.
 - Keep the public `npm run build` static and adapter-free; the Netlify adapter belongs only to `build:admin`.
 - Move or rename the crawl files or validators only alongside `tools/*.py` and `.github/workflows/` updates.
