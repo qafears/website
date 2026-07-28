@@ -159,6 +159,40 @@ category keys and shoot slugs in sync with the YAML (CI checks the keys). Never 
 shoots from different categories into one set: Celebrity men and Celebrity women are
 separate categories, as they were on the old site.
 
+Note the Work page no longer carries the old archive tile strip; it links to The
+Archives instead. `galleries` still backs the Work case-study lightbox buttons.
+
+## The Archives page
+
+`/archives` ([src/pages/archives.astro](src/pages/archives.astro),
+`content/archives.yaml`) is the portfolio: `sections` of `{ key, title, intro,
+images[] }`, one section per area of work (Celebrity, Editorial, Commercial, Red
+carpet). It is the owner's front door for portfolio material, so it is the first
+place new work should land.
+
+- **Every photo is a real `<img>` on the page.** That is the point of the page, and
+  it is also the only reliable way image search sees the portfolio (the Work
+  lightbox builds its DOM from JSON, which no crawler executes).
+- **A section with no photos is skipped**, so an area of work can be defined in the
+  YAML before its images exist without shipping an empty grid.
+- **The lightbox is reused unchanged.** Each section is emitted as a one-shoot
+  category in `<script id="gallery-data">`, which `main.js` already treats as "open
+  that shoot directly", so a click opens the clicked frame and prev/next walk the
+  section.
+- **Budget: 5 to 10 photos per section**, picked for name recognition first and
+  dynamism second. Past that, adding means replacing.
+- **`clients.names` is a plain-text list of named clients.** Alt text alone is a weak
+  signal for a person's name; a real sentence naming them, plus `mentions` in the
+  page's JSON-LD, is what lets a search for a client's name reach this site. Keep
+  spellings exactly right, since a misspelling matches nothing.
+- Photos here may sit in `assets/img/gallery/`; `tools/optimize_images.py` covers
+  that subfolder, so run it after adding files or they ship unoptimized.
+
+**Only publish photos the owner has the rights to.** Press and agency comps
+(Getty, WireImage, Shutterstock) are watermarked and licensed for review, not for
+publication on a commercial site. If a supplied file carries a visible watermark or
+credit bug, do not ship it: ask for the clean, licensed copy.
+
 ## SEO layer
 
 The full technical-SEO layer is generated in code, not authored per page, so it stays
@@ -421,11 +455,12 @@ Instagram tooling in `tools/` (stdlib-only except the authed one):
 Steady-state sizes — the signal to replace rather than append. These are ceilings
 for unattended growth, not targets to fill:
 
+- Archives sections (`content/archives.yaml` `sections[].images`): **5 to 10 each**
 - Gallery categories (`content/galleries.yaml`): **8 images each**, across that
   category's shoots
 - Ideas notes (`content/ideas.yaml` `notes.items`): **4–6** · Ideas reels
   (`reels.items`): **3–4**
-- Work cases (`content/work.yaml`): **4** · styling archive: **8**
+- Work cases (`content/work.yaml`): **4**
 
 ### Guardrails
 

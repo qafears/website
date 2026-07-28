@@ -35,6 +35,7 @@ function collectImages(node: unknown, out: string[] = []): string[] {
 const PAGES = [
   { path: '', singleton: 'home', changefreq: 'monthly', priority: '1.0' },
   { path: 'work', singleton: 'work', changefreq: 'monthly', priority: '0.8', extra: 'galleries' },
+  { path: 'archives', singleton: 'archives', changefreq: 'monthly', priority: '0.9' },
   { path: 'ideas', singleton: 'ideas', changefreq: 'monthly', priority: '0.8' },
   { path: 'speak', singleton: 'speak', changefreq: 'monthly', priority: '0.8' },
   { path: 'about', singleton: 'about', changefreq: 'monthly', priority: '0.7' },
