@@ -1,19 +1,25 @@
 ---
 /**
  * The Archives: the portfolio, grouped into sections (Celebrity, Editorial,
- * Commercial, Red carpet).
+ * Commercial, Red carpet), and within a section into shoots.
  *
- * Unlike the Work page, which shows a handful of case studies and hides the
- * rest of the photography behind the lightbox, every photo here is a real
- * <img> in the page. That is the point of the page, and it also means image
- * search can actually see the portfolio.
+ * A section shows one tile per shoot, not one per photo: the shoot's first
+ * image is its thumbnail, and clicking it opens that shoot in the lightbox
+ * with prev/next scoped to it. So Garcelle Beauvais is a single tile that
+ * opens four frames, rather than four tiles competing in the grid.
  *
- * The lightbox in public/assets/js/main.js is reused as-is. It reads
- * the gallery-data JSON block and treats a category with one shoot as
- * "open that shoot directly", so each section is emitted as a one-shoot
- * category: clicking a tile opens that frame, and prev/next walk the section.
+ * Every photo is still a real <img> in the page, which is the invariant that
+ * lets image search see the whole portfolio. The frames behind a tile are
+ * emitted into a visually-hidden block per shoot: same markup, same alt text,
+ * simply not painted until the viewer opens. They are lazy and hidden, so the
+ * browser never fetches them for the grid, and the image sitemap declares
+ * every one of them regardless.
  *
- * A section with no photos is skipped entirely, so Red carpet stays off the
+ * The lightbox in public/assets/js/main.js is reused unchanged: it reads the
+ * gallery-data JSON block, and a tile carrying data-gallery + data-shoot opens
+ * that shoot directly.
+ *
+ * A section with no shoots is skipped entirely, so Red carpet stays off the
  * page until its images land in content/archives.yaml.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -25,28 +31,30 @@ import { personMinimal, breadcrumb } from '../lib/jsonld';
 const archives = await reader.singletons.archives.readOrThrow();
 const O = SITE_ORIGIN;
 
-const filled = archives.sections.filter((s) => s.images.length > 0);
+const filled = archives.sections
+  .map((s) => ({ ...s, shoots: s.shoots.filter((sh) => sh.images.length > 0) }))
+  .filter((s) => s.shoots.length > 0);
+
+const plural = (n: number) => `${n} photo${n === 1 ? '' : 's'}`;
 
 const clientNames = (archives.clients?.names || '')
   .split(',')
   .map((n) => n.trim())
   .filter(Boolean);
 
-// One lightbox category per section, each holding a single shoot, so a click
-// opens the viewer straight onto the clicked frame.
+// One lightbox category per section, holding that section's shoots, so a tile
+// opens its own shoot and prev/next stay inside it.
 const galleryJson = JSON.stringify(
   Object.fromEntries(
     filled.map((s) => [
       s.key,
       {
         title: s.title,
-        shoots: [
-          {
-            slug: s.key,
-            title: s.title,
-            images: s.images.map((im) => ({ src: im.src, cap: im.cap })),
-          },
-        ],
+        shoots: s.shoots.map((sh) => ({
+          slug: sh.slug,
+          title: sh.title,
+          images: sh.images.map((im) => ({ src: im.src, cap: im.cap })),
+        })),
       },
     ])
   )
@@ -63,12 +71,13 @@ const jsonLd = {
       isPartOf: { '@id': `${O}/#website` },
       about: { '@id': `${O}/#person` },
       inLanguage: 'en',
-      hasPart: filled.map((s) => ({
-        '@type': 'ImageGallery',
-        name: s.title,
-        description: s.intro,
-        image: s.images.map((im) => `${O}/${im.src}`),
-      })),
+      hasPart: filled.flatMap((s) =>
+        s.shoots.map((sh) => ({
+          '@type': 'ImageGallery',
+          name: `${s.title}: ${sh.title}`,
+          image: sh.images.map((im) => `${O}/${im.src}`),
+        }))
+      ),
       // Names the page is genuinely about, so a search engine can connect this
       // page to each client as an entity rather than only as a string.
       ...(clientNames.length
@@ -113,11 +122,11 @@ const jsonLd = {
             <p>{s.intro}</p>
           </div>
           <div class="archive archive--page">
-            {s.images.map((im) => (
+            {s.shoots.map((sh) => (
               <figure class="ph ph--tall reveal">
                 <Picture
-                  src={im.src}
-                  alt={im.alt}
+                  src={sh.images[0].src}
+                  alt={sh.images[0].alt}
                   loading="lazy"
                   sizes="(min-width: 1000px) 30vw, (min-width: 680px) 46vw, 92vw"
                 />
@@ -125,13 +134,27 @@ const jsonLd = {
                   type="button"
                   class="ph-link"
                   data-gallery={s.key}
-                  data-shoot={s.key}
-                  data-src={im.src}
-                  aria-label={`Open ${im.cap} full size`}
+                  data-shoot={sh.slug}
+                  data-src={sh.images[0].src}
+                  aria-label={`Open the ${sh.title} shoot, ${plural(sh.images.length)}`}
                 ><span class="go">View</span></button>
-                <figcaption class="cap"><span>{im.cap}</span></figcaption>
+                <figcaption class="cap">
+                  <span>{sh.title}</span>
+                  {sh.images.length > 1 && <em class="cap__count">{plural(sh.images.length)}</em>}
+                </figcaption>
               </figure>
             ))}
+          </div>
+
+          {/* The frames behind each tile, as real markup so image search sees
+              the whole shoot and not just its thumbnail. Hidden and lazy, so
+              the grid never fetches them; the lightbox paints them on click. */}
+          <div class="archive-frames" aria-hidden="true">
+            {s.shoots.flatMap((sh) =>
+              sh.images.slice(1).map((im) => (
+                <img src={im.src} alt={im.alt} loading="lazy" decoding="async" width="400" height="533" />
+              ))
+            )}
           </div>
         </div>
       </section>

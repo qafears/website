@@ -349,21 +349,39 @@ export default config({
             }),
             title: fields.text({ label: 'Section title', description: 'e.g. Celebrity' }),
             intro: fields.text({ label: 'Section intro', multiline: true }),
-            images: fields.array(
+            shoots: fields.array(
               fields.object({
-                src: imageUpload('Photo', '/gallery', 'Drag an image in to upload it.'),
-                alt: fields.text({ label: 'Alt text (accessibility and image search)' }),
-                cap: fields.text({ label: 'Caption (shown under the photo)' }),
+                slug: fields.text({
+                  label: 'Shoot slug',
+                  description: 'Lowercase, no spaces, e.g. garcelle-beauvais',
+                }),
+                title: fields.text({
+                  label: 'Shoot title',
+                  description: 'Shown on the tile, e.g. Garcelle Beauvais',
+                }),
+                images: fields.array(
+                  fields.object({
+                    src: imageUpload('Photo', '/gallery', 'Drag an image in to upload it.'),
+                    alt: fields.text({ label: 'Alt text (accessibility and image search)' }),
+                    cap: fields.text({ label: 'Caption (shown under the photo)' }),
+                  }),
+                  {
+                    label: 'Photos (the first one is the tile)',
+                    itemLabel: (p) => p.fields.cap.value || p.fields.src.value || 'Photo',
+                  }
+                ),
               }),
               {
-                label: 'Photos (aim for 5 to 10 of the strongest)',
-                itemLabel: (p) => p.fields.cap.value || p.fields.src.value || 'Photo',
+                label: 'Shoots (each gets one tile on the page)',
+                description:
+                  'A shoot is one tile: its first photo is the thumbnail, and clicking it opens the rest.',
+                itemLabel: (p) => p.fields.title.value || p.fields.slug.value || 'Shoot',
               }
             ),
           }),
           {
             label: 'Sections',
-            description: 'A section with no photos is skipped on the page until you add some.',
+            description: 'A section with no shoots is skipped on the page until you add some.',
             itemLabel: (p) => p.fields.title.value || p.fields.key.value,
           }
         ),

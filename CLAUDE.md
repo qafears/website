@@ -166,20 +166,27 @@ Archives instead. `galleries` still backs the Work case-study lightbox buttons.
 
 `/archives` ([src/pages/archives.astro](src/pages/archives.astro),
 `content/archives.yaml`) is the portfolio: `sections` of `{ key, title, intro,
-images[] }`, one section per area of work (Celebrity, Editorial, Commercial, Red
-carpet). It is the owner's front door for portfolio material, so it is the first
-place new work should land.
+shoots[] }`, one section per area of work (Celebrity, Editorial, Commercial, Red
+carpet), and each shoot `{ slug, title, images[] }`. It is the owner's front door
+for portfolio material, so it is the first place new work should land.
 
-- **Every photo is a real `<img>` on the page.** That is the point of the page, and
-  it is also the only reliable way image search sees the portfolio (the Work
-  lightbox builds its DOM from JSON, which no crawler executes).
-- **A section with no photos is skipped**, so an area of work can be defined in the
+- **One tile per shoot, not per photo.** The shoot's first image is its thumbnail;
+  clicking it opens that shoot in the lightbox with prev/next scoped to it. So
+  Garcelle Beauvais is one tile that opens four frames, rather than four tiles
+  competing in the grid. Group Celebrity shoots by who is in the picture, and
+  Editorial/Commercial by the shoot itself.
+- **Every photo is still a real `<img>` on the page**, which is the invariant that
+  lets image search see the whole portfolio rather than only the thumbnails. The
+  frames behind a tile are emitted into a visually-hidden `.archive-frames` block
+  per section: same markup and alt text, hidden and lazy so the grid never fetches
+  them. Do not "tidy" that block away, and do not replace it with JSON.
+- **A section with no shoots is skipped**, so an area of work can be defined in the
   YAML before its images exist without shipping an empty grid.
-- **The lightbox is reused unchanged.** Each section is emitted as a one-shoot
-  category in `<script id="gallery-data">`, which `main.js` already treats as "open
-  that shoot directly", so a click opens the clicked frame and prev/next walk the
-  section.
-- **Budget: 5 to 10 photos per section**, picked for name recognition first and
+- **The lightbox is reused unchanged.** Each section is emitted as a category in
+  `<script id="gallery-data">` holding its shoots, and a tile carries
+  `data-gallery` + `data-shoot`, which `main.js` already treats as "open that shoot
+  directly". Back returns to the category's shoot index.
+- **Budget: 5 to 10 shoots per section**, ordered by name recognition first and
   dynamism second. Past that, adding means replacing.
 - **`clients.names` is a plain-text list of named clients.** Alt text alone is a weak
   signal for a person's name; a real sentence naming them, plus `mentions` in the
@@ -474,7 +481,7 @@ Instagram tooling in `tools/` (stdlib-only except the authed one):
 Steady-state sizes — the signal to replace rather than append. These are ceilings
 for unattended growth, not targets to fill:
 
-- Archives sections (`content/archives.yaml` `sections[].images`): **5 to 10 each**
+- Archives sections (`content/archives.yaml` `sections[].shoots`): **5 to 10 shoots each**
 - Gallery categories (`content/galleries.yaml`): **8 images each**, across that
   category's shoots
 - Ideas notes (`content/ideas.yaml` `notes.items`): **4–6** · Ideas reels
