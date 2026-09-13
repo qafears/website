@@ -304,6 +304,31 @@
       975
     ]
   },
+  "assets/img/gallery/garcelle-beauvais-sheen-crown.jpg": {
+    "height": 720,
+    "width": 1080,
+    "widths": [
+      400,
+      800,
+      1080
+    ]
+  },
+  "assets/img/gallery/garcelle-beauvais-sheen-magazine-cover.jpg": {
+    "height": 508,
+    "width": 393,
+    "widths": [
+      393
+    ]
+  },
+  "assets/img/gallery/garcelle-beauvais-sheen-suit.jpg": {
+    "height": 720,
+    "width": 1080,
+    "widths": [
+      400,
+      800,
+      1080
+    ]
+  },
   "assets/img/hero-portrait.jpg": {
     "height": 1350,
     "width": 1080,
