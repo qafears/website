@@ -354,6 +354,18 @@ button { font: inherit; cursor: pointer; }
 @media (min-width: 680px) { .archive--page { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1000px) { .archive--page { grid-template-columns: repeat(3, 1fr); } }
 .archive--page .cap span { font-size: 0.9rem; }
+/* Photo count on an Archives tile, so a tile reads as a shoot to open rather
+   than a single picture. */
+.archive--page .cap__count {
+  color: var(--ink-soft); font-style: normal; font-size: 0.78rem; margin-top: 0.1rem;
+}
+/* The frames behind each tile. Present in the markup for image search, never
+   painted: the lightbox is what shows them. */
+.archive-frames {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
 .arch-clients {
   margin-top: 3.5rem; border-top: 1px solid var(--line); padding-top: 1.75rem;
 }

@@ -77,17 +77,20 @@ direction — since the current site shows almost everyone except him in that ro
 
 ## The Archives page
 
-`/archives` is the portfolio, driven by `content/archives.yaml` (`sections[].images`),
-not by fixed slots: each entry is a `{ src, alt, cap }` pointing at any file under
-`public/assets/img/`. Most of them currently live in `assets/img/gallery/`.
+`/archives` is the portfolio, driven by `content/archives.yaml`
+(`sections[].shoots[].images`), not by fixed slots: each entry is a
+`{ src, alt, cap }` pointing at any file under `public/assets/img/`. Most of them
+currently live in `assets/img/gallery/`.
 
-- **Budget 5 to 10 photos per section**, chosen for name recognition first, then
-  for how dynamic the image is. Past that, adding means replacing.
+- **A shoot is one tile.** Its first photo is the thumbnail, and clicking the tile
+  opens the rest, so put the strongest frame first.
+- **Budget 5 to 10 shoots per section**, ordered by name recognition first, then
+  by how dynamic the image is. Past that, adding means replacing.
 - **Name the person in `alt` and `cap` when the shoot is a named client.** That, plus
   the `clients.names` line on the page, is what makes a search for that name reach
   the site. Get the spelling exactly right.
 - Sections: `celebrity`, `editorial`, `commercial`, `red-carpet`. A section with no
-  images is skipped on the page, so one can be defined before its photos exist.
+  shoots is skipped on the page, so one can be defined before its photos exist.
 - **Adding photos from the admin:** drag them into the photo field at `/keystatic`;
   they commit straight into `public/assets/img/`. Then run, in order:
   `python3 tools/normalize_uploads.py` (gallery uploads arrive named after their
