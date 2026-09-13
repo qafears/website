@@ -50,4 +50,15 @@ export default defineConfig({
   adapter: await loadAdapter(),
   integrations: buildingAdmin || enableAdmin ? await loadAdminIntegrations() : [],
   devToolbar: { enabled: false },
+  vite: {
+    // Keystatic's admin UI imports lodash's CommonJS single-function modules as
+    // default imports. Vite's dev server serves those unbundled, so the browser
+    // sees no `default` export and the admin fails to hydrate into a blank page
+    // (`npm run dev` -> /keystatic). Pre-bundling them converts CJS to ESM so
+    // the default import resolves. Production builds bundle anyway and were
+    // never affected, which is why only local editing broke.
+    optimizeDeps: {
+      include: ['lodash/debounce', 'lodash/isEqual', 'lodash/throttle'],
+    },
+  },
 });

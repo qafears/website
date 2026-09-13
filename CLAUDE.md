@@ -188,6 +188,25 @@ place new work should land.
 - Photos here may sit in `assets/img/gallery/`; `tools/optimize_images.py` covers
   that subfolder, so run it after adding files or they ship unoptimized.
 
+### The owner uploads photos from the admin
+
+Image paths are `fields.image` (the `imageUpload` helper in
+[keystatic.config.ts](keystatic.config.ts)), so the owner drags a photo into
+`/keystatic` and it commits into `public/assets/img/`. Two things to know:
+
+- **`publicPath` is relative on purpose** (`assets/img`, no leading slash).
+  Keystatic only appends a trailing slash, so stored values match the site's
+  relative paths. A root-absolute path would break the GitHub Pages subpath.
+  Reading is unchanged: the field's reader returns the plain string.
+- **Uploads into an array arrive machine-named.** Keystatic names a file nested
+  in an array after its *position*, e.g.
+  `assets/img/gallery/sections/0/images/8/src.jpg`. That is bad for image search
+  and the index can collide after a reorder. So after the owner uploads, run
+  **`python3 tools/normalize_uploads.py`**, which renames each one from its own
+  caption (`garcelle-beauvais-for-sheen-magazine.jpg`), rewrites the YAML, and
+  clears the empty folders. Then run `tools/optimize_images.py`. Standalone
+  photo slots keep their original filename and need neither step.
+
 **Only publish photos the owner has the rights to.** Press and agency comps
 (Getty, WireImage, Shutterstock) are watermarked and licensed for review, not for
 publication on a commercial site. If a supplied file carries a visible watermark or

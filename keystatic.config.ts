@@ -55,16 +55,43 @@ const cta = () =>
     { label: 'Closing call-to-action' }
   );
 
+/**
+ * A drag-and-drop image upload. The admin commits the file into `directory`
+ * and stores `publicPath + filename` in the YAML, so the owner adds photos
+ * without touching files or git.
+ *
+ * `publicPath` is deliberately relative, with no leading slash: Keystatic only
+ * appends a trailing slash to it, so the stored value matches the relative
+ * `assets/img/...` paths the rest of the site uses. A root-absolute path would
+ * break the site under the GitHub Pages subpath.
+ *
+ * Reading is unaffected: the field's reader returns the plain string, so page
+ * templates and every path already in the YAML keep working as-is.
+ *
+ * One caveat, documented in ASSETS.md: for a field inside an array, Keystatic
+ * names the uploaded file after the field's position, not the original
+ * filename, so gallery uploads arrive with machine names and are worth
+ * renaming to something descriptive on the next pass.
+ */
+const imageUpload = (label: string, subdir = '', description?: string) =>
+  fields.image({
+    label,
+    directory: `public/assets/img${subdir}`,
+    publicPath: `assets/img${subdir}`,
+    description,
+  });
+
 // A photo slot. `src` is a path under the site root (e.g.
 // assets/img/hero-portrait.jpg); a missing file falls back to the labeled
 // placeholder built from `tag` / `label`.
 const photo = (label: string) =>
   fields.object(
     {
-      src: fields.text({
-        label: 'Image path',
-        description: 'Path under the site root, e.g. assets/img/hero-portrait.jpg',
-      }),
+      src: imageUpload(
+        'Photo',
+        '',
+        'Drag an image in to upload it, or leave the existing one in place.'
+      ),
       alt: fields.text({ label: 'Alt text (accessibility)' }),
       tag: fields.text({ label: 'Placeholder tag (shown until the photo is added)' }),
       label: fields.text({ label: 'Placeholder caption' }),
@@ -119,7 +146,7 @@ export default config({
                 title: fields.text({ label: 'Shoot title' }),
                 images: fields.array(
                   fields.object({
-                    src: fields.text({ label: 'Image path' }),
+                    src: imageUpload('Photo', '/gallery', 'Drag an image in to upload it.'),
                     cap: fields.text({ label: 'Caption' }),
                   }),
                   { label: 'Images (first one is the shoot thumbnail)', itemLabel: (p) => p.fields.src.value || 'Image' }
@@ -324,10 +351,7 @@ export default config({
             intro: fields.text({ label: 'Section intro', multiline: true }),
             images: fields.array(
               fields.object({
-                src: fields.text({
-                  label: 'Image path',
-                  description: 'e.g. assets/img/gallery/g-celebrity-1.jpg',
-                }),
+                src: imageUpload('Photo', '/gallery', 'Drag an image in to upload it.'),
                 alt: fields.text({ label: 'Alt text (accessibility and image search)' }),
                 cap: fields.text({ label: 'Caption (shown under the photo)' }),
               }),
