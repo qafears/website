@@ -71,7 +71,7 @@ sets:
       - slug: "print-commercial"
         title: "Print & commercial"
         images:
-          - { src: "assets/img/gallery/g-commercial-5.jpg", cap: "Print & commercial" }
+          - { src: "assets/img/gallery/garcelle-beauvais-printed-ball-gown.jpg", cap: "Garcelle Beauvais" }
       - slug: "evening-wear"
         title: "Evening wear"
         images:

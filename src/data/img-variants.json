@@ -130,15 +130,6 @@
       867
     ]
   },
-  "assets/img/gallery/g-commercial-5.jpg": {
-    "height": 1300,
-    "width": 975,
-    "widths": [
-      400,
-      800,
-      975
-    ]
-  },
   "assets/img/gallery/g-commercial-6.jpg": {
     "height": 1300,
     "width": 867,
@@ -302,6 +293,15 @@
       400,
       800,
       900
+    ]
+  },
+  "assets/img/gallery/garcelle-beauvais-printed-ball-gown.jpg": {
+    "height": 1300,
+    "width": 975,
+    "widths": [
+      400,
+      800,
+      975
     ]
   },
   "assets/img/hero-portrait.jpg": {
