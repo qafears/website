@@ -256,6 +256,45 @@ def check_page(page, html, sitemap_locs):
         err(page, f"URL '{exp}' is not listed in sitemap.xml")
 
 
+# ---- Redirect stubs ---------------------------------------------------------
+# The old Wix site's URLs (/celebrity, /about-me, ...) still sit in Google's
+# index, so src/pages/[legacy].astro emits a stub at each one that forwards to
+# the page now covering it. A stub is not a site page: it carries no content of
+# its own, so the full SEO layer above does not apply and it is deliberately
+# kept out of the sitemap. It still has to actually redirect, which is what is
+# checked here.
+REFRESH_RE = re.compile(
+    r'<meta[^>]*http-equiv\s*=\s*"refresh"[^>]*content\s*=\s*"\s*\d+\s*;\s*url=([^"]+)"',
+    re.IGNORECASE,
+)
+
+
+def is_redirect_stub(html):
+    return REFRESH_RE.search(head_of(html)) is not None
+
+
+def check_redirect(page, html, pages):
+    head = head_of(html)
+    target = REFRESH_RE.search(head).group(1).strip()
+    if target.startswith(("http://", "https://", "/")):
+        err(page, f"redirect target '{target}' must be a relative path")
+        return
+    # Clean URLs: the host serves work.html for 'work'.
+    target_file = target if target.endswith(".html") else target + ".html"
+    if target_file not in pages:
+        err(page, f"redirects to '{target}', which is not a page in the build")
+
+    canon = [parse_attrs(t) for t in find_tags(head, "link")]
+    canon = [a.get("href", "") for a in canon if a.get("rel", "").lower() == "canonical"]
+    if len(canon) != 1:
+        err(page, f"expected exactly one canonical link, found {len(canon)}")
+    elif canon[0] != f"{BASE}/{target}":
+        err(page, f"canonical is '{canon[0]}', expected '{BASE}/{target}' (the redirect target)")
+
+    if re.search(r'<meta[^>]*name\s*=\s*"robots"[^>]*noindex', head, re.IGNORECASE):
+        err(page, "must not be noindex: Google has to read the stub to honour the redirect")
+
+
 # ---- Site-wide checks -------------------------------------------------------
 def check_sitemap(pages):
     try:
@@ -308,10 +347,14 @@ def check_assets():
 
 # ---- Main -------------------------------------------------------------------
 def main():
-    pages = sorted(os.path.basename(p) for p in glob.glob(os.path.join(ROOT, "*.html")))
-    if not pages:
+    all_pages = sorted(os.path.basename(p) for p in glob.glob(os.path.join(ROOT, "*.html")))
+    if not all_pages:
         print("No HTML pages found; nothing to check.", file=sys.stderr)
         return 1
+
+    html = {page: read(page) for page in all_pages}
+    redirects = [p for p in all_pages if is_redirect_stub(html[p])]
+    pages = [p for p in all_pages if p not in redirects]
 
     check_assets()
     check_robots()
@@ -319,7 +362,9 @@ def main():
     sitemap_locs = check_sitemap(pages)
 
     for page in pages:
-        check_page(page, read(page), sitemap_locs)
+        check_page(page, html[page], sitemap_locs)
+    for page in redirects:
+        check_redirect(page, html[page], all_pages)
 
     for w in warnings:
         print(f"  warn  {w}")
@@ -333,7 +378,7 @@ def main():
         return 1
 
     print(
-        f"SEO check passed: {len(pages)} pages, "
+        f"SEO check passed: {len(pages)} pages, {len(redirects)} redirect stub(s), "
         f"{len(REQUIRED_ASSETS)} assets, {len(warnings)} warning(s)."
     )
     return 0

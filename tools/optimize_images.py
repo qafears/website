@@ -38,11 +38,16 @@ AVIF_Q = 42
 
 
 def referenced_photos():
-    """Every assets/img/*.jpg path the CMS content points at."""
+    """Every assets/img/**.jpg path the CMS content points at.
+
+    Paths may sit in a subfolder (assets/img/gallery/...), which is why the
+    pattern allows a slash: the Archives page renders the gallery photos
+    directly, so they need variants like every other shipped photo.
+    """
     srcs = set()
     for f in glob.glob(os.path.join(CONTENT, "*.yaml")):
         text = open(f, encoding="utf-8").read()
-        for m in re.findall(r"assets/img/([a-z0-9-]+\.jpg)", text):
+        for m in re.findall(r"assets/img/([a-z0-9/-]+\.jpg)", text):
             srcs.add(m)
     return sorted(srcs)
 
@@ -59,7 +64,7 @@ def encode(name, report=False):
     orig = os.path.join(ORIG, name)
 
     if not os.path.exists(orig):
-        os.makedirs(ORIG, exist_ok=True)
+        os.makedirs(os.path.dirname(orig), exist_ok=True)
         shutil.copy2(live, orig)
 
     src = Image.open(orig).convert("RGB")

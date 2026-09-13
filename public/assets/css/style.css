@@ -349,6 +349,21 @@ button { font: inherit; cursor: pointer; }
 }
 .archive .cap span { color: var(--ink); font-size: 0.85rem; line-height: 1.2; }
 
+/* The Archives page: same tiles, fewer per row, so the work reads bigger than
+   it does in the teaser strip on Work. */
+@media (min-width: 680px) { .archive--page { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .archive--page { grid-template-columns: repeat(3, 1fr); } }
+.archive--page .cap span { font-size: 0.9rem; }
+.arch-clients {
+  margin-top: 3.5rem; border-top: 1px solid var(--line); padding-top: 1.75rem;
+}
+.arch-clients p:last-child {
+  color: var(--ink-soft); font-size: 1.05rem; line-height: 1.7; max-width: 46rem;
+}
+.arch-footnote {
+  margin-top: 1.75rem; color: var(--ink-faint); font-size: 0.9rem;
+}
+
 /* ============================================================
    Ideas
    ============================================================ */

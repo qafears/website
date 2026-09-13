@@ -75,6 +75,25 @@ direction — since the current site shows almost everyone except him in that ro
 | `assets/img/media-glamour.jpg` | Speak (`media` credits) | Poster frame for Glamour's styling competition *Dress to Kill* (16:9). Source video: https://www.youtube.com/watch?v=_KzZ2pqT_6g |
 | `assets/img/about-portrait.jpg` | About | A strong editorial portrait of Quentin. |
 
+## The Archives page
+
+`/archives` is the portfolio, driven by `content/archives.yaml` (`sections[].images`),
+not by fixed slots: each entry is a `{ src, alt, cap }` pointing at any file under
+`public/assets/img/`. Most of them currently live in `assets/img/gallery/`.
+
+- **Budget 5 to 10 photos per section**, chosen for name recognition first, then
+  for how dynamic the image is. Past that, adding means replacing.
+- **Name the person in `alt` and `cap` when the shoot is a named client.** That, plus
+  the `clients.names` line on the page, is what makes a search for that name reach
+  the site. Get the spelling exactly right.
+- Sections: `celebrity`, `editorial`, `commercial`, `red-carpet`. A section with no
+  images is skipped on the page, so one can be defined before its photos exist.
+- **Run `python3 tools/optimize_images.py` after adding files.** It now covers the
+  `gallery/` subfolder, and without it the new photos ship as single oversized JPEGs.
+- **Rights:** only publish photos the owner has the rights to. Press-agency comps
+  (Getty, WireImage, Shutterstock) carry visible watermarks and are licensed for
+  review, not publication. Ask for the clean licensed file instead of shipping one.
+
 ## Video — the speaking reel
 The Speak page has a play-button poster linking to `contact.html` as a placeholder.
 Replace it with the real two-minute reel cut from the **Tommy Hilfiger interview**,

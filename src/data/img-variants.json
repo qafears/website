@@ -8,56 +8,11 @@
       891
     ]
   },
-  "assets/img/archive-01.jpg": {
-    "height": 1199,
-    "width": 900,
-    "widths": [
-      400,
-      800,
-      900
-    ]
-  },
-  "assets/img/archive-02.jpg": {
-    "height": 1200,
-    "width": 900,
-    "widths": [
-      400,
-      800,
-      900
-    ]
-  },
-  "assets/img/archive-03.jpg": {
-    "height": 1200,
-    "width": 900,
-    "widths": [
-      400,
-      800,
-      900
-    ]
-  },
-  "assets/img/archive-04.jpg": {
-    "height": 1200,
-    "width": 900,
-    "widths": [
-      400,
-      800,
-      900
-    ]
-  },
   "assets/img/archive-05.jpg": {
     "height": 525,
     "width": 393,
     "widths": [
       393
-    ]
-  },
-  "assets/img/archive-06.jpg": {
-    "height": 1200,
-    "width": 900,
-    "widths": [
-      400,
-      800,
-      900
     ]
   },
   "assets/img/archive-07.jpg": {
@@ -69,12 +24,284 @@
       899
     ]
   },
-  "assets/img/archive-08.jpg": {
-    "height": 910,
+  "assets/img/gallery/g-celebrity-1.jpg": {
+    "height": 1300,
+    "width": 997,
+    "widths": [
+      400,
+      800,
+      997
+    ]
+  },
+  "assets/img/gallery/g-celebrity-2.jpg": {
+    "height": 1300,
+    "width": 867,
+    "widths": [
+      400,
+      800,
+      867
+    ]
+  },
+  "assets/img/gallery/g-celebrity-3.jpg": {
+    "height": 1300,
+    "width": 867,
+    "widths": [
+      400,
+      800,
+      867
+    ]
+  },
+  "assets/img/gallery/g-celebrity-4.jpg": {
+    "height": 525,
+    "width": 788,
+    "widths": [
+      400,
+      788
+    ]
+  },
+  "assets/img/gallery/g-celebrity-5.jpg": {
+    "height": 1300,
+    "width": 867,
+    "widths": [
+      400,
+      800,
+      867
+    ]
+  },
+  "assets/img/gallery/g-celebrity-6.jpg": {
+    "height": 1300,
+    "width": 867,
+    "widths": [
+      400,
+      800,
+      867
+    ]
+  },
+  "assets/img/gallery/g-celebrity-7.jpg": {
+    "height": 1080,
+    "width": 1080,
+    "widths": [
+      400,
+      800,
+      1080
+    ]
+  },
+  "assets/img/gallery/g-celebrity-8.jpg": {
+    "height": 1280,
+    "width": 720,
+    "widths": [
+      400,
+      720
+    ]
+  },
+  "assets/img/gallery/g-commercial-1.jpg": {
+    "height": 720,
+    "width": 1080,
+    "widths": [
+      400,
+      800,
+      1080
+    ]
+  },
+  "assets/img/gallery/g-commercial-2.jpg": {
+    "height": 720,
+    "width": 1080,
+    "widths": [
+      400,
+      800,
+      1080
+    ]
+  },
+  "assets/img/gallery/g-commercial-3.jpg": {
+    "height": 720,
+    "width": 1080,
+    "widths": [
+      400,
+      800,
+      1080
+    ]
+  },
+  "assets/img/gallery/g-commercial-4.jpg": {
+    "height": 1300,
+    "width": 867,
+    "widths": [
+      400,
+      800,
+      867
+    ]
+  },
+  "assets/img/gallery/g-commercial-5.jpg": {
+    "height": 1300,
+    "width": 975,
+    "widths": [
+      400,
+      800,
+      975
+    ]
+  },
+  "assets/img/gallery/g-commercial-6.jpg": {
+    "height": 1300,
+    "width": 867,
+    "widths": [
+      400,
+      800,
+      867
+    ]
+  },
+  "assets/img/gallery/g-commercial-7.jpg": {
+    "height": 630,
+    "width": 796,
+    "widths": [
+      400,
+      796
+    ]
+  },
+  "assets/img/gallery/g-commercial-8.jpg": {
+    "height": 558,
+    "width": 358,
+    "widths": [
+      358
+    ]
+  },
+  "assets/img/gallery/g-editorial-1.jpg": {
+    "height": 1300,
+    "width": 1037,
+    "widths": [
+      400,
+      800,
+      1037
+    ]
+  },
+  "assets/img/gallery/g-editorial-2.jpg": {
+    "height": 1300,
+    "width": 1037,
+    "widths": [
+      400,
+      800,
+      1037
+    ]
+  },
+  "assets/img/gallery/g-editorial-3.jpg": {
+    "height": 1300,
+    "width": 1037,
+    "widths": [
+      400,
+      800,
+      1037
+    ]
+  },
+  "assets/img/gallery/g-editorial-4.jpg": {
+    "height": 1300,
+    "width": 1037,
+    "widths": [
+      400,
+      800,
+      1037
+    ]
+  },
+  "assets/img/gallery/g-editorial-5.jpg": {
+    "height": 1024,
     "width": 683,
     "widths": [
       400,
       683
+    ]
+  },
+  "assets/img/gallery/g-editorial-6.jpg": {
+    "height": 1024,
+    "width": 683,
+    "widths": [
+      400,
+      683
+    ]
+  },
+  "assets/img/gallery/g-editorial-7.jpg": {
+    "height": 1300,
+    "width": 867,
+    "widths": [
+      400,
+      800,
+      867
+    ]
+  },
+  "assets/img/gallery/g-editorial-8.jpg": {
+    "height": 1280,
+    "width": 720,
+    "widths": [
+      400,
+      720
+    ]
+  },
+  "assets/img/gallery/g-menswear-1.jpg": {
+    "height": 1300,
+    "width": 975,
+    "widths": [
+      400,
+      800,
+      975
+    ]
+  },
+  "assets/img/gallery/g-menswear-2.jpg": {
+    "height": 1300,
+    "width": 975,
+    "widths": [
+      400,
+      800,
+      975
+    ]
+  },
+  "assets/img/gallery/g-menswear-3.jpg": {
+    "height": 1300,
+    "width": 975,
+    "widths": [
+      400,
+      800,
+      975
+    ]
+  },
+  "assets/img/gallery/g-menswear-4.jpg": {
+    "height": 1300,
+    "width": 975,
+    "widths": [
+      400,
+      800,
+      975
+    ]
+  },
+  "assets/img/gallery/g-menswear-5.jpg": {
+    "height": 1300,
+    "width": 975,
+    "widths": [
+      400,
+      800,
+      975
+    ]
+  },
+  "assets/img/gallery/g-menswear-6.jpg": {
+    "height": 1200,
+    "width": 900,
+    "widths": [
+      400,
+      800,
+      900
+    ]
+  },
+  "assets/img/gallery/g-menswear-7.jpg": {
+    "height": 1200,
+    "width": 900,
+    "widths": [
+      400,
+      800,
+      900
+    ]
+  },
+  "assets/img/gallery/g-menswear-8.jpg": {
+    "height": 1200,
+    "width": 900,
+    "widths": [
+      400,
+      800,
+      900
     ]
   },
   "assets/img/hero-portrait.jpg": {

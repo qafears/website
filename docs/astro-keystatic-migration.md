@@ -23,7 +23,9 @@ src/layouts/BaseLayout.astro   <- per-page <head>: SEO, OG, JSON-LD, favicons
 src/components/*.astro     <- Header, Footer, Cta
 src/pages/*.astro          <- one per page; renders content into the original markup
 public/                    <- assets/css, assets/js, assets/img, favicons, manifest,
-                              robots.txt, sitemap.xml (copied verbatim into dist/)
+                              robots.txt (copied verbatim into dist/)
+src/pages/sitemap.xml.ts   <- generates dist/sitemap.xml, image entries included
+src/pages/[legacy].astro   <- redirect stubs for the old Wix URLs
         |
         |  npm run build   (Astro, static; Keystatic admin excluded)
         v
@@ -94,10 +96,10 @@ separate `build:admin` output on Netlify.
   "shoot" field deep-links to one shoot's image set.
 - **Add a whole new page:** add a singleton to `keystatic.config.ts`, a
   `content/<page>.yaml`, and a `src/pages/<page>.astro` that renders it through
-  `BaseLayout` (which supplies the SEO/JSON-LD); add the URL to
-  `public/sitemap.xml`.
+  `BaseLayout` (which supplies the SEO/JSON-LD); add the page to `PAGES` in
+  `src/pages/sitemap.xml.ts`.
 - **Change the domain:** update `SITE_ORIGIN` in `src/lib/content.ts`, `BASE` in
-  `tools/seo_check.py`, and `public/robots.txt` + `public/sitemap.xml`.
+  `tools/seo_check.py`, and `public/robots.txt`.
 
 ## Tradeoffs
 

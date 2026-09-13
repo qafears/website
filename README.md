@@ -115,8 +115,8 @@ builds and publishes `dist/` on every push to `main`. The public site is
 - [ ] Have Quentin's manager/comms review the Walmart bio language.
 - [ ] Set the contact form endpoint and update the contact email.
 - [x] Set the real domain in the `og:` / canonical / sitemap tags (`https://quentinfears.com`). If the
-      site launches on a different domain, find-and-replace `quentinfears.com` across the HTML,
-      `robots.txt`, and `sitemap.xml`.
+      site launches on a different domain, update `SITE_ORIGIN` in `src/lib/content.ts` and
+      find-and-replace `quentinfears.com` in `robots.txt` and `CNAME`.
 - [x] **Flip indexing on at launch.** The password gate has been removed and every page
       ships `robots: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1`.
 - [ ] Submit `sitemap.xml` in Google Search Console and Bing Webmaster Tools after launch.

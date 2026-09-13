@@ -89,7 +89,7 @@ export default config({
   ui: {
     brand: { name: 'Quentin Fears site content' },
     navigation: {
-      Pages: ['home', 'work', 'ideas', 'speak', 'about', 'contact'],
+      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact'],
       Shared: ['settings', 'galleries'],
     },
   },
@@ -279,29 +279,6 @@ export default config({
           }),
           { label: 'Case studies', itemLabel: (p) => p.fields.title.value }
         ),
-        archive: fields.object(
-          {
-            eyebrow: fields.text({ label: 'Eyebrow' }),
-            heading: fields.text({ label: 'Heading' }),
-            intro: fields.text({ label: 'Intro', multiline: true }),
-            items: fields.array(
-              fields.object({
-                src: fields.text({ label: 'Image path' }),
-                alt: fields.text({ label: 'Alt text' }),
-                gallery: fields.text({ label: 'Gallery category key' }),
-                shoot: fields.text({
-                  label: 'Shoot slug',
-                  description: 'Opens this shoot directly; blank opens the category overview',
-                }),
-                capTitle: fields.text({ label: 'Caption title' }),
-                capSub: fields.text({ label: 'Caption subtitle' }),
-              }),
-              { label: 'Archive items', itemLabel: (p) => p.fields.capSub.value || p.fields.alt.value }
-            ),
-            footnote: fields.text({ label: 'Footnote', multiline: true }),
-          },
-          { label: 'Styling archive' }
-        ),
         video: fields.object(
           {
             eyebrow: fields.text({ label: 'Eyebrow' }),
@@ -326,6 +303,59 @@ export default config({
           },
           { label: 'Video' }
         ),
+        cta: cta(),
+      },
+    }),
+
+    archives: singleton({
+      label: 'Archives page',
+      path: 'content/archives',
+      format: { data: 'yaml' },
+      schema: {
+        seo: seo(),
+        hero: eyebrowHeadingIntro(),
+        sections: fields.array(
+          fields.object({
+            key: fields.text({
+              label: 'Section key',
+              description: 'Used by the lightbox, e.g. celebrity. Lowercase, no spaces.',
+            }),
+            title: fields.text({ label: 'Section title', description: 'e.g. Celebrity' }),
+            intro: fields.text({ label: 'Section intro', multiline: true }),
+            images: fields.array(
+              fields.object({
+                src: fields.text({
+                  label: 'Image path',
+                  description: 'e.g. assets/img/gallery/g-celebrity-1.jpg',
+                }),
+                alt: fields.text({ label: 'Alt text (accessibility and image search)' }),
+                cap: fields.text({ label: 'Caption (shown under the photo)' }),
+              }),
+              {
+                label: 'Photos (aim for 5 to 10 of the strongest)',
+                itemLabel: (p) => p.fields.cap.value || p.fields.src.value || 'Photo',
+              }
+            ),
+          }),
+          {
+            label: 'Sections',
+            description: 'A section with no photos is skipped on the page until you add some.',
+            itemLabel: (p) => p.fields.title.value || p.fields.key.value,
+          }
+        ),
+        clients: fields.object(
+          {
+            label: fields.text({ label: 'Label', description: 'e.g. Selected clients' }),
+            names: fields.text({
+              label: 'Names, comma separated',
+              multiline: true,
+              description:
+                'Named clients read as plain text on the page, which is what lets a search for one of these names find this site.',
+            }),
+          },
+          { label: 'Selected clients' }
+        ),
+        footnote: fields.text({ label: 'Closing note', multiline: true }),
         cta: cta(),
       },
     }),
