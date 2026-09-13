@@ -24,7 +24,7 @@
       899
     ]
   },
-  "assets/img/gallery/g-celebrity-1.jpg": {
+  "assets/img/gallery/amy-weber-glamour-cover.jpg": {
     "height": 1300,
     "width": 997,
     "widths": [
@@ -33,7 +33,7 @@
       997
     ]
   },
-  "assets/img/gallery/g-celebrity-2.jpg": {
+  "assets/img/gallery/amy-weber-lavender-gown.jpg": {
     "height": 1300,
     "width": 867,
     "widths": [
@@ -42,7 +42,7 @@
       867
     ]
   },
-  "assets/img/gallery/g-celebrity-3.jpg": {
+  "assets/img/gallery/amy-weber-pink-feather-gown.jpg": {
     "height": 1300,
     "width": 867,
     "widths": [
@@ -57,24 +57,6 @@
     "widths": [
       400,
       788
-    ]
-  },
-  "assets/img/gallery/g-celebrity-5.jpg": {
-    "height": 1300,
-    "width": 867,
-    "widths": [
-      400,
-      800,
-      867
-    ]
-  },
-  "assets/img/gallery/g-celebrity-6.jpg": {
-    "height": 1300,
-    "width": 867,
-    "widths": [
-      400,
-      800,
-      867
     ]
   },
   "assets/img/gallery/g-celebrity-7.jpg": {
@@ -327,6 +309,24 @@
       400,
       800,
       1080
+    ]
+  },
+  "assets/img/gallery/tahj-mowry-menswear-styling.jpg": {
+    "height": 1300,
+    "width": 867,
+    "widths": [
+      400,
+      800,
+      867
+    ]
+  },
+  "assets/img/gallery/tahj-mowry-tailoring.jpg": {
+    "height": 1300,
+    "width": 867,
+    "widths": [
+      400,
+      800,
+      867
     ]
   },
   "assets/img/hero-portrait.jpg": {
