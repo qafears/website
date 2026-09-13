@@ -88,6 +88,11 @@ not by fixed slots: each entry is a `{ src, alt, cap }` pointing at any file und
   the site. Get the spelling exactly right.
 - Sections: `celebrity`, `editorial`, `commercial`, `red-carpet`. A section with no
   images is skipped on the page, so one can be defined before its photos exist.
+- **Adding photos from the admin:** drag them into the photo field at `/keystatic`;
+  they commit straight into `public/assets/img/`. Then run, in order:
+  `python3 tools/normalize_uploads.py` (gallery uploads arrive named after their
+  list position, like `sections/0/images/8/src.jpg`; this renames them from their
+  caption and rewrites the YAML) and `python3 tools/optimize_images.py`.
 - **Run `python3 tools/optimize_images.py` after adding files.** It now covers the
   `gallery/` subfolder, and without it the new photos ship as single oversized JPEGs.
 - **Rights:** only publish photos the owner has the rights to. Press-agency comps
