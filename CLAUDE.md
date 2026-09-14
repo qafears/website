@@ -400,7 +400,11 @@ Instagram tooling in `tools/` (stdlib-only except the authed one):
 
 1. **Detect:** `python3 tools/instagram_new_since.py` to list posts newer than the
    ledger. An empty list does not end the run — the critical review in step 3 still
-   happens.
+   happens. **Exit 3 means detection was blocked, not that nothing is new** (the
+   scheduled environment's network policy must allow `i.instagram.com`). Leave
+   `reviewed_through` untouched so the next run re-checks from the same point, record
+   the run under `runs` with `"detection": "blocked"` and the reason, then continue to
+   step 3. Never route around a proxy denial; report the blocked host.
 2. **Judge** each new post from its caption + image(s) *against what the site
    already shows*. The bar is the site's existing best content, and the default
    verdict is **skip**.

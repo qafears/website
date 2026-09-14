@@ -14,8 +14,12 @@ routine can act on.
 Login-free and gentle (a single request), so it is safe to run unattended on a
 schedule. It only reads; it never writes the ledger or the site. Instagram
 returns roughly the 12 most-recent posts this way, which is plenty for a weekly
-"what's new" check. If Instagram rate-limits the anonymous endpoint (HTTP 401),
-it says so and exits non-zero.
+"what's new" check.
+
+Exit codes: 0 success, 2 Instagram refused the request (rate-limited), 3 the
+host could not be reached at all (no network, or an egress policy that does not
+allow it). A blocked run is reported in one line, never as a traceback, so the
+weekly routine can tell "nothing new" apart from "could not look".
 """
 
 import argparse
@@ -28,13 +32,14 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+API_HOST = "i.instagram.com"
 APP_ID = "936619743392459"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/122.0 Safari/537.36")
 
 
 def fetch_recent(user):
-    url = ("https://i.instagram.com/api/v1/users/web_profile_info/?username="
+    url = (f"https://{API_HOST}/api/v1/users/web_profile_info/?username="
            + urllib.parse.quote(user))
     req = urllib.request.Request(url, headers={
         "User-Agent": UA, "X-IG-App-ID": APP_ID,
@@ -43,6 +48,29 @@ def fetch_recent(user):
     with urllib.request.urlopen(req, timeout=30, context=ctx) as r:
         data = json.loads(r.read().decode("utf-8", "replace"))
     return data["data"]["user"]
+
+
+def unreachable_reason(err):
+    """Explain a connection failure, naming an egress block when that is what it is."""
+    text = str(getattr(err, "reason", err) or err)
+    if "Tunnel connection failed" in text and ("403" in text or "407" in text):
+        return (f"Could not reach {API_HOST}: the outbound proxy on this machine "
+                f"refused the tunnel ({text.strip()}), so the host is not permitted "
+                f"by this environment's network policy. Detection cannot run here. "
+                f"Allow {API_HOST} and www.instagram.com for this environment, or "
+                f"run the detector where egress is open. Do not route around the "
+                f"proxy.")
+    return (f"Could not reach {API_HOST}: {text}. Detection did not run, so this "
+            f"is not the same as finding no new posts.")
+
+
+def fail(args, status, message, code):
+    """Report a detection failure once, in whichever form the caller asked for."""
+    if args.json:
+        print(json.dumps({"user": args.user, "status": status,
+                          "new_count": None, "error": message}, indent=2))
+    print(message, file=sys.stderr)
+    sys.exit(code)
 
 
 def post_kind(node):
@@ -75,9 +103,11 @@ def main():
     try:
         user = fetch_recent(args.user)
     except urllib.error.HTTPError as e:
-        print(f"Instagram returned HTTP {e.code} for the anonymous endpoint "
-              f"(likely rate-limited). Try again later.", file=sys.stderr)
-        sys.exit(2)
+        fail(args, "refused",
+             f"Instagram returned HTTP {e.code} for the anonymous endpoint "
+             f"(likely rate-limited). Try again later.", 2)
+    except OSError as e:
+        fail(args, "unreachable", unreachable_reason(e), 3)
 
     edges = user.get("edge_owner_to_timeline_media", {}).get("edges", [])
     new = []
