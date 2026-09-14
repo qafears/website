@@ -531,11 +531,12 @@
     ]
   },
   "assets/img/work-popup-team.jpg": {
-    "height": 360,
-    "width": 480,
+    "height": 1440,
+    "width": 810,
     "widths": [
       400,
-      480
+      800,
+      810
     ]
   },
   "assets/img/work-spring-windows.jpg": {
