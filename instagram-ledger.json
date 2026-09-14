@@ -26,6 +26,16 @@
       "decision": "add",
       "target": "content/archives.yaml editorial/visionarios (4 frames)",
       "reason": "Owner asked to add another editorial: a black and white story shot for Visionarios Magazine, leather tailoring and a leopard suit against a hung white sheet in an overgrown courtyard. Four frames, no watermarks, so publishable. Editorial goes from 4 shoots to 5, inside the 5-to-10 budget, nothing replaced. Ordered strongest first so the two-model frame is the tile thumbnail. The magazine was briefly ambiguous (the owner sent jonmag.com, then corrected that Visionarios is the magazine), so the credit reads Visionarios Magazine throughout: shoot title, every caption, and every filename, since that is what image search reads."
+    },
+    {
+      "shortcode": null,
+      "source": "owner-supplied magazine files (not detected by the weekly run)",
+      "date": "2026-09-14",
+      "decision": "replace",
+      "target": "content/archives.yaml editorial/strange-memories (6 frames)",
+      "reason": "Owner asked for the JON Magazine editorial to go on the site and uploaded eight files: three printed spreads and five clean frames from the same story, 'Strange Memories', photographed by Ted Sun, styled by Quentin Fears, modelled by Cooper Jervis at Vision LA. The site already carried this shoot uncredited, as the Editorial tile 'Roadside Americana' (g-menswear-6 and g-menswear-8), so rather than add a sixth tile showing the same shoot twice, that tile was folded into a properly credited one. Editorial stays at 5 shoots, inside the 5-to-10 budget. Kept the two existing frames, which are 900x1200 against the uploads' 750x1000 for the same two looks, and added three new looks plus the opening spread, which carries 'STYLIST QUENTIN FEARS' in print and is the evidence the story ran.",
+      "replaced": "Editorial shoot 'Roadside Americana' (2 frames, captions 'Mirror, mosaic' and 'Roadside Americana'). It lost because it was this same JON story under an invented name, crediting neither the magazine, the story, nor the photographer. Its two images survive inside the new shoot with accurate alt text and captions.",
+      "dropped": "Four of the eight uploads: two near-duplicate frames of looks already covered at higher resolution (the fringed shirt on the car hood, and the checked suit on the mosaic column), and the second and third spreads, whose looks are all covered by cleaner single frames. Files removed from the repo; the owner holds the originals."
     }
   ],
   "skipped": [],
@@ -46,6 +56,12 @@
       "critical_review": "Read the built pages, not only the YAML. Budgets: galleries 4/5/8/8/8 images per category (ceiling 8), work cases 4, ideas notes 4, ideas reels 4, work video 1, archives celebrity 4, editorial 4, commercial 3, red-carpet 0 (all under the 10-shoot ceiling; the archives sections sit below the 5-shoot floor, so they have room to grow rather than anything to trim). Checked the dated-claim risks: 'Three series I keep coming back to' still matches exactly three formats items, and the 2020 reference in the TIME case is deliberately historical. Nothing stale, redundant, or reading as filler. No trim made.",
       "owner_request_pending": "Owner asked for 'the last video I posted about the Walmart Pop up'. The NYC pop-up shop video is already live on the Work page (video.items[0], poster assets/img/work-popup-shop.jpg, linking to the YouTube Short PXC-BWog7-Q). Awaiting confirmation whether that is the video meant or a newer Instagram post; a newer one cannot be fetched until Instagram egress is allowed or the owner supplies the file.",
       "content_changes": 0
+    },
+    {
+      "date": "2026-09-14",
+      "trigger": "owner request: add the editorial featured in JON Magazine",
+      "detection": "not run (owner-supplied files, not an Instagram pass)",
+      "reason": "Owner uploaded eight magazine files through GitHub. Added as the Editorial shoot 'Strange Memories | JON Magazine', replacing the uncredited 'Roadside Americana' tile that showed the same shoot. jonmag.com is blocked at this environment's egress proxy, so the publication could not be read first-hand; the magazine name follows the owner, who identified it. Note the publication styles itself JON in the search index and JÓN on its own masthead, so the accent is worth confirming with the owner."
     }
   ]
 }
