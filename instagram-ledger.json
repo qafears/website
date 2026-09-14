@@ -16,8 +16,8 @@
       "source": "owner-supplied caption (not detected by the weekly run)",
       "date": "2026-09-14",
       "decision": "add",
-      "target": "content/work.yaml cases[1] (Enterprise · Window design, \"Spring, told as a transformation\")",
-      "reason": "Owner asked for the Spring Awakening Fashion Statement Windows in Bentonville, with artist Muoi Le, to go on the site. It is a distinct body of work (window and installation design, an artist collaboration) that no existing case covers, so it grows the Work cases from 4 to 5, one past the budget, rather than replacing a case that still earns its place. Rewritten out of the employer's \"our\" voice into Quentin's own, per the personal-site rule. Photo not supplied, so the case ships with a blank image src and its labeled placeholder until the owner sends a window shot."
+      "target": "content/work.yaml cases[1] (Enterprise · Window design, \"Spring, told as a transformation\") plus content/archives.yaml commercial/spring-awakening (6 frames)",
+      "reason": "Owner asked for the Spring Awakening Fashion Statement Windows in Bentonville, with artist Muoi Le, to go on the site. It is a distinct body of work (window and installation design, an artist collaboration) that no existing case covers, so it grows the Work cases from 4 to 5, one past the budget, rather than replacing a case that still earns its place. Rewritten out of the employer's \"our\" voice into Quentin's own, per the personal-site rule. The owner then supplied ten photos of the installation: the case tile is the storefront bay cropped to 4:5, six more became the Archives Commercial shoot 'Spring Awakening windows' (3 shoots to 4, still under the 5-to-10 budget), and three were dropped, a duplicate, a near-repeat of the chambray frame, and a wide sales-floor shot with shoppers and a barista in it that is store interior rather than window work."
     }
   ],
   "skipped": [],

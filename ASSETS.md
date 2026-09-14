@@ -56,7 +56,7 @@ direction — since the current site shows almost everyone except him in that ro
 | `assets/img/hero-portrait.jpg` | Home hero | **Filled** — current studio headshot (smile, glasses, striped knit, wood backdrop; IG 3432270796993228309). The single most important image. |
 | `assets/img/speak-still.jpg` | Home (speak teaser) | On-camera still from Sheen Talk Live / BNC / Hilfiger footage. |
 | `assets/img/work-enterprise.jpg` | Work — case 01 | A generic, non-confidential retail/campaign visual (no unreleased Walmart work). |
-| `assets/img/work-spring-windows.jpg` | Work — case 02 | **Not supplied yet**, so the case ships with a blank `src` and its labeled placeholder. Wanted: a photo of the "Spring Awakening" Fashion Statement Window in Bentonville (Muoi Le's installation). Drop the file in and set `cases[1].image.src` to this path. |
+| `assets/img/work-spring-windows.jpg` | Work — case 02 | **Filled** — the "Spring Awakening" Fashion Statement Window in Bentonville, cropped to one bay so it reads in the 4:5 case frame. The rest of the shoot is in `assets/img/gallery/spring-awakening-*.jpg` (Archives, Commercial). |
 | `assets/img/work-time.jpg` | Work — case 03 | The TIME feature screenshot or a related office-dressing image. |
 | `assets/img/work-editorial.jpg` | Work — case 04 | A strong Glitter/Ladygunn editorial spread he art-directed. |
 | `assets/img/work-celebrity.jpg` | Work — case 05 | A standout red-carpet or Sheen cover look. |
