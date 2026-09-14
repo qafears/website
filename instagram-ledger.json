@@ -10,6 +10,14 @@
       "decision": "add",
       "target": "content/work.yaml video.items[1]",
       "reason": "Owner-requested. Behind-the-scenes reel from Walmart's largest NYC pop-up, naming Free Assembly, Scoop, Avia and Scenario. Clears the eligibility gate as professional creative work (styling and visual merchandising), and the pop-up video is already sanctioned site material. Added alongside the existing pop-up Short rather than replacing it: one is the build, the other the shout-out, and the section holds 2 of 4 grid slots. Poster + permalink only, videoSrc blank, so no video bytes enter the repo. The in-caption visit dates (1 Bond St., September 10 to 20) were dropped on purpose: the site is a portfolio, not a feed, and that line expires within the week."
+    },
+    {
+      "shortcode": null,
+      "source": "owner-supplied caption (not detected by the weekly run)",
+      "date": "2026-09-14",
+      "decision": "add",
+      "target": "content/work.yaml cases[1] (Enterprise · Window design, \"Spring, told as a transformation\")",
+      "reason": "Owner asked for the Spring Awakening Fashion Statement Windows in Bentonville, with artist Muoi Le, to go on the site. It is a distinct body of work (window and installation design, an artist collaboration) that no existing case covers, so it grows the Work cases from 4 to 5, one past the budget, rather than replacing a case that still earns its place. Rewritten out of the employer's \"our\" voice into Quentin's own, per the personal-site rule. Photo not supplied, so the case ships with a blank image src and its labeled placeholder until the owner sends a window shot."
     }
   ],
   "skipped": [],
