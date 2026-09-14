@@ -75,7 +75,7 @@ const jsonLd = {
       {work.cases.map((c, i) => (
         <article class={i % 2 === 1 ? 'case case--flip reveal' : 'case reveal'}>
           <figure class="ph ph--portrait case__media" data-tag={c.image.tag} data-label={c.image.label}>
-            <Picture src={c.image.src} alt={c.image.alt} loading="lazy" sizes="(min-width: 820px) 48vw, 92vw" onerror="this.remove()" />{c.gallery && <button type="button" class="ph-link" data-gallery={c.gallery} aria-label={`Open the ${galleryTitle(c.gallery)} gallery`}><span class="go">View</span></button>}
+            <Picture src={c.image.src} alt={c.image.alt} loading="lazy" sizes="(min-width: 820px) 48vw, 92vw" onerror="this.remove()" />{c.gallery &&<button type="button" class="ph-link" data-gallery={c.gallery} aria-label={`Open the ${galleryTitle(c.gallery)} gallery`}><span class="go">View</span></button>}
           </figure>
           <div>
             <div class="case__kicker"><span class="case__idx">{pad(i + 1)}</span><span class="case__tag">{c.tag}</span></div>
