@@ -4,5 +4,14 @@
   "_note": "Posts dated on/before reviewed_through were part of the initial bulk pull to the instagram-images branch and are NOT treated as new. Each weekly run considers posts newer than this date (and any shortcode not already listed below). Decisions are add | replace | skip; a replace also records what came out and why it lost. Site edits from the critical-review step that are not tied to a post (stale copy fixed, weak/redundant items removed) go under trimmed. After each run, advance reviewed_through to the newest post seen and append every considered post.",
   "incorporated": [],
   "skipped": [],
-  "trimmed": []
+  "trimmed": [],
+  "runs": [
+    {
+      "date": "2026-09-14",
+      "detection": "blocked",
+      "reason": "tools/instagram_new_since.py could not reach instagram.com: this session's egress proxy returned 403 Forbidden on the CONNECT tunnel (org network policy does not allow this host). reviewed_through left unchanged at 2026-06-19 so the next run with working access re-checks from the same point rather than silently skipping any posts published since.",
+      "critical_review": "Read every content/*.yaml against the site brief: no stale recent/upcoming claims, no section over its budget (galleries at or under 8/category, work cases at 4, ideas notes at 4, ideas reels at 4, archives sections at or under 10 shoots), no redundant items competing for the same point. No trim made.",
+      "content_changes": 0
+    }
+  ]
 }
