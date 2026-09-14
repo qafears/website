@@ -102,6 +102,14 @@ video:
       caption: "Styling a New York City pop-up shop for Walmart. Brandon Maxwell gives the team a shout-out."
       permalink: "https://youtube.com/shorts/PXC-BWog7-Q"
       videoSrc: ""
+    - poster:
+        src: "assets/img/work-popup-team.jpg"
+        alt: "The styling and visual merchandising team on the sales floor of Walmart's New York City pop-up shop"
+        tag: "Video"
+        label: "Instagram Reel"
+      caption: "Behind the scenes on Walmart's largest New York City pop-up, from the first rack to the final look. Bold color and layered textures across Free Assembly, Scoop, Avia, and Scenariō, built by the styling and visual merchandising team."
+      permalink: "https://www.instagram.com/reel/DdHndPEOYJu/"
+      videoSrc: ""
 cta:
   heading: "I take on a few brand projects at a time."
   body: "Creative direction, visual strategy, and campaign work for brands and agencies."

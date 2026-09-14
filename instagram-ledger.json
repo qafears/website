@@ -2,7 +2,16 @@
   "profile": "mrqfears",
   "reviewed_through": "2026-06-19",
   "_note": "Posts dated on/before reviewed_through were part of the initial bulk pull to the instagram-images branch and are NOT treated as new. Each weekly run considers posts newer than this date (and any shortcode not already listed below). Decisions are add | replace | skip; a replace also records what came out and why it lost. Site edits from the critical-review step that are not tied to a post (stale copy fixed, weak/redundant items removed) go under trimmed. After each run, advance reviewed_through to the newest post seen and append every considered post. runs records one entry per weekly run; a run whose detection was blocked leaves reviewed_through where it is so the next run re-checks from the same point.",
-  "incorporated": [],
+  "incorporated": [
+    {
+      "shortcode": "DdHndPEOYJu",
+      "date": "2026-09-05",
+      "date_note": "EXIF capture date of the poster photo. The post date could not be read because Instagram is unreachable from the run environment; the owner supplied the permalink and the still directly.",
+      "decision": "add",
+      "target": "content/work.yaml video.items[1]",
+      "reason": "Owner-requested. Behind-the-scenes reel from Walmart's largest NYC pop-up, naming Free Assembly, Scoop, Avia and Scenario. Clears the eligibility gate as professional creative work (styling and visual merchandising), and the pop-up video is already sanctioned site material. Added alongside the existing pop-up Short rather than replacing it: one is the build, the other the shout-out, and the section holds 2 of 4 grid slots. Poster + permalink only, videoSrc blank, so no video bytes enter the repo. The in-caption visit dates (1 Bond St., September 10 to 20) were dropped on purpose: the site is a portfolio, not a feed, and that line expires within the week."
+    }
+  ],
   "skipped": [],
   "trimmed": [],
   "runs": [
