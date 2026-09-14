@@ -147,6 +147,18 @@ layout never breaks. Real files live in `public/assets/img/`. When you add or re
 slot, update [ASSETS.md](ASSETS.md) so the manifest stays in sync. Bulk-download
 originals with `python3 tools/fetch_site_images.py`.
 
+That placeholder is a runtime safety net, not a way to ship a slot empty: `<Picture>`
+reads width/height from the variants manifest, so a slot pointing at a missing file
+renders an `<img>` with no dimensions and `seo_check` fails. A page ships with every
+slot filled, or not at all.
+
+Two things about `tools/optimize_images.py`: it re-encodes **every** referenced photo
+with whatever Pillow is installed, so it can rewrite images your change never touched.
+Check `git status` afterwards and `git checkout --` the unrelated ones so the diff
+stays yours. And it encodes from `public/assets/img/.orig/`, so to re-crop or replace a
+photo, write the new version there as well as to the public path, then re-run it and
+delete any now-stale `-<width>` variants.
+
 Work-page galleries are data-driven from the `galleries` singleton
 (`content/galleries.yaml`) and mirror the old site's portfolio structure:
 each set is a **category** (`key`, `title`) holding **photo shoots**
