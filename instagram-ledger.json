@@ -12,6 +12,15 @@
       "reason": "tools/instagram_new_since.py could not reach instagram.com: this session's egress proxy returned 403 Forbidden on the CONNECT tunnel (org network policy does not allow this host). reviewed_through left unchanged at 2026-06-19 so the next run with working access re-checks from the same point rather than silently skipping any posts published since.",
       "critical_review": "Read every content/*.yaml against the site brief: no stale recent/upcoming claims, no section over its budget (galleries at or under 8/category, work cases at 4, ideas notes at 4, ideas reels at 4, archives sections at or under 10 shoots), no redundant items competing for the same point. No trim made.",
       "content_changes": 0
+    },
+    {
+      "date": "2026-09-14",
+      "trigger": "owner-requested re-run",
+      "detection": "blocked",
+      "reason": "Second attempt the same day, at the owner's request. tools/instagram_new_since.py still exits 3: i.instagram.com refuses at the egress proxy (403 on CONNECT). The block is not specific to Instagram, this environment allows only an allowlist of hosts (github.com and the package registries resolve; example.com, google.com and even quentinfears.com do not), so no fetch of Instagram or YouTube media is possible from here. reviewed_through stays at 2026-06-19.",
+      "critical_review": "Read the built pages, not only the YAML. Budgets: galleries 4/5/8/8/8 images per category (ceiling 8), work cases 4, ideas notes 4, ideas reels 4, work video 1, archives celebrity 4, editorial 4, commercial 3, red-carpet 0 (all under the 10-shoot ceiling; the archives sections sit below the 5-shoot floor, so they have room to grow rather than anything to trim). Checked the dated-claim risks: 'Three series I keep coming back to' still matches exactly three formats items, and the 2020 reference in the TIME case is deliberately historical. Nothing stale, redundant, or reading as filler. No trim made.",
+      "owner_request_pending": "Owner asked for 'the last video I posted about the Walmart Pop up'. The NYC pop-up shop video is already live on the Work page (video.items[0], poster assets/img/work-popup-shop.jpg, linking to the YouTube Short PXC-BWog7-Q). Awaiting confirmation whether that is the video meant or a newer Instagram post; a newer one cannot be fetched until Instagram egress is allowed or the owner supplies the file.",
+      "content_changes": 0
     }
   ]
 }
