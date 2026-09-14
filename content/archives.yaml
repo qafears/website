@@ -59,6 +59,21 @@ sections:
     title: "Editorial"
     intro: "Concept, mood, styling, and art direction as one authored point of view."
     shoots:
+      - slug: "visionarios"
+        title: "Visionarios Magazine"
+        images:
+          - src: "assets/img/gallery/visionarios-magazine-leather-and-leopard.jpg"
+            alt: "Visionarios Magazine editorial: two models in black and white, one in a leather coat with puffed shoulders, one in a leopard-print suit, against a hung white sheet"
+            cap: "Visionarios Magazine, leather and leopard"
+          - src: "assets/img/gallery/visionarios-magazine-two-looks.jpg"
+            alt: "Visionarios Magazine editorial: the pair side by side, the leather coat and the leopard suit worn open, in an overgrown courtyard"
+            cap: "Visionarios Magazine, the pair"
+          - src: "assets/img/gallery/visionarios-magazine-leather-coat-profile.jpg"
+            alt: "Visionarios Magazine editorial: a model in a long leather coat with puffed shoulders and a spiked necklace, turned in profile"
+            cap: "Visionarios Magazine, leather coat in profile"
+          - src: "assets/img/gallery/visionarios-magazine-leather-coat-front.jpg"
+            alt: "Visionarios Magazine editorial: the leather coat shot straight on against the white sheet, with the courtyard wall behind"
+            cap: "Visionarios Magazine, straight on"
       - slug: "poolside-story"
         title: "Poolside story"
         images:
