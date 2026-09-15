@@ -345,6 +345,32 @@
       750
     ]
   },
+  "assets/img/gallery/rachael-harris-people-magazine-battle-ropes.jpg": {
+    "height": 1500,
+    "width": 1000,
+    "widths": [
+      400,
+      800,
+      1000
+    ]
+  },
+  "assets/img/gallery/rachael-harris-people-magazine-portrait.jpg": {
+    "height": 1620,
+    "width": 1080,
+    "widths": [
+      400,
+      800,
+      1080
+    ]
+  },
+  "assets/img/gallery/rachael-harris-people-magazine-seated.jpg": {
+    "height": 1068,
+    "width": 750,
+    "widths": [
+      400,
+      750
+    ]
+  },
   "assets/img/gallery/spring-awakening-accessories.jpg": {
     "height": 792,
     "width": 1080,
