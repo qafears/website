@@ -5,78 +5,46 @@ sets:
       - slug: "glamour-cover"
         title: "Glamour cover story"
         images:
-          - { src: "assets/img/gallery/amy-weber-glamour-cover.jpg", cap: "Amy Weber, Glamour cover" }
-          - { src: "assets/img/gallery/amy-weber-pink-feather-gown.jpg", cap: "Amy Weber for Glamour" }
-          - { src: "assets/img/work-celebrity.jpg", cap: "Glamour cover story" }
-          - { src: "assets/img/archive-07.jpg", cap: "Event dressing" }
-  - key: "celebrity-men"
-    title: "Celebrity men"
-    shoots:
-      - slug: "menswear-styling"
-        title: "Menswear styling"
-        images:
-          - { src: "assets/img/gallery/tahj-mowry-menswear-styling.jpg", cap: "Tahj Mowry" }
-          - { src: "assets/img/gallery/tahj-mowry-tailoring.jpg", cap: "Tahj Mowry, tailoring off duty" }
-          - { src: "assets/img/gallery/g-celebrity-7.jpg", cap: "Menswear styling" }
-          - { src: "assets/img/gallery/g-celebrity-8.jpg", cap: "Menswear styling" }
-      - slug: "norman-reedus"
-        title: "Norman Reedus"
-        images:
-          - { src: "assets/img/archive-05.jpg", cap: "Norman Reedus" }
+          - { src: "assets/img/gallery/amy-weber-glamour-cover.jpg", cap: "Amy Weber on the cover of Glamour, in a pink feathered coat" }
+          - { src: "assets/img/gallery/amy-weber-pink-feather-gown.jpg", cap: "Amy Weber in a pink feather-sleeved dress on the villa steps" }
+          - { src: "assets/img/archive-07.jpg", cap: "Amy Weber in a lilac tulle gown against the palms" }
   - key: "editorial"
     title: "Editorial"
     shoots:
       - slug: "poolside-story"
         title: "Poolside story"
         images:
-          - { src: "assets/img/gallery/g-editorial-1.jpg", cap: "Poolside story" }
-          - { src: "assets/img/gallery/g-editorial-3.jpg", cap: "Poolside story" }
-          - { src: "assets/img/gallery/g-editorial-2.jpg", cap: "Poolside story" }
-          - { src: "assets/img/gallery/g-editorial-4.jpg", cap: "Poolside story" }
-          - { src: "assets/img/gallery/g-editorial-8.jpg", cap: "Poolside story" }
+          - { src: "assets/img/gallery/g-editorial-1.jpg", cap: "Poolside story, a neon top on a pink ring float" }
+          - { src: "assets/img/gallery/g-editorial-3.jpg", cap: "Poolside story, sequins and thigh boots on a rainbow cloud float" }
+          - { src: "assets/img/gallery/g-editorial-2.jpg", cap: "Poolside story, pink beret and tweed at the pool table" }
+          - { src: "assets/img/gallery/g-editorial-4.jpg", cap: "Poolside story, the printed spread: pink knit and a vinyl mini" }
+          - { src: "assets/img/gallery/g-editorial-8.jpg", cap: "Poolside story, the pink knit and vinyl mini on set" }
       - slug: "color-movement"
         title: "Color & movement"
         images:
-          - { src: "assets/img/gallery/g-editorial-5.jpg", cap: "Color & movement" }
-          - { src: "assets/img/gallery/g-editorial-6.jpg", cap: "Color & movement" }
-          - { src: "assets/img/gallery/g-editorial-7.jpg", cap: "Color & movement" }
-  - key: "menswear"
-    title: "Menswear editorial"
-    shoots:
-      - slug: "fringe-harness"
-        title: "Fringe & harness"
-        images:
-          - { src: "assets/img/gallery/g-menswear-1.jpg", cap: "Menswear editorial" }
-          - { src: "assets/img/gallery/g-menswear-2.jpg", cap: "Menswear editorial" }
-          - { src: "assets/img/gallery/g-menswear-3.jpg", cap: "Menswear editorial" }
-          - { src: "assets/img/gallery/g-menswear-4.jpg", cap: "Menswear editorial" }
-          - { src: "assets/img/gallery/g-menswear-5.jpg", cap: "Menswear editorial" }
-      - slug: "roadside-americana"
-        title: "Roadside Americana"
-        images:
-          - { src: "assets/img/gallery/g-menswear-6.jpg", cap: "Menswear editorial" }
-          - { src: "assets/img/gallery/g-menswear-7.jpg", cap: "Menswear editorial" }
-          - { src: "assets/img/gallery/g-menswear-8.jpg", cap: "Menswear editorial" }
+          - { src: "assets/img/gallery/g-editorial-5.jpg", cap: "Color and movement, print on print against desert palms" }
+          - { src: "assets/img/gallery/g-editorial-6.jpg", cap: "Color and movement, a chartreuse cut-out dress in full sun" }
+          - { src: "assets/img/gallery/g-editorial-7.jpg", cap: "Color and movement, a printed dress caught mid-stride" }
   - key: "commercial"
     title: "Campaign & commercial"
     shoots:
       - slug: "swim-campaign"
         title: "Swim campaign"
         images:
-          - { src: "assets/img/gallery/g-commercial-1.jpg", cap: "Swim campaign" }
-          - { src: "assets/img/gallery/g-commercial-2.jpg", cap: "Swim campaign" }
-          - { src: "assets/img/gallery/g-commercial-3.jpg", cap: "Swim campaign" }
-          - { src: "assets/img/gallery/g-commercial-6.jpg", cap: "Swim campaign" }
-          - { src: "assets/img/gallery/g-commercial-7.jpg", cap: "Swim campaign" }
+          - { src: "assets/img/gallery/g-commercial-1.jpg", cap: "Swim campaign, two swimmers in an empty competition pool" }
+          - { src: "assets/img/gallery/g-commercial-2.jpg", cap: "Swim campaign, poolside in racing suits" }
+          - { src: "assets/img/gallery/g-commercial-3.jpg", cap: "Swim campaign, mid-stroke from overhead" }
+          - { src: "assets/img/gallery/g-commercial-6.jpg", cap: "Swim campaign, red and black racing suits in studio" }
+          - { src: "assets/img/gallery/g-commercial-7.jpg", cap: "Swim campaign, kids jumping in wearing float vests" }
       - slug: "print-commercial"
         title: "Print & commercial"
         images:
-          - { src: "assets/img/gallery/garcelle-beauvais-printed-ball-gown.jpg", cap: "Garcelle Beauvais" }
+          - { src: "assets/img/gallery/garcelle-beauvais-printed-ball-gown.jpg", cap: "Garcelle Beauvais in a printed ball gown with a bow shoulder" }
       - slug: "evening-wear"
         title: "Evening wear"
         images:
-          - { src: "assets/img/gallery/g-commercial-4.jpg", cap: "Evening wear campaign" }
+          - { src: "assets/img/gallery/g-commercial-4.jpg", cap: "Evening wear campaign, navy sequin gowns on the terrace" }
       - slug: "studio-lookbook"
         title: "Studio lookbook"
         images:
-          - { src: "assets/img/gallery/g-commercial-8.jpg", cap: "Studio lookbook" }
+          - { src: "assets/img/gallery/g-commercial-8.jpg", cap: "Studio lookbook, a rose shirt dress, pillbox hat and tan leather" }

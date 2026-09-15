@@ -168,11 +168,20 @@ category via `gallery`; archive items also set `shoot` to deep-link into one sho
 `work.astro` emits the `<script id="gallery-data">` JSON the lightbox reads, and the
 lightbox keeps prev/next navigation inside the open shoot. Keep the referenced
 category keys and shoot slugs in sync with the YAML (CI checks the keys). Never merge
-shoots from different categories into one set: Celebrity men and Celebrity women are
-separate categories, as they were on the old site.
+shoots from different categories into one set: Celebrity men and Celebrity women stay
+separate, as they were on the old site and as they are in The Archives.
+
+Two rules that CI cannot check for you:
+
+- **Every category must be opened by a Work case.** A category no case references via
+  `gallery:` ships JSON no visitor can reach and photos only the sitemap sees, so wire
+  it up or drop it. The portfolio's home is The Archives, where every photo is a real
+  `<img>`; `galleries` exists only to back the Work case-study lightbox buttons.
+- **A gallery `cap` is also the photo's alt text** (`main.js` sets `img.alt` from it),
+  so write what is in the frame rather than repeating the shoot title down the list.
 
 Note the Work page no longer carries the old archive tile strip; it links to The
-Archives instead. `galleries` still backs the Work case-study lightbox buttons.
+Archives instead.
 
 ## The Archives page
 
