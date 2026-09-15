@@ -36,6 +36,14 @@
       "reason": "Owner asked for the JÓN Magazine editorial to go on the site and uploaded eight files: three printed spreads and five clean frames from the same story, 'Strange Memories', photographed by Ted Sun, styled by Quentin Fears, modelled by Cooper Jervis at Vision LA. The site already carried this shoot uncredited, as the Editorial tile 'Roadside Americana' (g-menswear-6 and g-menswear-8), so rather than add a sixth tile showing the same shoot twice, that tile was folded into a properly credited one. Editorial stays at 5 shoots, inside the 5-to-10 budget. Kept the two existing frames, which are 900x1200 against the uploads' 750x1000 for the same two looks, and added three new looks plus the opening spread, which carries 'STYLIST QUENTIN FEARS' in print and is the evidence the story ran.",
       "replaced": "Editorial shoot 'Roadside Americana' (2 frames, captions 'Mirror, mosaic' and 'Roadside Americana'). It lost because it was this same JON story under an invented name, crediting neither the magazine, the story, nor the photographer. Its two images survive inside the new shoot with accurate alt text and captions.",
       "dropped": "Four of the eight uploads: two near-duplicate frames of looks already covered at higher resolution (the fringed shirt on the car hood, and the checked suit on the mosaic column), and the second and third spreads, whose looks are all covered by cleaner single frames. Files removed from the repo; the owner holds the originals."
+    },
+    {
+      "shortcode": "CqVEs8bsleQ",
+      "source": "owner-supplied Instagram reel link (not detected by the weekly run; the post predates reviewed_through)",
+      "date": "2026-09-15",
+      "decision": "add",
+      "target": "content/speak.yaml tv (new featured player) plus content/about.yaml prose and arc",
+      "reason": "Owner asked to add his California Live segment on style at any age. The segment was already on the site, but only as one of four small cards in the Speak page 'On camera' grid, linking out to YouTube (8mQbKjS_8VA). Instagram is blocked at this environment's egress proxy, so the reel itself could not be opened; the owner's description matches the existing card exactly, so this was treated as the same segment rather than a second appearance. Rather than duplicate it, the segment was promoted to its own click-to-play panel alongside the keynote and the Sheen Talk Live reel, since a national network credit is the strongest booking signal on that page and was the least visible thing on it. Its card was removed from the grid in the same change, which also leaves that grid a clean row of three instead of an orphaned fourth tile. No new image was needed: media-cali.jpg is 1080x608, the same size as the existing featured poster. California Live and NBC were also added to the About credits paragraph and the arc, which named TIME, Glamour, and Sheen but no television."
     }
   ],
   "skipped": [],
@@ -62,6 +70,12 @@
       "trigger": "owner request: add the editorial featured in JÓN Magazine",
       "detection": "not run (owner-supplied files, not an Instagram pass)",
       "reason": "Owner uploaded eight magazine files through GitHub. Added as the Editorial shoot 'Strange Memories | JÓN Magazine', replacing the uncredited 'Roadside Americana' tile that showed the same shoot. jonmag.com is blocked at this environment's egress proxy, so the publication could not be read first-hand; the magazine name follows the owner, who identified it. The publication styles itself JON in search listings and JÓN on its own masthead; the owner confirmed JÓN, so all shipped copy carries the accent. Filenames stay unaccented ASCII (jon-magazine-*), which keeps URLs clean and preserves the unaccented spelling as a search signal."
+    },
+    {
+      "date": "2026-09-15",
+      "trigger": "owner request: add the California Live segment on style at any age",
+      "detection": "not run (owner-supplied link, not an Instagram pass)",
+      "reason": "instagram.com is blocked at this environment's egress proxy (403 on CONNECT), so the supplied reel could not be read first-hand, and youtube.com is blocked too, so the existing segment link could not be re-verified; it was already shipping on the live site and was left as is. reviewed_through is unchanged: the post predates it and is outside the weekly detection window."
     }
   ]
 }
