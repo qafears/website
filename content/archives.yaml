@@ -55,6 +55,11 @@ sections:
           - src: "assets/img/gallery/tahj-mowry-tailoring.jpg"
             alt: "Actor Tahj Mowry in a grey checked blazer, black trousers and white sneakers, styled by Quentin Fears"
             cap: "Tahj Mowry, tailoring off duty"
+      # Waiting on photos. A shoot with no photos is skipped on the page, so this
+      # stays invisible until the frames are dropped into it from the admin.
+      - slug: "rachael-harris"
+        title: "Rachael Harris"
+        images: []
   - key: "editorial"
     title: "Editorial"
     intro: "Concept, mood, styling, and art direction as one authored point of view."
