@@ -55,6 +55,11 @@ sections:
           - src: "assets/img/gallery/tahj-mowry-tailoring.jpg"
             alt: "Actor Tahj Mowry in a grey checked blazer, black trousers and white sneakers, styled by Quentin Fears"
             cap: "Tahj Mowry, tailoring off duty"
+      # Waiting on photos. A shoot with no photos is skipped on the page, so this
+      # stays invisible until the frames are dropped into it from the admin.
+      - slug: "rachael-harris"
+        title: "Rachael Harris"
+        images: []
   - key: "editorial"
     title: "Editorial"
     intro: "Concept, mood, styling, and art direction as one authored point of view."
@@ -186,7 +191,7 @@ sections:
     shoots: []
 clients:
   label: "Selected clients"
-  names: "Alfre Woodard, Norman Reedus, Garcelle Beauvais, Tahj Mowry, Amy Weber, Macy Gray, Isis King, Skai Jackson, Kristina Arielle, Ray Santiago, Loren Lott, Keesha Sharp, EJ Johnson"
+  names: "Alfre Woodard, Norman Reedus, Garcelle Beauvais, Tahj Mowry, Amy Weber, Macy Gray, Rachael Harris, Isis King, Skai Jackson, Kristina Arielle, Ray Santiago, Loren Lott, Keesha Sharp, EJ Johnson"
 footnote: "A selection from a decade of work. The full archive is available on request."
 cta:
   heading: "I take on a few brand projects at a time."
