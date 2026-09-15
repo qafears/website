@@ -97,6 +97,11 @@ currently live in `assets/img/gallery/`.
   `python3 tools/normalize_uploads.py` (gallery uploads arrive named after their
   list position, like `sections/0/images/8/src.jpg`; this renames them from their
   caption and rewrites the YAML) and `python3 tools/optimize_images.py`.
+- **Adding photos from GitHub instead:** the owner can also drag files onto
+  `github.com/qafears/website/upload/main/public/assets/img/gallery`, which opens a
+  PR. These keep the filename they arrived with, so `normalize_uploads.py` does not
+  apply: rename them by hand from the caption, and convert to `.jpg` first if they
+  land as `.webp`, since `optimize_images.py` only picks up `.jpg` paths.
 - **Run `python3 tools/optimize_images.py` after adding files.** It now covers the
   `gallery/` subfolder, and without it the new photos ship as single oversized JPEGs.
 - **Rights:** only publish photos the owner has the rights to. Press-agency comps

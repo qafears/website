@@ -55,11 +55,18 @@ sections:
           - src: "assets/img/gallery/tahj-mowry-tailoring.jpg"
             alt: "Actor Tahj Mowry in a grey checked blazer, black trousers and white sneakers, styled by Quentin Fears"
             cap: "Tahj Mowry, tailoring off duty"
-      # Waiting on photos. A shoot with no photos is skipped on the page, so this
-      # stays invisible until the frames are dropped into it from the admin.
       - slug: "rachael-harris"
         title: "Rachael Harris"
-        images: []
+        images:
+          - src: "assets/img/gallery/rachael-harris-people-magazine-portrait.jpg"
+            alt: "Actress Rachael Harris in a crisp white shirt and black frame glasses for People Magazine, styled by Quentin Fears"
+            cap: "Rachael Harris, People Magazine portrait"
+          - src: "assets/img/gallery/rachael-harris-people-magazine-battle-ropes.jpg"
+            alt: "Actress Rachael Harris training with battle ropes in a black sleeveless zip top and silver metallic leggings for People Magazine, styled by Quentin Fears"
+            cap: "Rachael Harris, battle ropes"
+          - src: "assets/img/gallery/rachael-harris-people-magazine-seated.jpg"
+            alt: "Actress Rachael Harris in a black sleeveless zip top and silver metallic leggings, seated for People Magazine, styled by Quentin Fears"
+            cap: "Rachael Harris for People Magazine"
   - key: "editorial"
     title: "Editorial"
     intro: "Concept, mood, styling, and art direction as one authored point of view."
