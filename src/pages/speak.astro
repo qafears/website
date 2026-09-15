@@ -72,29 +72,29 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- REEL -->
-  <section class="section" id="reel" style="padding-top:clamp(2rem,4vw,3rem)">
+  <!-- ON CAMERA: HOSTING + NATIONAL TV, SIDE BY SIDE -->
+  <section class="section--tight" id="reel" style="padding-top:clamp(2rem,4vw,3rem);padding-bottom:clamp(2rem,4vw,3rem)">
     <div class="wrap">
-      <div class="reel reveal" data-yt={speak.reel.youtubeId} role="button" tabindex="0" aria-label={speak.reel.ariaLabel}>
-        <figure class="ph" data-tag={speak.reel.image.tag} data-label={speak.reel.image.label}>
-          <Picture src={speak.reel.image.src} alt={speak.reel.image.alt} loading="lazy" sizes="(min-width: 760px) 62vw, 92vw" />
-        </figure>
-        <span class="reel__play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#f3efe6"/></svg></span></span>
+      <div class="grid cols-2">
+        <div id="tv">
+          <div class="reel reveal" data-yt={speak.tv.youtubeId} role="button" tabindex="0" aria-label={speak.tv.ariaLabel}>
+            <figure class="ph" data-tag={speak.tv.image.tag} data-label={speak.tv.image.label}>
+              <Picture src={speak.tv.image.src} alt={speak.tv.image.alt} loading="lazy" sizes="(min-width: 760px) 46vw, 92vw" />
+            </figure>
+            <span class="reel__play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#f3efe6"/></svg></span></span>
+          </div>
+          <p style="margin-top:1rem;color:var(--ink-faint);font-size:0.9rem" class="reveal" set:html={speak.tv.caption}></p>
+        </div>
+        <div>
+          <div class="reel reveal" data-yt={speak.reel.youtubeId} role="button" tabindex="0" aria-label={speak.reel.ariaLabel}>
+            <figure class="ph" data-tag={speak.reel.image.tag} data-label={speak.reel.image.label}>
+              <Picture src={speak.reel.image.src} alt={speak.reel.image.alt} loading="lazy" sizes="(min-width: 760px) 46vw, 92vw" />
+            </figure>
+            <span class="reel__play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#f3efe6"/></svg></span></span>
+          </div>
+          <p style="margin-top:1rem;color:var(--ink-faint);font-size:0.9rem" class="reveal" set:html={speak.reel.caption}></p>
+        </div>
       </div>
-      <p style="margin-top:1rem;color:var(--ink-faint);font-size:0.9rem" class="reveal" set:html={speak.reel.caption}></p>
-    </div>
-  </section>
-
-  <!-- NATIONAL TV SEGMENT -->
-  <section class="section--tight" id="tv" style="padding-top:0;padding-bottom:clamp(2rem,4vw,3rem)">
-    <div class="wrap">
-      <div class="reel reveal" data-yt={speak.tv.youtubeId} role="button" tabindex="0" aria-label={speak.tv.ariaLabel}>
-        <figure class="ph" data-tag={speak.tv.image.tag} data-label={speak.tv.image.label}>
-          <Picture src={speak.tv.image.src} alt={speak.tv.image.alt} loading="lazy" sizes="(min-width: 760px) 62vw, 92vw" />
-        </figure>
-        <span class="reel__play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#f3efe6"/></svg></span></span>
-      </div>
-      <p style="margin-top:1rem;color:var(--ink-faint);font-size:0.9rem" class="reveal" set:html={speak.tv.caption}></p>
     </div>
   </section>
 
