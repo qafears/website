@@ -311,6 +311,40 @@
       1080
     ]
   },
+  "assets/img/gallery/jon-magazine-strange-memories-car-interior.jpg": {
+    "height": 810,
+    "width": 1080,
+    "widths": [
+      400,
+      800,
+      1080
+    ]
+  },
+  "assets/img/gallery/jon-magazine-strange-memories-fringed-shirt.jpg": {
+    "height": 1000,
+    "width": 750,
+    "widths": [
+      400,
+      750
+    ]
+  },
+  "assets/img/gallery/jon-magazine-strange-memories-opening-spread.jpg": {
+    "height": 766,
+    "width": 1080,
+    "widths": [
+      400,
+      800,
+      1080
+    ]
+  },
+  "assets/img/gallery/jon-magazine-strange-memories-printed-polo.jpg": {
+    "height": 1000,
+    "width": 750,
+    "widths": [
+      400,
+      750
+    ]
+  },
   "assets/img/gallery/spring-awakening-accessories.jpg": {
     "height": 792,
     "width": 1080,
