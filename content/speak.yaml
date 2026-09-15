@@ -27,6 +27,15 @@ reel:
     tag: "Sheen Talk Live"
     label: "Quentin Fears hosting"
   caption: "Hosting <em>The Journey</em> on Sheen Talk Live. Full episodes below."
+tv:
+  youtubeId: "8mQbKjS_8VA"
+  ariaLabel: "Play: Quentin Fears presenting fashion trends on California Live"
+  image:
+    src: "assets/img/media-cali.jpg"
+    alt: "Quentin Fears presenting fashion trends on California Live"
+    tag: "California Live"
+    label: "NBC fashion segment"
+  caption: "A trend segment for NBC's <em>California Live</em>: style that works at any age. Press play to watch."
 topics:
   eyebrow: "Talk topics"
   heading: "Six talks, one throughline."
@@ -67,12 +76,6 @@ media:
       tag: "Sheen Talk Live"
       title: "Larry Sims"
       body: "Celebrity hairstylist, on craft and career."
-    - href: "https://youtu.be/8mQbKjS_8VA"
-      thumbSrc: "assets/img/media-cali.jpg"
-      thumbAlt: "Quentin Fears presenting fashion trends on California Live"
-      tag: "California Live"
-      title: "Fashion trends, every age"
-      body: "Trend segment for NBC's California lifestyle show: style that works for all ages."
     - href: "https://www.youtube.com/watch?v=AxFFn_2NdVI&t=49s"
       thumbSrc: "assets/img/media-bnc.jpg"
       thumbAlt: "Quentin Fears on Black News Channel sharing holiday shopping tips highlighting Black designers"

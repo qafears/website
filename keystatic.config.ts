@@ -522,6 +522,15 @@ export default config({
           },
           { label: 'Reel' }
         ),
+        tv: fields.object(
+          {
+            youtubeId: fields.text({ label: 'YouTube video id' }),
+            ariaLabel: fields.text({ label: 'Accessible label' }),
+            image: photo('Segment poster'),
+            caption: fields.text({ label: 'Caption', multiline: true }),
+          },
+          { label: 'National TV segment' }
+        ),
         topics: fields.object(
           {
             eyebrow: fields.text({ label: 'Eyebrow' }),
