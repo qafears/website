@@ -33,7 +33,7 @@
       "date": "2026-09-14",
       "decision": "replace",
       "target": "content/archives.yaml editorial/strange-memories (6 frames)",
-      "reason": "Owner asked for the JON Magazine editorial to go on the site and uploaded eight files: three printed spreads and five clean frames from the same story, 'Strange Memories', photographed by Ted Sun, styled by Quentin Fears, modelled by Cooper Jervis at Vision LA. The site already carried this shoot uncredited, as the Editorial tile 'Roadside Americana' (g-menswear-6 and g-menswear-8), so rather than add a sixth tile showing the same shoot twice, that tile was folded into a properly credited one. Editorial stays at 5 shoots, inside the 5-to-10 budget. Kept the two existing frames, which are 900x1200 against the uploads' 750x1000 for the same two looks, and added three new looks plus the opening spread, which carries 'STYLIST QUENTIN FEARS' in print and is the evidence the story ran.",
+      "reason": "Owner asked for the JÓN Magazine editorial to go on the site and uploaded eight files: three printed spreads and five clean frames from the same story, 'Strange Memories', photographed by Ted Sun, styled by Quentin Fears, modelled by Cooper Jervis at Vision LA. The site already carried this shoot uncredited, as the Editorial tile 'Roadside Americana' (g-menswear-6 and g-menswear-8), so rather than add a sixth tile showing the same shoot twice, that tile was folded into a properly credited one. Editorial stays at 5 shoots, inside the 5-to-10 budget. Kept the two existing frames, which are 900x1200 against the uploads' 750x1000 for the same two looks, and added three new looks plus the opening spread, which carries 'STYLIST QUENTIN FEARS' in print and is the evidence the story ran.",
       "replaced": "Editorial shoot 'Roadside Americana' (2 frames, captions 'Mirror, mosaic' and 'Roadside Americana'). It lost because it was this same JON story under an invented name, crediting neither the magazine, the story, nor the photographer. Its two images survive inside the new shoot with accurate alt text and captions.",
       "dropped": "Four of the eight uploads: two near-duplicate frames of looks already covered at higher resolution (the fringed shirt on the car hood, and the checked suit on the mosaic column), and the second and third spreads, whose looks are all covered by cleaner single frames. Files removed from the repo; the owner holds the originals."
     }
@@ -59,9 +59,9 @@
     },
     {
       "date": "2026-09-14",
-      "trigger": "owner request: add the editorial featured in JON Magazine",
+      "trigger": "owner request: add the editorial featured in JÓN Magazine",
       "detection": "not run (owner-supplied files, not an Instagram pass)",
-      "reason": "Owner uploaded eight magazine files through GitHub. Added as the Editorial shoot 'Strange Memories | JON Magazine', replacing the uncredited 'Roadside Americana' tile that showed the same shoot. jonmag.com is blocked at this environment's egress proxy, so the publication could not be read first-hand; the magazine name follows the owner, who identified it. Note the publication styles itself JON in the search index and JÓN on its own masthead, so the accent is worth confirming with the owner."
+      "reason": "Owner uploaded eight magazine files through GitHub. Added as the Editorial shoot 'Strange Memories | JÓN Magazine', replacing the uncredited 'Roadside Americana' tile that showed the same shoot. jonmag.com is blocked at this environment's egress proxy, so the publication could not be read first-hand; the magazine name follows the owner, who identified it. The publication styles itself JON in search listings and JÓN on its own masthead; the owner confirmed JÓN, so all shipped copy carries the accent. Filenames stay unaccented ASCII (jon-magazine-*), which keeps URLs clean and preserves the unaccented spelling as a search signal."
     }
   ]
 }
