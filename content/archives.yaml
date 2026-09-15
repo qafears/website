@@ -67,6 +67,11 @@ sections:
           - src: "assets/img/gallery/rachael-harris-people-magazine-seated.jpg"
             alt: "Actress Rachael Harris in a black sleeveless zip top and silver metallic leggings, seated for People Magazine, styled by Quentin Fears"
             cap: "Rachael Harris for People Magazine"
+      # Waiting on photos. A shoot with no photos is skipped on the page, so this
+      # stays invisible until the JeJune Magazine frames are dropped into it.
+      - slug: "patricia-velasquez"
+        title: "Patricia Velásquez"
+        images: []
   - key: "editorial"
     title: "Editorial"
     intro: "Concept, mood, styling, and art direction as one authored point of view."
@@ -198,7 +203,7 @@ sections:
     shoots: []
 clients:
   label: "Selected clients"
-  names: "Alfre Woodard, Norman Reedus, Garcelle Beauvais, Tahj Mowry, Amy Weber, Macy Gray, Rachael Harris, Isis King, Skai Jackson, Kristina Arielle, Ray Santiago, Loren Lott, Keesha Sharp, EJ Johnson"
+  names: "Alfre Woodard, Norman Reedus, Garcelle Beauvais, Tahj Mowry, Amy Weber, Macy Gray, Rachael Harris, Patricia Velásquez, Isis King, Skai Jackson, Kristina Arielle, Ray Santiago, Loren Lott, Keesha Sharp, EJ Johnson"
 footnote: "A selection from a decade of work. The full archive is available on request."
 cta:
   heading: "I take on a few brand projects at a time."
