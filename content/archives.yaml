@@ -67,11 +67,18 @@ sections:
           - src: "assets/img/gallery/rachael-harris-people-magazine-seated.jpg"
             alt: "Actress Rachael Harris in a black sleeveless zip top and silver metallic leggings, seated for People Magazine, styled by Quentin Fears"
             cap: "Rachael Harris for People Magazine"
-      # Waiting on photos. A shoot with no photos is skipped on the page, so this
-      # stays invisible until the JeJune Magazine frames are dropped into it.
       - slug: "patricia-velasquez"
         title: "Patricia Velásquez"
-        images: []
+        images:
+          - src: "assets/img/gallery/patricia-velasquez-blowe-magazine-pink-taffeta.jpg"
+            alt: "Actress and model Patricia Velásquez in a pink taffeta Puey Quiñones gown with sculptural sleeves for BLOWE Magazine, styled by Quentin Fears"
+            cap: "Patricia Velásquez for BLOWE Magazine"
+          - src: "assets/img/gallery/patricia-velasquez-blowe-magazine-red-chiffon.jpg"
+            alt: "Actress Patricia Velásquez in a red silk chiffon Stello gown on an ocean rock for BLOWE Magazine, styled by Quentin Fears"
+            cap: "Patricia Velásquez, red chiffon by Stello"
+          - src: "assets/img/gallery/patricia-velasquez-blowe-magazine-red-gown.jpg"
+            alt: "Actress Patricia Velásquez in a red gown with a draped cape and high slit against a Malibu rock face for BLOWE Magazine, styled by Quentin Fears"
+            cap: "Patricia Velásquez, red gown and cape"
   - key: "editorial"
     title: "Editorial"
     intro: "Concept, mood, styling, and art direction as one authored point of view."
