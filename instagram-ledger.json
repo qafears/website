@@ -115,6 +115,14 @@
       "detection": "not run (editorial pass over existing content, not an Instagram pass)",
       "critical_review": "Read the built pages for the last two weeks of work. The new Archives material (Rachael Harris, Patricia Velasquez, the JON and Visionarios editorials, the California Live promotion) holds up; the gap was that content/galleries.yaml had been left behind by it, carrying the retired Roadside Americana name, label captions, and two categories nothing linked to. Five changes: two trims, two rewrites, one owner-approved restack. Budgets after: archives celebrity 6 shoots, editorial 5, commercial 4 (ceiling 10); gallery categories 3 images, 8, 8 (ceiling 8); work cases 5; ideas notes 4, reels 4. Above the 3-change guardrail for an unattended run, done under an explicit owner request.",
       "reason": "reviewed_through unchanged at 2026-06-19: no Instagram detection was attempted, and Instagram remains blocked at this environment's egress proxy."
+    },
+    {
+      "date": "2026-09-21",
+      "trigger": "scheduled weekly run",
+      "detection": "blocked",
+      "reason": "tools/instagram_new_since.py exits 3 again: i.instagram.com still refuses the CONNECT tunnel at this environment's egress proxy (403 Forbidden), the same restriction every prior run has hit. reviewed_through left unchanged at 2026-06-19 so the next run with working access re-checks from that point rather than silently skipping any posts published since. No new posts could be considered this run.",
+      "critical_review": "Built the site (npm run build) and read every content/*.yaml against the site brief, then spot-checked the rendered pages (index, work, ideas, speak, about, archives) in a headless browser. Budgets: galleries 3/8/8 images per category (ceiling 8, no overage); archives 7/6/4/0 shoots per section (celebrity/editorial/commercial/red-carpet, all within the 5-to-10 band, red-carpet correctly skipped empty); ideas notes 4 (band 4-6), reels 4 (band 3-4, at ceiling); work cases 5 (one over the 4 budget, already recorded as an owner-approved exception opening the Spring Awakening theme, not this run's to undo). No stale recent/upcoming claims, no dated language that has lapsed, no redundant items competing for the same point, nothing reading as filler. This is the same content the 2026-09-15 owner-requested pass already reviewed and cleaned up six days ago, and nothing has changed since (no new Instagram material reached the site, no owner-supplied uploads this week), so the review confirms the prior pass's fixes are holding rather than finding anything new to trim.",
+      "content_changes": 0
     }
   ]
 }
