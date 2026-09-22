@@ -416,6 +416,11 @@ export default config({
             heading: fields.text({ label: 'Heading' }),
             pullquote: fields.text({ label: 'Pull quote', multiline: true }),
             attribution: fields.text({ label: 'Attribution' }),
+            articleUrl: fields.url({ label: 'Article link', description: 'The TIME article on time.com' }),
+            articleHeadline: fields.text({ label: 'Article headline', description: 'As TIME titles it; used in search structured data' }),
+            articleAuthor: fields.text({ label: 'Article author' }),
+            articlePublished: fields.date({ label: 'Article publish date' }),
+            linkLabel: fields.text({ label: 'Link label' }),
             lead: fields.text({ label: 'Lead paragraph', multiline: true }),
           },
           { label: 'TIME feature' }
