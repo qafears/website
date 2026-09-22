@@ -471,6 +471,8 @@ button { font: inherit; cursor: pointer; }
 .prose p { color: var(--ink-soft); font-size: 1.06rem; max-width: 60ch; }
 .prose p .drop { font-family: var(--serif); color: var(--accent); }
 .prose strong { color: var(--ink); font-weight: 600; }
+.prose a { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.2em; }
+.prose a:hover { color: var(--accent); }
 
 .timeline { margin-top: 1rem; }
 .tl { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1.5rem; padding-block: 1.4rem; border-top: 1px solid var(--line); }
