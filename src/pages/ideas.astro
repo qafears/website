@@ -28,6 +28,8 @@ const jsonLd = {
           '@id': time.articleUrl,
           url: time.articleUrl,
           headline: time.articleHeadline,
+          ...(time.articleAuthor ? { author: { '@type': 'Person', name: time.articleAuthor } } : {}),
+          ...(time.articlePublished ? { datePublished: time.articlePublished } : {}),
           publisher: { '@type': 'Organization', name: 'TIME', url: 'https://time.com/' },
           mentions: { '@id': PERSON_ID },
         }]
