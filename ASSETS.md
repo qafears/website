@@ -142,6 +142,6 @@ API key. Submissions are emailed to the address in the form's `action`
 
 | Slot | File | Notes |
 |---|---|---|
-| Newsletter clipping | `assets/img/press-behind-the-seams.jpg` | 722×452 crop of the associate-newsletter header (headline and photos); replace with a higher-resolution copy if one turns up |
+| Newsletter clipping | `assets/img/press-behind-the-seams.jpg` | 722×452 crop of the BAARG newsletter header (headline and photos); replace with a higher-resolution copy if one turns up |
 | Answer photos | `popup-free-assembly.jpg`, `popup-plaid-and-denim.jpg` (360×540), `popup-storefront.jpg`, `popup-main-floor.jpg` (540×360) | Owner-supplied; small, so shown in pairs at native size. Swap in larger originals if they turn up |
 | Closing pair | `work-popup-shop.jpg`, `work-popup-team.jpg` | Reused from the Work page video posters |
