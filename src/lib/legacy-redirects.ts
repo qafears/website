@@ -20,7 +20,7 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   services: 'work',
   'tv-correspondent': 'speak',
   'about-me': 'about',
-  press: 'about',
+  press: 'ideas',
   testimonials: 'about',
   'press-testimonials': 'about',
 };

@@ -427,6 +427,19 @@ export default config({
           },
           { label: 'TIME feature' }
         ),
+        pressFeature: fields.object(
+          {
+            image: photo('Press feature image'),
+            eyebrow: fields.text({ label: 'Eyebrow' }),
+            heading: fields.text({ label: 'Heading' }),
+            pullquote: fields.text({ label: 'Pull quote', multiline: true }),
+            attribution: fields.text({ label: 'Attribution' }),
+            linkLabel: fields.text({ label: 'Button label', description: 'Blank hides the whole feature' }),
+            linkHref: fields.text({ label: 'Button link', description: 'e.g. behind-the-seams' }),
+            lead: fields.text({ label: 'Lead paragraph', multiline: true }),
+          },
+          { label: 'Second press feature (under TIME)' }
+        ),
         thesis: fields.object(
           {
             eyebrow: fields.text({ label: 'Eyebrow' }),

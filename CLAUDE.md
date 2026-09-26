@@ -10,7 +10,7 @@ in [ASSETS.md](ASSETS.md); the build architecture is in
 A marketing site for Quentin Fears that keeps a dark, editorial visual style while
 repositioning him from "celebrity & personal stylist" to fashion creative leader,
 visual strategist, speaker, and host. Pages: `index`, `work`, `archives`, `ideas`, `speak`, `about`, `contact`, plus the
-`behind-the-seams` interview linked from Work.
+`behind-the-seams` interview, which is press: it is linked from the Ideas page's second press feature, not from Work.
 
 It is built with **Astro**, and all copy lives in editable content files managed by a
 **Keystatic** admin, so the site is maintainable with no code. Astro renders the

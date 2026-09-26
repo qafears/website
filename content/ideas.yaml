@@ -24,6 +24,19 @@ timeFeature:
   articlePublished: "2021-10-26"
   linkLabel: "Read the article on TIME.com"
   lead: "The real subject isn't hemlines. It's how dress, identity, race, and perception tangle together. Clothing is never neutral. It gets read, and it gets read differently depending on who's wearing it. That's the territory I speak and write about."
+pressFeature:
+  image:
+    src: "assets/img/press-behind-the-seams.jpg"
+    alt: "Newsletter feature titled Behind the Seams: Inside Walmart Fashion's NYC Pop-Up, with a portrait of Quentin Fears and two photos of him in the styled pop-up shop"
+    tag: "Press"
+    label: "BAARG newsletter"
+  eyebrow: "Featured in the BAARG newsletter"
+  heading: "Behind the Seams"
+  pullquote: "It's almost like creating chapters within one larger story. Each brand has its own voice, but they all need to belong in the same book."
+  attribution: "Quentin Fears in the Walmart Black & African American Resource Group (BAARG) newsletter"
+  linkLabel: "Read the interview"
+  linkHref: "behind-the-seams"
+  lead: "An inside look at the styling and visual merchandising behind Walmart's largest New York City pop-up, from brand storytelling to the moment a shopper sees fashion differently."
 thesis:
   eyebrow: "A recurring thesis"
   quote: "Making room in your closet is making room in your <span class=\"accent\">life</span>."
