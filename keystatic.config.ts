@@ -116,7 +116,7 @@ export default config({
   ui: {
     brand: { name: 'Quentin Fears site content' },
     navigation: {
-      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact'],
+      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams'],
       Shared: ['settings', 'galleries'],
     },
   },
@@ -311,6 +311,8 @@ export default config({
             eyebrow: fields.text({ label: 'Eyebrow' }),
             heading: fields.text({ label: 'Heading' }),
             intro: fields.text({ label: 'Intro', multiline: true }),
+            linkLabel: fields.text({ label: 'Button label (optional)', description: 'e.g. Read the interview. Blank = no button.' }),
+            linkHref: fields.text({ label: 'Button link', description: 'e.g. behind-the-seams' }),
             items: fields.array(
               fields.object({
                 poster: photo('Poster still (vertical, ~1080x1920)'),
@@ -643,6 +645,46 @@ export default config({
           description: 'e.g. Prefer to reach me directly? Email <a href="...">...</a>.',
           multiline: true,
         }),
+      },
+    }),
+
+    behindTheSeams: singleton({
+      label: 'Behind the Seams (interview)',
+      path: 'content/behind-the-seams',
+      format: { data: 'yaml' },
+      schema: {
+        seo: seo(),
+        hero: eyebrowHeadingIntro(),
+        clipping: fields.object(
+          {
+            image: photo('Clipping'),
+            source: fields.text({ label: 'Source line' }),
+            standfirst: fields.text({ label: 'Introduction (blank line between paragraphs)', multiline: true }),
+          },
+          { label: 'The feature' }
+        ),
+        pullquote: fields.object(
+          {
+            quote: fields.text({ label: 'Quote (HTML allowed)', multiline: true }),
+            cite: fields.text({ label: 'Caption' }),
+          },
+          { label: 'Pull quote' }
+        ),
+        photos: fields.array(
+          fields.object({
+            image: photo('Photo'),
+            caption: fields.text({ label: 'Caption' }),
+          }),
+          { label: 'Photos', itemLabel: (p) => p.fields.caption.value || 'Photo' }
+        ),
+        qa: fields.array(
+          fields.object({
+            question: fields.text({ label: 'Question', multiline: true }),
+            answer: fields.text({ label: 'Answer (blank line between paragraphs)', multiline: true }),
+          }),
+          { label: 'Questions and answers', itemLabel: (p) => p.fields.question.value.slice(0, 60) }
+        ),
+        cta: cta(),
       },
     }),
   },

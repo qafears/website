@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Cta from '../components/Cta.astro';
+import Picture from '../components/Picture.astro';
+import { reader, SITE_ORIGIN } from '../lib/content';
+import { personMinimal, breadcrumb, PERSON_ID } from '../lib/jsonld';
+
+const page = await reader.singletons.behindTheSeams.readOrThrow();
+const O = SITE_ORIGIN;
+
+// Multiline answers are plain text; a blank line starts a new paragraph.
+const paras = (text: string) => text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+
+// JSON-LD renders into <head>, so it names the interview by its page title only:
+// employer names stay in body copy (tools/seo_check.py enforces this).
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${O}/behind-the-seams#webpage`,
+      url: `${O}/behind-the-seams`,
+      name: page.seo.ogTitle,
+      isPartOf: { '@id': `${O}/#website` },
+      about: { '@id': PERSON_ID },
+      inLanguage: 'en',
+    },
+    personMinimal(),
+    breadcrumb([
+      { name: 'Home', item: `${O}/` },
+      { name: 'Work', item: `${O}/work` },
+      { name: page.hero.heading, item: `${O}/behind-the-seams` },
+    ]),
+  ],
+};
+---
+<BaseLayout
+  pagePath="behind-the-seams"
+  title={page.seo.title}
+  description={page.seo.description}
+  ogTitle={page.seo.ogTitle}
+  ogDescription={page.seo.ogDescription}
+  ogType={page.seo.ogType}
+  navCurrent="work"
+  jsonLd={jsonLd}
+>
+
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <p class="eyebrow">{page.hero.eyebrow}</p>
+      <h1>{page.hero.heading}</h1>
+      <p>{page.hero.intro}</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- THE FEATURE -->
+  <section class="section">
+    <div class="wrap idea-feature">
+      <figure class="ph ph--clip reveal" data-tag={page.clipping.image.tag} data-label={page.clipping.image.label}>
+        <Picture src={page.clipping.image.src} alt={page.clipping.image.alt} loading="eager" sizes="(min-width: 880px) 45vw, 92vw" onerror="this.remove()" />
+      </figure>
+      <div class="prose reveal">
+        <p class="attribution">{page.clipping.source}</p>
+        {paras(page.clipping.standfirst).map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section belief">
+    <div class="wrap reveal">
+      <blockquote set:html={page.pullquote.quote}></blockquote>
+      <cite>{page.pullquote.cite}</cite>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- QUESTIONS AND ANSWERS -->
+  <section class="section">
+    <div class="wrap qa">
+      {page.qa.map((item) => (
+        <div class="qa__item reveal">
+          <h2>{item.question}</h2>
+          <div class="prose">
+            {paras(item.answer).map((p) => <p>{p}</p>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {page.photos.length > 0 && (
+    <Fragment>
+      <hr class="rule">
+      <section class="section">
+        <div class="wrap duo">
+          {page.photos.map((ph) => (
+            <figure class="reveal">
+              <div class="ph ph--tall" data-tag={ph.image.tag} data-label={ph.image.label}>
+                <Picture src={ph.image.src} alt={ph.image.alt} loading="lazy" sizes="(min-width: 760px) 45vw, 92vw" onerror="this.remove()" />
+              </div>
+              {ph.caption && <figcaption class="duo__cap">{ph.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      </section>
+    </Fragment>
+  )}
+
+  <Cta
+    heading={page.cta.heading}
+    body={page.cta.body}
+    buttonLabel={page.cta.buttonLabel}
+    buttonHref={page.cta.buttonHref}
+  />
+
+</BaseLayout>

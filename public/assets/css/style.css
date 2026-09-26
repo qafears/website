@@ -464,6 +464,18 @@ button { font: inherit; cursor: pointer; }
 .reel-card:hover .reel__play svg path { fill: #0b0b0c; }
 
 /* ============================================================
+   Interview (behind-the-seams)
+   ============================================================ */
+.qa { display: grid; gap: 0; }
+.qa__item { padding-block: clamp(2rem, 4vw, 3rem); border-top: 1px solid var(--line); display: grid; gap: 1rem; }
+@media (min-width: 900px) { .qa__item { grid-template-columns: 0.8fr 1.2fr; gap: 3rem; } }
+.qa__item h2 { font-family: var(--serif); font-size: clamp(1.25rem, 2.2vw, 1.7rem); line-height: 1.25; }
+.ph--clip { aspect-ratio: 722 / 642; }
+.duo { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); }
+@media (min-width: 760px) { .duo { grid-template-columns: 1fr 1fr; } }
+.duo__cap { margin-top: 0.9rem; color: var(--ink-faint); font-size: 0.9rem; }
+
+/* ============================================================
    About / timeline
    ============================================================ */
 .about-grid { display: grid; gap: clamp(2rem, 4vw, 3.5rem); }

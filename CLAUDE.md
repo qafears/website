@@ -9,8 +9,8 @@ in [ASSETS.md](ASSETS.md); the build architecture is in
 
 A marketing site for Quentin Fears that keeps a dark, editorial visual style while
 repositioning him from "celebrity & personal stylist" to fashion creative leader,
-visual strategist, speaker, and host. Six pages (`index`, `work`, `ideas`, `speak`,
-`about`, `contact`).
+visual strategist, speaker, and host. Pages: `index`, `work`, `archives`, `ideas`, `speak`, `about`, `contact`, plus the
+`behind-the-seams` interview linked from Work.
 
 It is built with **Astro**, and all copy lives in editable content files managed by a
 **Keystatic** admin, so the site is maintainable with no code. Astro renders the
@@ -128,7 +128,8 @@ Three build shapes from one project (see the header comment in
 
 - This is Quentin's **personal** site; it does not speak for any employer. Walmart may
   be named in body copy, and public work Quentin himself has posted publicly (e.g. his
-  own NYC pop-up-shop video) may be shown and named at the owner's discretion. What
+  own NYC pop-up-shop video) may be shown and named at the owner's discretion. The owner has also approved republishing his Walmart associate-newsletter interview
+  (`/behind-the-seams`); treat further internal features as case-by-case owner calls. What
   stays out regardless: internal, unreleased, or confidential work, and any implied
   official endorsement. When describing enterprise engagements in the abstract, still
   prefer generic framing ("a Fortune 1 retailer"). Do not present him as an official

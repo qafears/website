@@ -117,6 +117,9 @@ const jsonLd = {
             <p class="eyebrow">{work.video.eyebrow}</p>
             <h2>{work.video.heading}</h2>
             {work.video.intro && <p>{work.video.intro}</p>}
+            {work.video.linkLabel && work.video.linkHref && (
+              <p style="margin-top:1.75rem"><a class="btn" href={work.video.linkHref}>{work.video.linkLabel} <span class="btn__arrow">&rarr;</span></a></p>
+            )}
           </div>
           <div class="reels">
             {work.video.items.map((r) => {

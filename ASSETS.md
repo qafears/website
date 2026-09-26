@@ -137,3 +137,10 @@ API key. Submissions are emailed to the address in the form's `action`
   **Netlify** instead of GitHub Pages — add `data-netlify="true"` + a hidden `form-name`
   and Netlify captures it natively (JS auto-detects a non-FormSubmit action and lets it
   POST normally).
+
+## Behind the Seams interview (`content/behind-the-seams.yaml`)
+
+| Slot | File | Notes |
+|---|---|---|
+| Newsletter clipping | `assets/img/press-behind-the-seams.jpg` | 722×642 screenshot of the associate-newsletter header; replace with a higher-resolution copy if one turns up |
+| Photos | `work-popup-shop.jpg`, `work-popup-team.jpg` | Reused from the Work page video posters |
