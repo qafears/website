@@ -7,7 +7,7 @@ seo:
 hero:
   eyebrow: "Interview"
   heading: "Behind the Seams"
-  intro: "Inside Walmart Fashion's NYC Fashion Week pop-up: an inside look with Quentin Fears, Manager, Visual Merchandising & Styling Marketing."
+  intro: "For Walmart's largest New York City pop-up, I led styling and visual merchandising across Free Assembly, Scoop, Avia, and Scenariō. The company newsletter sat down with me about the thinking behind it."
 clipping:
   image:
     src: "assets/img/press-behind-the-seams.jpg"
@@ -15,99 +15,82 @@ clipping:
     tag: "Press"
     label: "Walmart associate newsletter"
   source: "As featured in Walmart's associate newsletter"
-  standfirst: |
-    Fashion Week is often associated with the final reveal: the styles, the trends, and the moments that capture attention. But behind every activation is a team of creative thinkers translating vision into experience. As Walmart continues to evolve its fashion business through elevated brands, immersive customer experiences, and a growing presence in the style conversation, the recent NYC Fashion Week pop-up showcased the breadth of Walmart's fashion portfolio, featuring brands including Free Assembly, Scoop, Avia, and Scenariō.
-
-    More than a showcase of products, the activation reflected the strategic brand building helping shape Walmart Fashion's continued evolution. The communications team sat down with Quentin Fears, a leader from the Visual Merchandising & Styling Marketing team, to get a behind-the-scenes look at the inspiration behind the experience. From concept to execution, here's a glimpse into the work that happens beyond the seams.
-pullquote:
-  quote: "It's almost like creating chapters within one larger story. Each brand has its own voice, but they all need to belong in the <span class=\"accent\">same book</span>."
-  cite: "On building one experience out of many brands"
-photos:
-  - image:
-      src: "assets/img/work-popup-shop.jpg"
-      alt: "Quentin Fears adjusting a pink shirt on a mannequin in a pop-up shop window"
-      tag: "On the floor"
-      label: "Styling the window"
-    caption: "Styling the window, down to the last button."
-  - image:
-      src: "assets/img/work-popup-team.jpg"
-      alt: "Quentin Fears with the styling and visual merchandising team on the sales floor of the NYC pop-up shop"
-      tag: "The team"
-      label: "The styling and visual merchandising team"
-    caption: "The styling and visual merchandising team on the finished floor."
 qa:
-  - question: "For those unfamiliar with your role, what does a Manager of Visual Merchandising & Styling Marketing do, and what drew you to this work?"
+  - question: "What does visual merchandising and styling actually do, and what drew you to this work?"
     answer: |
-      My role in Visual Merchandising & Enterprise Styling is really about storytelling through a fashion lens. I consider brand identity, fashion and market trends, seasonality, customer interests and demographics to create experiences that engage and delight the customer.
+      It's really about storytelling through a fashion lens. I consider brand identity, fashion and market trends, seasonality, customer interests and demographics to create experiences that engage and delight the customer.
 
-      Ultimately, we're not just selling a shirt or a pair of pants. We're helping customers see an identity or lifestyle they can make their own. Styling and Visual Merchandising bring the product to life. When it's done well, the customer doesn't just see the blouse. They see the blouse with the skirt, the belt, the shoes and the accessories. Suddenly, they can envision the entire look and how it fits into their life. And from a business perspective, that can ultimately help add to the basket.
+      We're not just selling a shirt or a pair of pants. We're helping customers see an identity or lifestyle they can make their own. When it's done well, the customer doesn't just see the blouse. They see the blouse with the skirt, the belt, the shoes and the accessories. Suddenly, they can envision the entire look and how it fits into their life.
 
       That ability to tell a story through product is what has always drawn me to this work. Fashion can communicate so much without saying a word.
-  - question: "Walmart's Fashion Week pop-up created quite a buzz. What was your role in bringing the experience, and brands like Free Assembly, Scoop, Avia and Scenariō, to life?"
+    quote: ""
+    photos:
+      - image:
+          src: "assets/img/popup-free-assembly.jpg"
+          alt: "Two mannequins in the Free Assembly section: a green trench over a printed dress, and a graphic-print shirt with navy trousers"
+          tag: "Pop-up"
+          label: "Free Assembly"
+        caption: "Free Assembly, the first chapter of the space."
+      - image:
+          src: "assets/img/popup-plaid-and-denim.jpg"
+          alt: "A mannequin in a red plaid jacket over a tied blue shirt, dark jeans and red flats beside the shop window"
+          tag: "Pop-up"
+          label: "Plaid and denim"
+        caption: "Plaid, poplin, and denim, finished with a red shoe."
+  - question: "What was your role in bringing the pop-up, and brands like Free Assembly, Scoop, Avia and Scenariō, to life?"
     answer: |
-      This was Walmart's largest New York City pop-up to date, and bringing an experience of this scale to life was truly a collaborative effort across the Fashion Office, Marketing, Visual Merchandising & Styling and many other partners.
+      Bringing an experience of this scale to life was a collaborative effort across the Fashion Office, Marketing, Visual Merchandising & Styling and many other partners. My role is to make sure the fashion shows up in the strongest possible way: the fixtures supporting the product, how the assortment lives within the space, how the mannequins are styled, and how each brand keeps its identity while connecting with the customer in that particular market.
 
-      My role within that larger team is to make sure the fashion shows up in the strongest possible way. That means thinking about everything from the fixtures supporting the product to how the assortment lives within the space, how the mannequins are styled and how we maintain each brand's identity while connecting with the customer in that particular market.
+      One thing I think about a lot is geography. Styling for a New York customer can be different from styling for a customer in Los Angeles or Bentonville. You may be working with the exact same product, but how you combine and present those pieces changes with the audience, while still maintaining the integrity of the brand.
 
-      One thing I think about a lot is geography. Styling for a New York customer can be different from styling for a customer in Los Angeles or Bentonville. You may be working with the exact same product, but how you combine and present those pieces can change based on the audience while still maintaining the integrity of the brand.
-
-      That's what makes this work so interesting to me. There's strategy behind it, but there's also an art to it.
-  - question: "When planning an activation like this, how do you balance trend-forward fashion with Walmart's commitment to accessibility and value?"
+      There's strategy behind it, but there's also an art to it.
+    quote: ""
+    photos:
+      - image:
+          src: "assets/img/popup-storefront.jpg"
+          alt: "The pop-up's cast-iron storefront on a cobblestone street, with campaign imagery in every window"
+          tag: "Pop-up"
+          label: "Storefront"
+        caption: "The storefront, with campaign imagery in every window."
+      - image:
+          src: "assets/img/popup-main-floor.jpg"
+          alt: "The pop-up's main floor: color-grouped racks, folded knits stacked on a wood table, and styled mannequins"
+          tag: "Pop-up"
+          label: "Main floor"
+        caption: "Color stories that complement each other across the floor."
+  - question: "How do you create a cohesive experience while allowing each brand to shine?"
     answer: |
-      The value is already inherent in the merchandise. The quality and price point are incredibly compelling, especially in a market like New York City.
+      That thinking begins long before the product reaches the floor. Brand placement and adjacencies are incredibly important. What brand should the customer experience first? How should they naturally move through the space? Which brands make sense beside one another?
 
-      At the pop-up, for example, customers could find Free Assembly women's knit cashmere for $60, a Scoop cashmere turtleneck for $45 and a men's Free Assembly leather jacket for $99, the same style worn by EVP & Chief Operating Officer Kyle Kinnard at YEM and styled by MaryFrances Gattine.
+      We introduced customers to Free Assembly first, our modern American heritage brand with broad appeal. From there, the experience flows into Avia, with its athletic assortments positioned alongside the matching Free Assembly collections. Then customers discover Scoop, the more fashion-forward assortment; Scenariō, with its bohemian point of view; and accessories.
 
-      Our opportunity in Visual Merchandising & Enterprise Styling is to create an environment that allows customers to see that value in a new way. When you take compelling product and present it through an elevated, boutique-style experience, you create a sense of discovery. The customer is drawn in by the environment, engages with the fashion and then discovers that the pieces are accessible.
-
-      That combination of style, quality, experience and value is incredibly powerful.
-  - question: "The pop-up featured a diverse collection of brands, each with its own identity and customer appeal. How do you approach creating a cohesive experience while allowing each brand to shine?"
+      Color is another powerful tool. Each brand needs to remain distinctive, but the color stories throughout the space should complement one another so the environment feels intentional. And we identify signature pieces that immediately say what each brand stands for. With Scenariō, denim is an important part of the story, so denim was the hero in the mannequin styling.
+    quote: "It's almost like creating chapters within one larger story. Each brand has its own voice, but they all need to belong in the <span class=\"accent\">same book</span>."
+    photos: []
+  - question: "Was there a moment that stood out as especially rewarding?"
     answer: |
-      That thinking begins long before the product reaches the floor. Brand placement and adjacencies are incredibly important. We ask questions like: What brand should the customer experience first? How should they naturally move through the space? Which brands make sense beside one another?
+      I was helping a customer in the space when she looked around and said, "Who knew Walmart had such amazing pieces?" That was the moment I thought, this is working.
 
-      We chose to introduce customers to Free Assembly first, our modern American heritage brand with both men's and women's collections and broad customer appeal. From there, the experience flows into Avia, with men's and women's athletic assortments positioned alongside their respective Free Assembly collections. Then customers discover Scoop, our more fashion-forward assortment; Scenariō, with its bohemian point of view; and accessories.
+      Her favorite piece was a cropped Free Assembly trench jacket, and by the time she left, she had three bags of clothing. She came in with one perception and left with another. Seeing that shift happen in real time was incredibly rewarding.
 
-      Color is another powerful tool. Each brand needs to remain distinctive, but the color stories throughout the space should complement one another so the entire environment feels intentional and cohesive.
-
-      Finally, we identify signature pieces that immediately communicate what each brand stands for. With Scenariō, for example, denim is an important part of the brand story, so we wanted denim to be a hero in the mannequin styling.
-
-      It's almost like creating chapters within one larger story. Each brand has its own voice, but they all need to belong in the same book.
-  - question: "Fashion is often described as a form of storytelling. What story do you believe your team was aiming to tell through this year's Fashion Week experience?"
-    answer: |
-      The story we're telling is that Walmart Fashion has evolved, and customers can find elevated, fashion-forward pieces at an incredible value.
-
-      We want to democratize fashion and challenge perceptions of what Walmart Fashion can be. Great style shouldn't feel inaccessible. Through the product, styling and environment, we're showing customers that Walmart can be a fashion destination where they can discover quality, trend-right pieces at Every Day Low Prices.
-
-      For me, the exciting part is creating that moment of discovery when someone walks into the space and sees Walmart Fashion through a completely different lens.
-  - question: "What are some of the creative decisions or details that attendees may not realize took months of planning behind the scenes?"
-    answer: |
-      There is so much planning behind what ultimately looks effortless to the customer.
-
-      Months before opening, we were having conversations about the interior fabrication and materials. Should an area use wood or metal? What feeling does each material create? How should the windows come to life? Should they feature mannequins, campaign imagery, accessories or a combination?
-
-      Then there are decisions about mannequin styles, placement, sightlines and how customers move through the space. Even signage involves layers of consideration: What should it look like? Where should it live? What message are we trying to communicate at that particular point in the customer journey?
-
-      Customers may experience the finished space in a matter of minutes, but virtually every detail they encounter has been discussed, considered and refined. That's part of the magic of Visual Merchandising. When we've done our job well, all of that work feels effortless.
-  - question: "Looking back on the pop-up, was there a particular moment, brand feature or guest interaction that stands out as especially rewarding?"
-    answer: |
-      One interaction really stayed with me. I was helping a customer in the space when she looked around and said, "Who knew Walmart had such amazing pieces?"
-
-      That was the moment I thought, this is working.
-
-      Her favorite piece was a cropped Free Assembly trench jacket, and by the time she left, she had three bags of clothing. She had essentially discovered an entirely new wardrobe.
-
-      For me, that interaction represented exactly what we were trying to accomplish. She came in with one perception of Walmart Fashion and left with another. Seeing that shift happen in real time was incredibly rewarding.
-
-      It was also incredibly rewarding to see the finished space come to life after months of collaboration. I'm grateful to have shared this experience with the Hoboken Visual Merchandising and Enterprise Styling team: Erica Brandon, Josh Danforth, Jason Cicchelli, Cayla Hutton-Pessoa, Alex Pacheco, Michelle Nagasawa and MaryFrances Gattine, along with so many talented partners across the Fashion Office, Marketing and our extended teams. An experience of this scale is truly a team effort, and everyone brought something special to it.
-  - question: "For associates interested in careers in fashion, styling, marketing or creative strategy, what advice would you share?"
-    answer: |
-      One of the most important skills you can develop as a creative is observation. Open your eyes to what is happening around you.
-
-      Pay attention to what people are wearing and, just as importantly, how they're wearing it. Walk through different stores and notice how the same category of product is presented differently depending on the customer that retailer is trying to reach. Watch fashion shows, study the collections and then observe how those ideas eventually make their way into what people are actually wearing.
-
-      And then connect with people. Have conversations. Tell people who you are, what you're interested in and where you want to go. Some of the most important opportunities in my career have come from being willing to put myself in the room and build genuine relationships.
-
-      You can learn the technical side of fashion, styling or marketing, but curiosity, observation and relationships are what keep you growing.
+      I'm grateful to have shared this with the Hoboken Visual Merchandising and Enterprise Styling team: Erica Brandon, Josh Danforth, Jason Cicchelli, Cayla Hutton-Pessoa, Alex Pacheco, Michelle Nagasawa and MaryFrances Gattine, along with our partners across the Fashion Office and Marketing. An experience of this scale is truly a team effort.
+    quote: ""
+    photos:
+      - image:
+          src: "assets/img/work-popup-shop.jpg"
+          alt: "Quentin Fears adjusting a pink shirt on a mannequin in a pop-up shop window"
+          tag: "Pop-up"
+          label: "Styling the window"
+        caption: "Styling the window, down to the last button."
+      - image:
+          src: "assets/img/work-popup-team.jpg"
+          alt: "Quentin Fears with the styling and visual merchandising team on the sales floor of the NYC pop-up shop"
+          tag: "Pop-up"
+          label: "The team"
+        caption: "The styling and visual merchandising team on the finished floor."
+watch:
+  label: "Watch the pop-up come together"
+  href: "work#on-the-floor"
 cta:
   heading: "I take on a few brand projects at a time."
   body: "Creative direction, visual strategy, and styling for brands, retail spaces, and campaigns."

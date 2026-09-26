@@ -659,30 +659,33 @@ export default config({
           {
             image: photo('Clipping'),
             source: fields.text({ label: 'Source line' }),
-            standfirst: fields.text({ label: 'Introduction (blank line between paragraphs)', multiline: true }),
           },
           { label: 'The feature' }
-        ),
-        pullquote: fields.object(
-          {
-            quote: fields.text({ label: 'Quote (HTML allowed)', multiline: true }),
-            cite: fields.text({ label: 'Caption' }),
-          },
-          { label: 'Pull quote' }
-        ),
-        photos: fields.array(
-          fields.object({
-            image: photo('Photo'),
-            caption: fields.text({ label: 'Caption' }),
-          }),
-          { label: 'Photos', itemLabel: (p) => p.fields.caption.value || 'Photo' }
         ),
         qa: fields.array(
           fields.object({
             question: fields.text({ label: 'Question', multiline: true }),
             answer: fields.text({ label: 'Answer (blank line between paragraphs)', multiline: true }),
+            quote: fields.text({
+              label: 'Pull quote after this answer (optional, HTML allowed)',
+              multiline: true,
+            }),
+            photos: fields.array(
+              fields.object({
+                image: photo('Photo'),
+                caption: fields.text({ label: 'Caption' }),
+              }),
+              { label: 'Photos after this answer (pairs work best)', itemLabel: (p) => p.fields.caption.value || 'Photo' }
+            ),
           }),
           { label: 'Questions and answers', itemLabel: (p) => p.fields.question.value.slice(0, 60) }
+        ),
+        watch: fields.object(
+          {
+            label: fields.text({ label: 'Button label' }),
+            href: fields.text({ label: 'Button link', description: 'e.g. work#on-the-floor' }),
+          },
+          { label: 'Closing link' }
         ),
         cta: cta(),
       },

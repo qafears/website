@@ -4,11 +4,18 @@ import Cta from '../components/Cta.astro';
 import Picture from '../components/Picture.astro';
 import { reader, SITE_ORIGIN } from '../lib/content';
 import { personMinimal, breadcrumb, PERSON_ID } from '../lib/jsonld';
+import variants from '../data/img-variants.json';
 
 const page = await reader.singletons.behindTheSeams.readOrThrow();
 const O = SITE_ORIGIN;
 
 // Multiline answers are plain text; a blank line starts a new paragraph.
+// Photos keep their own shape (no crop), so a pair reads at its natural size.
+const ratio = (src: string) => {
+  const v = (variants as Record<string, { width: number; height: number }>)[src];
+  return v ? `aspect-ratio:${v.width}/${v.height}` : undefined;
+};
+
 const paras = (text: string) => text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
 
 // JSON-LD renders into <head>, so it names the interview by its page title only:
@@ -57,43 +64,44 @@ const jsonLd = {
 
   <hr class="rule">
 
-  <!-- One reading column: the clipping, the intro, the Q&A, then the photos. -->
+  <!-- One reading column: the clipping, then each answer with its photos. -->
   <section class="section section--tight">
     <div class="wrap interview">
-      <figure class="ph ph--clip reveal" data-tag={page.clipping.image.tag} data-label={page.clipping.image.label}>
-        <Picture src={page.clipping.image.src} alt={page.clipping.image.alt} loading="eager" sizes="(min-width: 800px) 680px, 92vw" onerror="this.remove()" />
+      <figure class="reveal">
+        <div class="ph ph--clip" data-tag={page.clipping.image.tag} data-label={page.clipping.image.label}>
+          <Picture src={page.clipping.image.src} alt={page.clipping.image.alt} loading="eager" sizes="(min-width: 800px) 680px, 92vw" onerror="this.remove()" />
+        </div>
+        <figcaption class="attribution duo__cap">{page.clipping.source}</figcaption>
       </figure>
-      <div class="prose reveal">
-        <p class="attribution">{page.clipping.source}</p>
-        {paras(page.clipping.standfirst).map((p) => <p>{p}</p>)}
-      </div>
 
-      {page.pullquote.quote && (
-        <blockquote class="pullquote pullquote--sm reveal" set:html={page.pullquote.quote}></blockquote>
-      )}
-
-      <div class="qa">
-        {page.qa.map((item) => (
+      {page.qa.map((item) => (
+        <Fragment>
           <div class="qa__item reveal">
             <h2>{item.question}</h2>
             <div class="prose">
               {paras(item.answer).map((p) => <p>{p}</p>)}
             </div>
           </div>
-        ))}
-      </div>
+          {item.quote && (
+            <blockquote class="pullquote reveal" set:html={item.quote}></blockquote>
+          )}
+          {item.photos.length > 0 && (
+            <div class="duo">
+              {item.photos.map((ph) => (
+                <figure class="reveal">
+                  <div class="ph" style={ratio(ph.image.src)} data-tag={ph.image.tag} data-label={ph.image.label}>
+                    <Picture src={ph.image.src} alt={ph.image.alt} loading="lazy" sizes="(min-width: 800px) 330px, 46vw" onerror="this.remove()" />
+                  </div>
+                  {ph.caption && <figcaption class="duo__cap">{ph.caption}</figcaption>}
+                </figure>
+              ))}
+            </div>
+          )}
+        </Fragment>
+      ))}
 
-      {page.photos.length > 0 && (
-        <div class="duo">
-          {page.photos.map((ph) => (
-            <figure class="reveal">
-              <div class="ph ph--tall" data-tag={ph.image.tag} data-label={ph.image.label}>
-                <Picture src={ph.image.src} alt={ph.image.alt} loading="lazy" sizes="(min-width: 800px) 320px, 46vw" onerror="this.remove()" />
-              </div>
-              {ph.caption && <figcaption class="duo__cap">{ph.caption}</figcaption>}
-            </figure>
-          ))}
-        </div>
+      {page.watch.label && page.watch.href && (
+        <p class="reveal"><a class="btn" href={page.watch.href}>{page.watch.label} <span class="btn__arrow">&rarr;</span></a></p>
       )}
     </div>
   </section>
