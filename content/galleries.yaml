@@ -19,12 +19,12 @@ sets:
           - { src: "assets/img/gallery/industry-magazine-tweed-and-beret.jpg", cap: "Industry Magazine, pink beret and tweed at the pool table" }
           - { src: "assets/img/gallery/industry-magazine-printed-spread.jpg", cap: "Industry Magazine, the printed spread: pink knit and a vinyl mini" }
           - { src: "assets/img/gallery/industry-magazine-pink-knit-vinyl-mini.jpg", cap: "Industry Magazine, the pink knit and vinyl mini on set" }
-      - slug: "color-movement"
-        title: "Color & movement"
+      - slug: "sheen-magazine"
+        title: "Sheen Magazine"
         images:
-          - { src: "assets/img/gallery/g-editorial-5.jpg", cap: "Color and movement, print on print against desert palms" }
-          - { src: "assets/img/gallery/g-editorial-6.jpg", cap: "Color and movement, a chartreuse cut-out dress in full sun" }
-          - { src: "assets/img/gallery/g-editorial-7.jpg", cap: "Color and movement, a printed dress caught mid-stride" }
+          - { src: "assets/img/gallery/sheen-magazine-printed-gown-seated.jpg", cap: "Sheen Magazine, a geometric-print gown with laced heels against the palms" }
+          - { src: "assets/img/gallery/sheen-magazine-chartreuse-sequin-dress.jpg", cap: "Sheen Magazine, a chartreuse sequin keyhole dress in full sun" }
+          - { src: "assets/img/gallery/sheen-magazine-printed-gown-mid-stride.jpg", cap: "Sheen Magazine, the printed gown caught mid-stride" }
   - key: "commercial"
     title: "Campaign & commercial"
     shoots:
