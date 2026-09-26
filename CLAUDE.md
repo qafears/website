@@ -129,7 +129,7 @@ Three build shapes from one project (see the header comment in
 - This is Quentin's **personal** site; it does not speak for any employer. Walmart may
   be named in body copy, and public work Quentin himself has posted publicly (e.g. his
   own NYC pop-up-shop video) may be shown and named at the owner's discretion. The owner has also approved republishing his Walmart BAARG (Black & African American Resource Group) newsletter interview
-  (`/behind-the-seams`); treat further internal features as case-by-case owner calls. What
+  (`/behind-the-seams`); treat further internal features as case-by-case owner calls. Credit shared work as shared: "helped lead", not "led", and thank teams without listing every colleague. What
   stays out regardless: internal, unreleased, or confidential work, and any implied
   official endorsement. When describing enterprise engagements in the abstract, still
   prefer generic framing ("a Fortune 1 retailer"). Do not present him as an official
