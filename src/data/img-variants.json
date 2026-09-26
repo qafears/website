@@ -136,42 +136,6 @@
       358
     ]
   },
-  "assets/img/gallery/g-editorial-1.jpg": {
-    "height": 1300,
-    "width": 1037,
-    "widths": [
-      400,
-      800,
-      1037
-    ]
-  },
-  "assets/img/gallery/g-editorial-2.jpg": {
-    "height": 1300,
-    "width": 1037,
-    "widths": [
-      400,
-      800,
-      1037
-    ]
-  },
-  "assets/img/gallery/g-editorial-3.jpg": {
-    "height": 1300,
-    "width": 1037,
-    "widths": [
-      400,
-      800,
-      1037
-    ]
-  },
-  "assets/img/gallery/g-editorial-4.jpg": {
-    "height": 1300,
-    "width": 1037,
-    "widths": [
-      400,
-      800,
-      1037
-    ]
-  },
   "assets/img/gallery/g-editorial-5.jpg": {
     "height": 1024,
     "width": 683,
@@ -195,14 +159,6 @@
       400,
       800,
       867
-    ]
-  },
-  "assets/img/gallery/g-editorial-8.jpg": {
-    "height": 1280,
-    "width": 720,
-    "widths": [
-      400,
-      720
     ]
   },
   "assets/img/gallery/g-menswear-1.jpg": {
@@ -309,6 +265,50 @@
       400,
       800,
       1080
+    ]
+  },
+  "assets/img/gallery/industry-magazine-neon-satin-ring-float.jpg": {
+    "height": 1300,
+    "width": 1037,
+    "widths": [
+      400,
+      800,
+      1037
+    ]
+  },
+  "assets/img/gallery/industry-magazine-pink-knit-vinyl-mini.jpg": {
+    "height": 1280,
+    "width": 720,
+    "widths": [
+      400,
+      720
+    ]
+  },
+  "assets/img/gallery/industry-magazine-printed-spread.jpg": {
+    "height": 1300,
+    "width": 1037,
+    "widths": [
+      400,
+      800,
+      1037
+    ]
+  },
+  "assets/img/gallery/industry-magazine-sequins-rainbow-float.jpg": {
+    "height": 1300,
+    "width": 1037,
+    "widths": [
+      400,
+      800,
+      1037
+    ]
+  },
+  "assets/img/gallery/industry-magazine-tweed-and-beret.jpg": {
+    "height": 1300,
+    "width": 1037,
+    "widths": [
+      400,
+      800,
+      1037
     ]
   },
   "assets/img/gallery/jon-magazine-strange-memories-car-interior.jpg": {

@@ -11,14 +11,14 @@ sets:
   - key: "editorial"
     title: "Editorial"
     shoots:
-      - slug: "poolside-story"
-        title: "Poolside story"
+      - slug: "industry-magazine"
+        title: "Industry Magazine"
         images:
-          - { src: "assets/img/gallery/g-editorial-1.jpg", cap: "Poolside story, a neon top on a pink ring float" }
-          - { src: "assets/img/gallery/g-editorial-3.jpg", cap: "Poolside story, sequins and thigh boots on a rainbow cloud float" }
-          - { src: "assets/img/gallery/g-editorial-2.jpg", cap: "Poolside story, pink beret and tweed at the pool table" }
-          - { src: "assets/img/gallery/g-editorial-4.jpg", cap: "Poolside story, the printed spread: pink knit and a vinyl mini" }
-          - { src: "assets/img/gallery/g-editorial-8.jpg", cap: "Poolside story, the pink knit and vinyl mini on set" }
+          - { src: "assets/img/gallery/industry-magazine-neon-satin-ring-float.jpg", cap: "Industry Magazine, a neon top on a pink ring float" }
+          - { src: "assets/img/gallery/industry-magazine-sequins-rainbow-float.jpg", cap: "Industry Magazine, sequins and thigh boots on a rainbow cloud float" }
+          - { src: "assets/img/gallery/industry-magazine-tweed-and-beret.jpg", cap: "Industry Magazine, pink beret and tweed at the pool table" }
+          - { src: "assets/img/gallery/industry-magazine-printed-spread.jpg", cap: "Industry Magazine, the printed spread: pink knit and a vinyl mini" }
+          - { src: "assets/img/gallery/industry-magazine-pink-knit-vinyl-mini.jpg", cap: "Industry Magazine, the pink knit and vinyl mini on set" }
       - slug: "color-movement"
         title: "Color & movement"
         images:
