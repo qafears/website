@@ -466,14 +466,16 @@ button { font: inherit; cursor: pointer; }
 /* ============================================================
    Interview (behind-the-seams)
    ============================================================ */
+.interview { max-width: 680px; margin-inline: auto; display: grid; gap: clamp(1.75rem, 3.5vw, 2.5rem); }
+.interview .prose p { max-width: none; }
+.interview-hero { max-width: 680px; margin-inline: auto; }
+.interview .pullquote { margin: 0; }
+.ph--clip { aspect-ratio: 722 / 452; }
 .qa { display: grid; gap: 0; }
-.qa__item { padding-block: clamp(2rem, 4vw, 3rem); border-top: 1px solid var(--line); display: grid; gap: 1rem; }
-@media (min-width: 900px) { .qa__item { grid-template-columns: 0.8fr 1.2fr; gap: 3rem; } }
-.qa__item h2 { font-family: var(--serif); font-size: clamp(1.25rem, 2.2vw, 1.7rem); line-height: 1.25; }
-.ph--clip { aspect-ratio: 722 / 642; }
-.duo { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); }
-@media (min-width: 760px) { .duo { grid-template-columns: 1fr 1fr; } }
-.duo__cap { margin-top: 0.9rem; color: var(--ink-faint); font-size: 0.9rem; }
+.qa__item { padding-block: clamp(1.5rem, 3vw, 2rem); border-top: 1px solid var(--line); display: grid; gap: 0.8rem; }
+.qa__item h2 { font-family: var(--serif); font-size: clamp(1.15rem, 1.8vw, 1.4rem); line-height: 1.3; }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.75rem, 2vw, 1.25rem); }
+.duo__cap { margin-top: 0.6rem; color: var(--ink-faint); font-size: 0.85rem; }
 
 /* ============================================================
    About / timeline

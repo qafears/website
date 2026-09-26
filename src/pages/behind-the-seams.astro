@@ -47,69 +47,56 @@ const jsonLd = {
 
   <section class="page-hero">
     <div class="wrap reveal">
-      <p class="eyebrow">{page.hero.eyebrow}</p>
-      <h1>{page.hero.heading}</h1>
-      <p>{page.hero.intro}</p>
-    </div>
-  </section>
-
-  <hr class="rule">
-
-  <!-- THE FEATURE -->
-  <section class="section">
-    <div class="wrap idea-feature">
-      <figure class="ph ph--clip reveal" data-tag={page.clipping.image.tag} data-label={page.clipping.image.label}>
-        <Picture src={page.clipping.image.src} alt={page.clipping.image.alt} loading="eager" sizes="(min-width: 880px) 45vw, 92vw" onerror="this.remove()" />
-      </figure>
-      <div class="prose reveal">
-        <p class="attribution">{page.clipping.source}</p>
-        {paras(page.clipping.standfirst).map((p) => <p>{p}</p>)}
+      <div class="interview-hero">
+        <p class="eyebrow">{page.hero.eyebrow}</p>
+        <h1>{page.hero.heading}</h1>
+        <p>{page.hero.intro}</p>
       </div>
     </div>
   </section>
 
   <hr class="rule">
 
-  <section class="section belief">
-    <div class="wrap reveal">
-      <blockquote set:html={page.pullquote.quote}></blockquote>
-      <cite>{page.pullquote.cite}</cite>
-    </div>
-  </section>
+  <!-- One reading column: the clipping, the intro, the Q&A, then the photos. -->
+  <section class="section section--tight">
+    <div class="wrap interview">
+      <figure class="ph ph--clip reveal" data-tag={page.clipping.image.tag} data-label={page.clipping.image.label}>
+        <Picture src={page.clipping.image.src} alt={page.clipping.image.alt} loading="eager" sizes="(min-width: 800px) 680px, 92vw" onerror="this.remove()" />
+      </figure>
+      <div class="prose reveal">
+        <p class="attribution">{page.clipping.source}</p>
+        {paras(page.clipping.standfirst).map((p) => <p>{p}</p>)}
+      </div>
 
-  <hr class="rule">
+      {page.pullquote.quote && (
+        <blockquote class="pullquote pullquote--sm reveal" set:html={page.pullquote.quote}></blockquote>
+      )}
 
-  <!-- QUESTIONS AND ANSWERS -->
-  <section class="section">
-    <div class="wrap qa">
-      {page.qa.map((item) => (
-        <div class="qa__item reveal">
-          <h2>{item.question}</h2>
-          <div class="prose">
-            {paras(item.answer).map((p) => <p>{p}</p>)}
+      <div class="qa">
+        {page.qa.map((item) => (
+          <div class="qa__item reveal">
+            <h2>{item.question}</h2>
+            <div class="prose">
+              {paras(item.answer).map((p) => <p>{p}</p>)}
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </section>
+        ))}
+      </div>
 
-  {page.photos.length > 0 && (
-    <Fragment>
-      <hr class="rule">
-      <section class="section">
-        <div class="wrap duo">
+      {page.photos.length > 0 && (
+        <div class="duo">
           {page.photos.map((ph) => (
             <figure class="reveal">
               <div class="ph ph--tall" data-tag={ph.image.tag} data-label={ph.image.label}>
-                <Picture src={ph.image.src} alt={ph.image.alt} loading="lazy" sizes="(min-width: 760px) 45vw, 92vw" onerror="this.remove()" />
+                <Picture src={ph.image.src} alt={ph.image.alt} loading="lazy" sizes="(min-width: 800px) 320px, 46vw" onerror="this.remove()" />
               </div>
               {ph.caption && <figcaption class="duo__cap">{ph.caption}</figcaption>}
             </figure>
           ))}
         </div>
-      </section>
-    </Fragment>
-  )}
+      )}
+    </div>
+  </section>
 
   <Cta
     heading={page.cta.heading}

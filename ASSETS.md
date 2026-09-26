@@ -142,5 +142,5 @@ API key. Submissions are emailed to the address in the form's `action`
 
 | Slot | File | Notes |
 |---|---|---|
-| Newsletter clipping | `assets/img/press-behind-the-seams.jpg` | 722×642 screenshot of the associate-newsletter header; replace with a higher-resolution copy if one turns up |
+| Newsletter clipping | `assets/img/press-behind-the-seams.jpg` | 722×452 crop of the associate-newsletter header (headline and photos); replace with a higher-resolution copy if one turns up |
 | Photos | `work-popup-shop.jpg`, `work-popup-team.jpg` | Reused from the Work page video posters |
