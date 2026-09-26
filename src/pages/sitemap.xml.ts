@@ -2,7 +2,7 @@
  * sitemap.xml, generated at build time.
  *
  * Two jobs:
- *   1. List the six pages (what the hand-written public/sitemap.xml used to do).
+ *   1. List the site's pages (what the hand-written public/sitemap.xml used to do).
  *   2. Declare every photo each page shows, as <image:image> entries, so Google
  *      Images can find them.
  *
@@ -38,6 +38,7 @@ const PAGES = [
   { path: 'archives', singleton: 'archives', changefreq: 'monthly', priority: '0.9' },
   { path: 'ideas', singleton: 'ideas', changefreq: 'monthly', priority: '0.8' },
   { path: 'speak', singleton: 'speak', changefreq: 'monthly', priority: '0.8' },
+  { path: 'behind-the-seams', singleton: 'behindTheSeams', changefreq: 'yearly', priority: '0.7' },
   { path: 'about', singleton: 'about', changefreq: 'monthly', priority: '0.7' },
   { path: 'contact', singleton: 'contact', changefreq: 'yearly', priority: '0.6' },
 ] as const;

@@ -116,7 +116,7 @@ export default config({
   ui: {
     brand: { name: 'Quentin Fears site content' },
     navigation: {
-      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact'],
+      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams'],
       Shared: ['settings', 'galleries'],
     },
   },
@@ -311,6 +311,8 @@ export default config({
             eyebrow: fields.text({ label: 'Eyebrow' }),
             heading: fields.text({ label: 'Heading' }),
             intro: fields.text({ label: 'Intro', multiline: true }),
+            linkLabel: fields.text({ label: 'Button label (optional)', description: 'e.g. Read the interview. Blank = no button.' }),
+            linkHref: fields.text({ label: 'Button link', description: 'e.g. behind-the-seams' }),
             items: fields.array(
               fields.object({
                 poster: photo('Poster still (vertical, ~1080x1920)'),
@@ -643,6 +645,49 @@ export default config({
           description: 'e.g. Prefer to reach me directly? Email <a href="...">...</a>.',
           multiline: true,
         }),
+      },
+    }),
+
+    behindTheSeams: singleton({
+      label: 'Behind the Seams (interview)',
+      path: 'content/behind-the-seams',
+      format: { data: 'yaml' },
+      schema: {
+        seo: seo(),
+        hero: eyebrowHeadingIntro(),
+        clipping: fields.object(
+          {
+            image: photo('Clipping'),
+            source: fields.text({ label: 'Source line' }),
+          },
+          { label: 'The feature' }
+        ),
+        qa: fields.array(
+          fields.object({
+            question: fields.text({ label: 'Question', multiline: true }),
+            answer: fields.text({ label: 'Answer (blank line between paragraphs)', multiline: true }),
+            quote: fields.text({
+              label: 'Pull quote after this answer (optional, HTML allowed)',
+              multiline: true,
+            }),
+            photos: fields.array(
+              fields.object({
+                image: photo('Photo'),
+                caption: fields.text({ label: 'Caption' }),
+              }),
+              { label: 'Photos after this answer (pairs work best)', itemLabel: (p) => p.fields.caption.value || 'Photo' }
+            ),
+          }),
+          { label: 'Questions and answers', itemLabel: (p) => p.fields.question.value.slice(0, 60) }
+        ),
+        watch: fields.object(
+          {
+            label: fields.text({ label: 'Button label' }),
+            href: fields.text({ label: 'Button link', description: 'e.g. work#on-the-floor' }),
+          },
+          { label: 'Closing link' }
+        ),
+        cta: cta(),
       },
     }),
   },

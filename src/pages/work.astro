@@ -111,12 +111,15 @@ const jsonLd = {
   {work.video && work.video.items.length > 0 && (
     <Fragment>
       <hr class="rule">
-      <section class="section">
+      <section class="section" id="on-the-floor">
         <div class="wrap">
           <div class="sec-head reveal">
             <p class="eyebrow">{work.video.eyebrow}</p>
             <h2>{work.video.heading}</h2>
             {work.video.intro && <p>{work.video.intro}</p>}
+            {work.video.linkLabel && work.video.linkHref && (
+              <p style="margin-top:1.75rem"><a class="btn" href={work.video.linkHref}>{work.video.linkLabel} <span class="btn__arrow">&rarr;</span></a></p>
+            )}
           </div>
           <div class="reels">
             {work.video.items.map((r) => {

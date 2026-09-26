@@ -558,6 +558,44 @@
       640
     ]
   },
+  "assets/img/popup-free-assembly.jpg": {
+    "height": 540,
+    "width": 360,
+    "widths": [
+      360
+    ]
+  },
+  "assets/img/popup-main-floor.jpg": {
+    "height": 360,
+    "width": 540,
+    "widths": [
+      400,
+      540
+    ]
+  },
+  "assets/img/popup-plaid-and-denim.jpg": {
+    "height": 540,
+    "width": 360,
+    "widths": [
+      360
+    ]
+  },
+  "assets/img/popup-storefront.jpg": {
+    "height": 360,
+    "width": 540,
+    "widths": [
+      400,
+      540
+    ]
+  },
+  "assets/img/press-behind-the-seams.jpg": {
+    "height": 452,
+    "width": 722,
+    "widths": [
+      400,
+      722
+    ]
+  },
   "assets/img/reel-character.jpg": {
     "height": 1280,
     "width": 720,

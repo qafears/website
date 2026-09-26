@@ -1,0 +1,98 @@
+seo:
+  title: "Behind the Seams | Quentin Fears | NYC Fashion Week pop-up"
+  description: "Quentin Fears on the styling and visual merchandising behind a New York Fashion Week pop-up shop, from brand storytelling to space planning."
+  ogTitle: "Behind the Seams | Quentin Fears"
+  ogDescription: "An interview on the styling and visual strategy behind a New York Fashion Week pop-up."
+  ogType: "article"
+hero:
+  eyebrow: "Interview"
+  heading: "Behind the Seams"
+  intro: "For Walmart's largest New York City pop-up, styling and visual merchandising brought Free Assembly, Scoop, Avia, and Scenariō to life. The Black & African American Resource Group (BAARG) newsletter sat down with me about the thinking behind it."
+clipping:
+  image:
+    src: "assets/img/press-behind-the-seams.jpg"
+    alt: "Newsletter feature titled Behind the Seams: Inside Walmart Fashion's NYC Pop-Up, with a portrait of Quentin Fears and two photos of him in the styled pop-up shop"
+    tag: "Press"
+    label: "BAARG newsletter"
+  source: "As featured in the newsletter of Walmart's Black & African American Resource Group (BAARG)"
+qa:
+  - question: "What does visual merchandising and styling actually do, and what drew you to this work?"
+    answer: |
+      It's really about storytelling through a fashion lens. I consider brand identity, fashion and market trends, seasonality, customer interests and demographics to create experiences that engage and delight the customer.
+
+      We're not just selling a shirt or a pair of pants. We're helping customers see an identity or lifestyle they can make their own. When it's done well, the customer doesn't just see the blouse. They see the blouse with the skirt, the belt, the shoes and the accessories. Suddenly, they can envision the entire look and how it fits into their life.
+
+      That ability to tell a story through product is what has always drawn me to this work. Fashion can communicate so much without saying a word.
+    quote: ""
+    photos:
+      - image:
+          src: "assets/img/popup-free-assembly.jpg"
+          alt: "Two mannequins in the Free Assembly section: a green trench over a printed dress, and a graphic-print shirt with navy trousers"
+          tag: "Pop-up"
+          label: "Free Assembly"
+        caption: "Free Assembly, the first chapter of the space."
+      - image:
+          src: "assets/img/popup-plaid-and-denim.jpg"
+          alt: "A mannequin in a red plaid jacket over a tied blue shirt, dark jeans and red flats beside the shop window"
+          tag: "Pop-up"
+          label: "Plaid and denim"
+        caption: "Plaid, poplin, and denim, finished with a red shoe."
+  - question: "What was your role in bringing the pop-up, and brands like Free Assembly, Scoop, Avia and Scenariō, to life?"
+    answer: |
+      Bringing an experience of this scale to life was a collaborative effort across the Fashion Office, Marketing, Visual Merchandising & Styling and many other partners. My role is to make sure the fashion shows up in the strongest possible way: the fixtures supporting the product, how the assortment lives within the space, how the mannequins are styled, and how each brand keeps its identity while connecting with the customer in that particular market.
+
+      One thing I think about a lot is geography. Styling for a New York customer can be different from styling for a customer in Los Angeles or Bentonville. You may be working with the exact same product, but how you combine and present those pieces changes with the audience, while still maintaining the integrity of the brand.
+
+      There's strategy behind it, but there's also an art to it.
+    quote: ""
+    photos:
+      - image:
+          src: "assets/img/popup-storefront.jpg"
+          alt: "The pop-up's cast-iron storefront on a cobblestone street, with campaign imagery in every window"
+          tag: "Pop-up"
+          label: "Storefront"
+        caption: "The storefront, with campaign imagery in every window."
+      - image:
+          src: "assets/img/popup-main-floor.jpg"
+          alt: "The pop-up's main floor: color-grouped racks, folded knits stacked on a wood table, and styled mannequins"
+          tag: "Pop-up"
+          label: "Main floor"
+        caption: "Color stories that complement each other across the floor."
+  - question: "How do you create a cohesive experience while allowing each brand to shine?"
+    answer: |
+      That thinking begins long before the product reaches the floor. Brand placement and adjacencies are incredibly important. What brand should the customer experience first? How should they naturally move through the space? Which brands make sense beside one another?
+
+      We introduced customers to Free Assembly first, our modern American heritage brand with broad appeal. From there, the experience flows into Avia, with its athletic assortments positioned alongside the matching Free Assembly collections. Then customers discover Scoop, the more fashion-forward assortment; Scenariō, with its bohemian point of view; and accessories.
+
+      Color is another powerful tool. Each brand needs to remain distinctive, but the color stories throughout the space should complement one another so the environment feels intentional. And we identify signature pieces that immediately say what each brand stands for. With Scenariō, denim is an important part of the story, so denim was the hero in the mannequin styling.
+    quote: "It's almost like creating chapters within one larger story. Each brand has its own voice, but they all need to belong in the <span class=\"accent\">same book</span>."
+    photos: []
+  - question: "Was there a moment that stood out as especially rewarding?"
+    answer: |
+      I was helping a customer in the space when she looked around and said, "Who knew Walmart had such amazing pieces?" That was the moment I thought, this is working.
+
+      Her favorite piece was a cropped Free Assembly trench jacket, and by the time she left, she had three bags of clothing. She came in with one perception and left with another. Seeing that shift happen in real time was incredibly rewarding.
+
+      I'm grateful to have shared this with our Visual Merchandising and Enterprise Styling team and our partners across the Fashion Office and Marketing. An experience of this scale is truly a team effort.
+    quote: ""
+    photos:
+      - image:
+          src: "assets/img/work-popup-shop.jpg"
+          alt: "Quentin Fears adjusting a pink shirt on a mannequin in a pop-up shop window"
+          tag: "Pop-up"
+          label: "Styling the window"
+        caption: "Styling the window, down to the last button."
+      - image:
+          src: "assets/img/work-popup-team.jpg"
+          alt: "Quentin Fears with the styling and visual merchandising team on the sales floor of the NYC pop-up shop"
+          tag: "Pop-up"
+          label: "The team"
+        caption: "The styling and visual merchandising team on the finished floor."
+watch:
+  label: "Watch the pop-up come together"
+  href: "work#on-the-floor"
+cta:
+  heading: "I take on a few brand projects at a time."
+  body: "Creative direction, visual strategy, and styling for brands, retail spaces, and campaigns."
+  buttonLabel: "Start a project"
+  buttonHref: "contact"
