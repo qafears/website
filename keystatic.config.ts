@@ -155,7 +155,7 @@ export default config({
   ui: {
     brand: { name: 'Quentin Fears site content' },
     navigation: {
-      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview', 'reynoldsInterview'],
+      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview', 'reynoldsInterview', 'goreskiInterview'],
       Shared: ['settings', 'galleries'],
     },
   },
@@ -769,6 +769,13 @@ export default config({
     reynoldsInterview: singleton({
       label: 'Writing: Supreme Force (Marcellas Reynolds)',
       path: 'content/reynolds-interview',
+      format: { data: 'yaml' },
+      schema: writtenInterview(),
+    }),
+
+    goreskiInterview: singleton({
+      label: "Writing: It's a Brad Brad World (Brad Goreski)",
+      path: 'content/goreski-interview',
       format: { data: 'yaml' },
       schema: writtenInterview(),
     }),
