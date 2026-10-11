@@ -111,12 +111,36 @@ const eyebrowHeadingIntro = () =>
 
 const textItem = (label = 'Value') => fields.text({ label });
 
+// An interview Quentin wrote for a magazine (src/components/WrittenInterview.astro).
+// The cover photo is optional: show one only when it is Quentin's own work.
+const writtenInterview = () => ({
+  seo: seo(),
+  hero: eyebrowHeadingIntro(),
+  source: fields.text({ label: 'Source line', description: 'Where it was published' }),
+  cover: fields.object(
+    {
+      image: photo('Issue cover'),
+      caption: fields.text({ label: 'Caption' }),
+    },
+    { label: 'Issue cover (optional; leave the photo empty to hide it)' }
+  ),
+  essay: fields.text({ label: 'Opening essay (blank line between paragraphs)', multiline: true }),
+  qa: fields.array(
+    fields.object({
+      question: fields.text({ label: 'Question', multiline: true }),
+      answer: fields.text({ label: 'Answer (blank line between paragraphs)', multiline: true }),
+    }),
+    { label: 'Questions and answers', itemLabel: (p) => p.fields.question.value.slice(0, 60) }
+  ),
+  cta: cta(),
+});
+
 export default config({
   storage,
   ui: {
     brand: { name: 'Quentin Fears site content' },
     navigation: {
-      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview'],
+      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview', 'reynoldsInterview'],
       Shared: ['settings', 'galleries'],
     },
   },
@@ -721,30 +745,17 @@ export default config({
     }),
 
     elgortInterview: singleton({
-      label: 'The Painter and the Light (Elgort interview)',
+      label: 'Writing: The Painter and the Light (Elgort)',
       path: 'content/elgort-interview',
       format: { data: 'yaml' },
-      schema: {
-        seo: seo(),
-        hero: eyebrowHeadingIntro(),
-        source: fields.text({ label: 'Source line', description: 'Where it was published' }),
-        cover: fields.object(
-          {
-            image: photo('Issue cover'),
-            caption: fields.text({ label: 'Caption' }),
-          },
-          { label: 'Issue cover (shown beside the opening essay)' }
-        ),
-        essay: fields.text({ label: 'Opening essay (blank line between paragraphs)', multiline: true }),
-        qa: fields.array(
-          fields.object({
-            question: fields.text({ label: 'Question', multiline: true }),
-            answer: fields.text({ label: 'Answer (blank line between paragraphs)', multiline: true }),
-          }),
-          { label: 'Questions and answers', itemLabel: (p) => p.fields.question.value.slice(0, 60) }
-        ),
-        cta: cta(),
-      },
+      schema: writtenInterview(),
+    }),
+
+    reynoldsInterview: singleton({
+      label: 'Writing: Supreme Force (Marcellas Reynolds)',
+      path: 'content/reynolds-interview',
+      format: { data: 'yaml' },
+      schema: writtenInterview(),
     }),
   },
 });
