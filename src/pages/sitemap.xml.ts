@@ -39,6 +39,8 @@ const PAGES = [
   { path: 'ideas', singleton: 'ideas', changefreq: 'monthly', priority: '0.8' },
   { path: 'speak', singleton: 'speak', changefreq: 'monthly', priority: '0.8' },
   { path: 'behind-the-seams', singleton: 'behindTheSeams', changefreq: 'yearly', priority: '0.7' },
+  { path: 'arthur-and-sophie-elgort', singleton: 'elgortInterview', changefreq: 'yearly', priority: '0.7' },
+  { path: 'marcellas-reynolds', singleton: 'reynoldsInterview', changefreq: 'yearly', priority: '0.7' },
   { path: 'about', singleton: 'about', changefreq: 'monthly', priority: '0.7' },
   { path: 'contact', singleton: 'contact', changefreq: 'yearly', priority: '0.6' },
 ] as const;

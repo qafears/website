@@ -1,0 +1,23 @@
+---
+// Supreme Force, Sheen Magazine, July/August 2020. Text only: the spread's
+// photos belong to their photographers and the magazine.
+import WrittenInterview from '../components/WrittenInterview.astro';
+import { reader } from '../lib/content';
+
+const page = await reader.singletons.reynoldsInterview.readOrThrow();
+---
+<WrittenInterview
+  page={page}
+  pagePath="marcellas-reynolds"
+  headline={`${page.hero.heading}: Marcellas Reynolds`}
+  subjects={[
+    { slug: 'marcellas-reynolds', name: 'Marcellas Reynolds', jobTitle: 'Author, stylist, and television host', sameAs: ['https://marcellasreynolds.com'] },
+  ]}
+  mentions={['Beverly Johnson', 'Donyale Luna', 'Bethann Hardison', 'Naomi Campbell', 'Tyra Banks', 'Naomi Sims', 'Roshumba Williams', 'Veronica Webb', 'Tyson Beckford']}
+  publishedIn={{
+    '@type': 'PublicationIssue',
+    name: 'July/August 2020',
+    isPartOf: { '@type': 'Periodical', name: 'Sheen Magazine' },
+  }}
+  datePublished="2020-07"
+/>

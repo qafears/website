@@ -1,0 +1,26 @@
+---
+// The Painter and the Light, Visionarios Magazine Issue 2. Only the issue cover
+// is shown (a story Quentin styled); the spread's photos are Arthur Elgort's
+// work, not Quentin's to republish.
+import WrittenInterview from '../components/WrittenInterview.astro';
+import { reader } from '../lib/content';
+
+const page = await reader.singletons.elgortInterview.readOrThrow();
+---
+<WrittenInterview
+  page={page}
+  pagePath="arthur-and-sophie-elgort"
+  headline={`${page.hero.heading}: Arthur and Sophie Elgort`}
+  subjects={[
+    { slug: 'arthur-elgort', name: 'Arthur Elgort', jobTitle: 'Fashion photographer', sameAs: ['https://en.wikipedia.org/wiki/Arthur_Elgort'] },
+    { slug: 'sophie-elgort', name: 'Sophie Elgort', jobTitle: 'Fashion photographer' },
+  ]}
+  mentions={['Christy Turlington', 'Linda Evangelista', 'Kate Moss', 'Cindy Crawford', 'Karlie Kloss']}
+  publishedIn={{
+    '@type': 'PublicationIssue',
+    issueNumber: '2',
+    isPartOf: { '@type': 'Periodical', name: 'Visionarios Magazine' },
+  }}
+>
+  <a slot="cover-link" href="archives#editorial">See the shoot in The Archives.</a>
+</WrittenInterview>

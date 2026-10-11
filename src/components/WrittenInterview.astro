@@ -1,0 +1,141 @@
+---
+// A magazine interview Quentin wrote, rendered as one reading column: the
+// optional issue cover, his opening essay, then the Q&A. Each page passes its
+// singleton plus the structured data that lets it rank for the subjects' names
+// (`subjects` become the Article's `about`, `mentions` its named people).
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Cta from './Cta.astro';
+import Picture from './Picture.astro';
+import { SITE_ORIGIN } from '../lib/content';
+import { personMinimal, breadcrumb, PERSON_ID } from '../lib/jsonld';
+import variants from '../data/img-variants.json';
+
+type Subject = { slug: string; name: string; jobTitle: string; sameAs?: string[] };
+
+interface Props {
+  page: any;
+  pagePath: string;
+  headline: string;
+  subjects: Subject[];
+  mentions: string[];
+  /** schema.org node for where it ran, e.g. a PublicationIssue. */
+  publishedIn: Record<string, unknown>;
+  datePublished?: string;
+}
+
+const { page, pagePath, headline, subjects, mentions, publishedIn, datePublished } = Astro.props;
+const O = SITE_ORIGIN;
+const URL_ = `${O}/${pagePath}`;
+
+// Multiline text is plain; a blank line starts a new paragraph.
+const paras = (text: string) => text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+// The cover keeps its own shape so the masthead is not cropped away.
+const ratio = (src: string) => {
+  const v = (variants as Record<string, { width: number; height: number }>)[src];
+  return v ? `aspect-ratio:${v.width}/${v.height}` : undefined;
+};
+const cover = page.cover?.image?.src ? page.cover : null;
+
+const people = subjects.map((s) => ({
+  '@type': 'Person',
+  '@id': `${URL_}#${s.slug}`,
+  name: s.name,
+  jobTitle: s.jobTitle,
+  ...(s.sameAs ? { sameAs: s.sameAs } : {}),
+}));
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${URL_}#webpage`,
+      url: URL_,
+      name: page.seo.ogTitle,
+      isPartOf: { '@id': `${O}/#website` },
+      mainEntity: { '@id': `${URL_}#article` },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'Article',
+      '@id': `${URL_}#article`,
+      headline,
+      description: page.seo.description,
+      author: { '@id': PERSON_ID },
+      about: people.map((p) => ({ '@id': p['@id'] })),
+      mentions: mentions.map((name) => ({ '@type': 'Person', name })),
+      isPartOf: publishedIn,
+      ...(datePublished ? { datePublished } : {}),
+      ...(cover ? { image: `${O}/${cover.image.src}` } : {}),
+      mainEntityOfPage: { '@id': `${URL_}#webpage` },
+      inLanguage: 'en',
+    },
+    ...people,
+    personMinimal(),
+    breadcrumb([
+      { name: 'Home', item: `${O}/` },
+      { name: 'Ideas', item: `${O}/ideas` },
+      { name: page.hero.heading, item: URL_ },
+    ]),
+  ],
+};
+---
+<BaseLayout
+  pagePath={pagePath}
+  title={page.seo.title}
+  description={page.seo.description}
+  ogTitle={page.seo.ogTitle}
+  ogDescription={page.seo.ogDescription}
+  ogType={page.seo.ogType}
+  navCurrent="ideas"
+  jsonLd={jsonLd}
+>
+
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <div class="interview-hero">
+        <p class="eyebrow">{page.hero.eyebrow}</p>
+        <h1>{page.hero.heading}</h1>
+        <p>{page.hero.intro}</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section section--tight">
+    <div class="wrap interview">
+      {cover && (
+        <figure class="reveal" style="max-width:420px">
+          <div class="ph" style={ratio(cover.image.src)} data-tag={cover.image.tag} data-label={cover.image.label}>
+            <Picture src={cover.image.src} alt={cover.image.alt} loading="eager" sizes="(min-width: 480px) 420px, 92vw" onerror="this.remove()" />
+          </div>
+          <figcaption class="attribution duo__cap">{cover.caption} <slot name="cover-link" /></figcaption>
+        </figure>
+      )}
+
+      <div class="prose reveal">
+        {paras(page.essay).map((p) => <p>{p}</p>)}
+      </div>
+
+      {page.qa.map((item: { question: string; answer: string }) => (
+        <div class="qa__item reveal">
+          <h2>{item.question}</h2>
+          <div class="prose">
+            {paras(item.answer).map((p) => <p>{p}</p>)}
+          </div>
+        </div>
+      ))}
+
+      <p class="attribution reveal">{page.source}</p>
+    </div>
+  </section>
+
+  <Cta
+    heading={page.cta.heading}
+    body={page.cta.body}
+    buttonLabel={page.cta.buttonLabel}
+    buttonHref={page.cta.buttonHref}
+  />
+
+</BaseLayout>

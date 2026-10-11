@@ -111,12 +111,36 @@ const eyebrowHeadingIntro = () =>
 
 const textItem = (label = 'Value') => fields.text({ label });
 
+// An interview Quentin wrote for a magazine (src/components/WrittenInterview.astro).
+// The cover photo is optional: show one only when it is Quentin's own work.
+const writtenInterview = () => ({
+  seo: seo(),
+  hero: eyebrowHeadingIntro(),
+  source: fields.text({ label: 'Source line', description: 'Where it was published' }),
+  cover: fields.object(
+    {
+      image: photo('Issue cover'),
+      caption: fields.text({ label: 'Caption' }),
+    },
+    { label: 'Issue cover (optional; leave the photo empty to hide it)' }
+  ),
+  essay: fields.text({ label: 'Opening essay (blank line between paragraphs)', multiline: true }),
+  qa: fields.array(
+    fields.object({
+      question: fields.text({ label: 'Question', multiline: true }),
+      answer: fields.text({ label: 'Answer (blank line between paragraphs)', multiline: true }),
+    }),
+    { label: 'Questions and answers', itemLabel: (p) => p.fields.question.value.slice(0, 60) }
+  ),
+  cta: cta(),
+});
+
 export default config({
   storage,
   ui: {
     brand: { name: 'Quentin Fears site content' },
     navigation: {
-      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams'],
+      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview', 'reynoldsInterview'],
       Shared: ['settings', 'galleries'],
     },
   },
@@ -440,6 +464,22 @@ export default config({
           },
           { label: 'Second press feature (under TIME)' }
         ),
+        writing: fields.object(
+          {
+            eyebrow: fields.text({ label: 'Eyebrow' }),
+            heading: fields.text({ label: 'Heading' }),
+            items: fields.array(
+              fields.object({
+                publication: fields.text({ label: 'Publication', description: 'e.g. Visionarios Magazine' }),
+                title: fields.text({ label: 'Headline' }),
+                dek: fields.text({ label: 'One-line summary', multiline: true }),
+                href: fields.text({ label: 'Link', description: 'A page on this site, e.g. arthur-and-sophie-elgort, or a full URL' }),
+              }),
+              { label: 'Pieces (empty hides the section)', itemLabel: (p) => p.fields.title.value || 'Piece' }
+            ),
+          },
+          { label: 'Writing (pieces by Quentin)' }
+        ),
         thesis: fields.object(
           {
             eyebrow: fields.text({ label: 'Eyebrow' }),
@@ -702,6 +742,20 @@ export default config({
         ),
         cta: cta(),
       },
+    }),
+
+    elgortInterview: singleton({
+      label: 'Writing: The Painter and the Light (Elgort)',
+      path: 'content/elgort-interview',
+      format: { data: 'yaml' },
+      schema: writtenInterview(),
+    }),
+
+    reynoldsInterview: singleton({
+      label: 'Writing: Supreme Force (Marcellas Reynolds)',
+      path: 'content/reynolds-interview',
+      format: { data: 'yaml' },
+      schema: writtenInterview(),
     }),
   },
 });

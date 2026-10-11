@@ -83,6 +83,21 @@ sections:
     title: "Editorial"
     intro: "Concept, mood, styling, and art direction as one authored point of view."
     shoots:
+      - slug: "visionarios-issue-2-cover"
+        title: "Visionarios Magazine, Issue 2 cover"
+        images:
+          - src: "assets/img/gallery/visionarios-issue-2-cover-paisley-jacket.jpg"
+            alt: "Visionarios Magazine Issue 2 cover styled by Quentin Fears: a model in a red paisley jacket and shirt with a gold rose boutonniere, against hand-drawn cover artwork"
+            cap: "Visionarios Issue 2 cover, paisley and a gold rose"
+          - src: "assets/img/gallery/visionarios-issue-2-cover-red-leather-jacket.jpg"
+            alt: "Alternate Visionarios Magazine Issue 2 cover styled by Quentin Fears: a red perforated leather jacket worn open over red shorts, a red brimmed hat and a white rose"
+            cap: "Visionarios Issue 2 alternate cover, red leather"
+          - src: "assets/img/gallery/visionarios-red-lodge-portraits.jpg"
+            alt: "Welcome to the Red Lodge, Visionarios Magazine: a red suit with pinstripe trousers beside a red peplum gown, shot on film"
+            cap: "Welcome to the Red Lodge, shot on film"
+          - src: "assets/img/gallery/visionarios-red-lodge-opener.jpg"
+            alt: "Welcome to the Red Lodge opening spread in Visionarios Magazine Issue 2: three models in red, styled by Quentin Fears, photographed by Karen Elizabeth Evans"
+            cap: "Welcome to the Red Lodge, the opening spread"
       - slug: "visionarios"
         title: "Visionarios Magazine"
         images:
