@@ -560,6 +560,14 @@
       683
     ]
   },
+  "assets/img/gallery/sheen-magazine-july-august-2020-cover.jpg": {
+    "height": 1004,
+    "width": 783,
+    "widths": [
+      400,
+      783
+    ]
+  },
   "assets/img/gallery/sheen-magazine-printed-gown-mid-stride.jpg": {
     "height": 1300,
     "width": 867,
@@ -629,6 +637,23 @@
       400,
       800,
       1080
+    ]
+  },
+  "assets/img/gallery/supreme-force-marcellas-reynolds-sheen-page-40.jpg": {
+    "height": 947,
+    "width": 809,
+    "widths": [
+      400,
+      800,
+      809
+    ]
+  },
+  "assets/img/gallery/supreme-force-marcellas-reynolds-sheen-page-41.jpg": {
+    "height": 947,
+    "width": 727,
+    "widths": [
+      400,
+      727
     ]
   },
   "assets/img/gallery/tahj-mowry-menswear-styling.jpg": {

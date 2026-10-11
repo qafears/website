@@ -476,6 +476,13 @@ button { font: inherit; cursor: pointer; }
 .qa__item h2 { font-family: var(--serif); font-size: clamp(1.15rem, 1.8vw, 1.4rem); line-height: 1.3; }
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.75rem, 2vw, 1.25rem); align-items: start; }
 .duo__cap { margin-top: 0.6rem; color: var(--ink-faint); font-size: 0.85rem; }
+.tearsheets { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: clamp(0.75rem, 2vw, 1.25rem); align-items: start; margin-top: 0.8rem; }
+.tearsheet { display: block; }
+.tearsheet .ph { display: block; aspect-ratio: 4 / 5; background: none; border: 0; }
+.tearsheet .ph img { object-fit: contain; object-position: center top; }
+.tearsheet:hover img { transform: scale(1.03); }
+.tearsheet:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.tearsheet .duo__cap { display: block; }
 
 /* ============================================================
    About / timeline
