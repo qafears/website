@@ -52,6 +52,9 @@ sections:
           - src: "assets/img/gallery/elisabeth-rohm-jejune-sequin-set.jpg"
             alt: "Elisabeth Röhm in a black and silver sequin set on a chrome chair for Jejune Magazine, styled by Quentin Fears"
             cap: "Elisabeth Röhm for Jejune Magazine"
+          - src: "assets/img/gallery/elisabeth-rohm-jejune-sequin-jacket-portrait.jpg"
+            alt: "Elisabeth Röhm in a plunging black and silver sequin jacket with crystal trim, a close portrait for Jejune Magazine, styled by Quentin Fears"
+            cap: "Elisabeth Röhm for Jejune Magazine"
       - slug: "amy-weber"
         title: "Amy Weber"
         images:
