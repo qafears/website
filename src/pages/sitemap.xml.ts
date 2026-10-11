@@ -43,7 +43,6 @@ const PAGES = [
   { path: 'marcellas-reynolds', singleton: 'reynoldsInterview', changefreq: 'yearly', priority: '0.7' },
   { path: 'brad-goreski', singleton: 'goreskiInterview', changefreq: 'yearly', priority: '0.7' },
   { path: 'alicia-goodwin-lingua-nigra', singleton: 'goodwinInterview', changefreq: 'yearly', priority: '0.7' },
-  { path: 'saweetie-get-the-look', singleton: 'saweetieLook', changefreq: 'yearly', priority: '0.7' },
   { path: 'isha-dunton-izayla', singleton: 'duntonInterview', changefreq: 'yearly', priority: '0.7' },
   { path: 'about', singleton: 'about', changefreq: 'monthly', priority: '0.7' },
   { path: 'contact', singleton: 'contact', changefreq: 'yearly', priority: '0.6' },

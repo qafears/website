@@ -11,7 +11,7 @@ A marketing site for Quentin Fears that keeps a dark, editorial visual style whi
 repositioning him from "celebrity & personal stylist" to fashion creative leader,
 visual strategist, speaker, and host. Pages: `index`, `work`, `archives`, `ideas`, `speak`, `about`, `contact`, plus the
 `behind-the-seams` interview, which is press: it is linked from the Ideas page's second press feature, not from Work.
-Pieces Quentin wrote (interviews such as `marcellas-reynolds` and `brad-goreski`, and the `saweetie-get-the-look` styling column) each get a page
+Interviews Quentin wrote (e.g. `marcellas-reynolds`, `brad-goreski`) each get a page
 built from `src/components/WrittenInterview.astro` and a singleton using the shared
 `writtenInterview()` schema, and are listed in the Ideas page's Writing block
 (`writing.items`, newest first). Their job is to rank for the subjects' names, so keep
