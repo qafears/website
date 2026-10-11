@@ -728,6 +728,13 @@ export default config({
         seo: seo(),
         hero: eyebrowHeadingIntro(),
         source: fields.text({ label: 'Source line', description: 'Where it was published' }),
+        cover: fields.object(
+          {
+            image: photo('Issue cover'),
+            caption: fields.text({ label: 'Caption' }),
+          },
+          { label: 'Issue cover (shown beside the opening essay)' }
+        ),
         essay: fields.text({ label: 'Opening essay (blank line between paragraphs)', multiline: true }),
         qa: fields.array(
           fields.object({

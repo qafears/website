@@ -1,19 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Cta from '../components/Cta.astro';
+import Picture from '../components/Picture.astro';
 import { reader, SITE_ORIGIN } from '../lib/content';
 import { personMinimal, breadcrumb, PERSON_ID } from '../lib/jsonld';
+import variants from '../data/img-variants.json';
 
 const page = await reader.singletons.elgortInterview.readOrThrow();
 const O = SITE_ORIGIN;
 const URL_ = `${O}/arthur-and-sophie-elgort`;
 
 // Multiline text is plain; a blank line starts a new paragraph.
+// The cover keeps its own shape so the masthead is not cropped away.
+const ratio = (src: string) => {
+  const v = (variants as Record<string, { width: number; height: number }>)[src];
+  return v ? `aspect-ratio:${v.width}/${v.height}` : undefined;
+};
 const paras = (text: string) => text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
 
-// Text only on purpose: the printed spread's photographs are Arthur Elgort's
-// work, not Quentin's to republish. The names do the search work instead, in
-// the copy and in `about` / `mentions` below.
+// No photos from the spread: they are Arthur Elgort's work, not Quentin's to
+// republish. The only image is the issue cover, a story Quentin styled. The
+// names do the search work instead, in the copy and in `about` / `mentions`.
 const arthur = {
   '@type': 'Person',
   '@id': `${URL_}#arthur-elgort`,
@@ -50,7 +57,12 @@ const jsonLd = {
       mentions: ['Christy Turlington', 'Linda Evangelista', 'Kate Moss', 'Cindy Crawford', 'Karlie Kloss'].map(
         (name) => ({ '@type': 'Person', name })
       ),
-      isPartOf: { '@type': 'Periodical', name: 'Visionarios Magazine' },
+      isPartOf: {
+        '@type': 'PublicationIssue',
+        issueNumber: '2',
+        isPartOf: { '@type': 'Periodical', name: 'Visionarios Magazine' },
+      },
+      image: `${O}/${page.cover.image.src}`,
       mainEntityOfPage: { '@id': `${URL_}#webpage` },
       inLanguage: 'en',
     },
@@ -90,6 +102,15 @@ const jsonLd = {
 
   <section class="section section--tight">
     <div class="wrap interview">
+      {page.cover.image.src && (
+        <figure class="reveal" style="max-width:420px">
+          <div class="ph" style={ratio(page.cover.image.src)} data-tag={page.cover.image.tag} data-label={page.cover.image.label}>
+            <Picture src={page.cover.image.src} alt={page.cover.image.alt} loading="eager" sizes="(min-width: 480px) 420px, 92vw" onerror="this.remove()" />
+          </div>
+          <figcaption class="attribution duo__cap">{page.cover.caption} <a href="archives#editorial">See the shoot in The Archives</a>.</figcaption>
+        </figure>
+      )}
+
       <div class="prose reveal">
         {paras(page.essay).map((p) => <p>{p}</p>)}
       </div>

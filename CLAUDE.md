@@ -12,8 +12,9 @@ repositioning him from "celebrity & personal stylist" to fashion creative leader
 visual strategist, speaker, and host. Pages: `index`, `work`, `archives`, `ideas`, `speak`, `about`, `contact`, plus the
 `behind-the-seams` interview, which is press: it is linked from the Ideas page's second press feature, not from Work.
 `arthur-and-sophie-elgort` is a piece Quentin wrote (Visionarios Magazine), linked from the
-Ideas page's Writing block (`writing.items`). It is text only on purpose: the printed
-spread's photos are Arthur Elgort's, not ours to republish. Its job is to rank for the
+Ideas page's Writing block (`writing.items`). It shows only the Issue 2 cover (a story
+Quentin styled, also in The Archives); the spread's photos are Arthur Elgort's, not ours
+to republish. Its job is to rank for the
 Elgorts' names, so keep them in its title, copy, and JSON-LD `about`/`mentions`.
 
 It is built with **Astro**, and all copy lives in editable content files managed by a
