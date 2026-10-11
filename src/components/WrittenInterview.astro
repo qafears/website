@@ -37,6 +37,10 @@ const ratio = (src: string) => {
 };
 const cover = page.cover?.image?.src ? page.cover : null;
 const tears = (page.tearsheets?.pages ?? []).filter((p: { src: string | null }) => p.src);
+// Two-page spreads are landscape: they stack full width at their own shape.
+// Single pages sit in a row, boxed to one height so the row lines up.
+const vmap = variants as Record<string, { width: number; height: number }>;
+const spreads = tears.length > 0 && tears.every((t: { src: string }) => vmap[t.src] && vmap[t.src].width > vmap[t.src].height);
 
 const people = subjects.map((s) => ({
   '@type': 'Person',
@@ -119,11 +123,11 @@ const jsonLd = {
       {tears.length > 0 && (
         <figure class="reveal">
           {page.tearsheets.heading && <p class="eyebrow">{page.tearsheets.heading}</p>}
-          <div class="tearsheets">
+          <div class:list={["tearsheets", { "tearsheets--spreads": spreads }]}>
             {tears.map((t: { src: string; alt: string; caption: string }) => (
               <a class="tearsheet" href={t.src} aria-label={`${t.alt} (full size)`}>
-                <span class="ph" data-tag="">
-                  <Picture src={t.src} alt={t.alt} sizes="(min-width: 760px) 220px, 45vw" />
+                <span class="ph" style={spreads ? ratio(t.src) : undefined} data-tag="">
+                  <Picture src={t.src} alt={t.alt} sizes={spreads ? '(min-width: 760px) 680px, 92vw' : '(min-width: 760px) 220px, 30vw'} />
                 </span>
                 {t.caption && <span class="duo__cap">{t.caption}</span>}
               </a>

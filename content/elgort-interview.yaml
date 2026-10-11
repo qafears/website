@@ -17,9 +17,18 @@ cover:
     label: "Visionarios Issue 2"
   caption: "Visionarios Magazine, Issue 2. Cover story \"Welcome to the Red Lodge,\" styled by Quentin Fears, photographed by Karen Elizabeth Evans."
 tearsheets:
-  heading: ""
-  credit: ""
-  pages: []
+  heading: "From the magazine"
+  credit: "Visionarios Magazine, Issue 2: \"The Painter and the Light,\" pages 94 to 99, text by Quentin Fears. Photographs and illustrations belong to their creators and Visionarios Magazine."
+  pages:
+    - src: "assets/img/gallery/painter-and-the-light-elgort-visionarios-pages-94-95.jpg"
+      alt: "The Painter and the Light by Quentin Fears, opening spread in Visionarios Magazine: illustrated portraits of Arthur and Sophie Elgort beside Arthur Elgort's portrait of Christy Turlington"
+      caption: "Pages 94 and 95"
+    - src: "assets/img/gallery/painter-and-the-light-elgort-visionarios-pages-96-97.jpg"
+      alt: "The Painter and the Light, pages 96 and 97 of Visionarios Magazine: two of Arthur Elgort's black and white fashion photographs beside the interview"
+      caption: "Pages 96 and 97"
+    - src: "assets/img/gallery/painter-and-the-light-elgort-visionarios-pages-98-99.jpg"
+      alt: "The Painter and the Light, pages 98 and 99 of Visionarios Magazine: an illustrated portrait and a color photograph of a model in a gilded period room beside the interview's close"
+      caption: "Pages 98 and 99"
 essay: |
   I made my debut at New York's Fashion Week in 2009, running around the tents of Bryant Park with a handheld digital video camera with poor audio, a crew of one hired off of Craigslist, dedicated to becoming a fashion commentator, or at least the next YouTube sensation. A combination of tenacity, guts, and a bit of luck snagged me interviews with Aly Hilfiger, Lauren Ezersky and Rachel Zoe, along with an invitation from a friendly doorman to Derek Lam's party. As thrilling as it was to be among fashion's elite, it was an intimidating moment for a newcomer yet to make a name.
 

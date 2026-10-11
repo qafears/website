@@ -152,4 +152,4 @@ API key. Submissions are emailed to the address in the form's `action`
 |---|---|---|
 | Elgort issue cover | `gallery/visionarios-issue-2-cover-paisley-jacket.jpg` | Quentin's own cover story, so shown uncropped above the text |
 | Reynolds tear sheets | `gallery/sheen-magazine-july-august-2020-cover.jpg`, `gallery/supreme-force-marcellas-reynolds-sheen-page-40.jpg`, `-page-41.jpg` | Owner-supplied scans of the printed Sheen July/August 2020 pages (~800px); each thumbnail links to its full scan. Swap in larger scans if they turn up |
-| Elgort tear sheets | none yet (`tearsheets.pages: []`) | Waiting on scans of the Visionarios Issue 2 spread |
+| Elgort tear sheets | `gallery/painter-and-the-light-elgort-visionarios-pages-94-95.jpg`, `-96-97.jpg`, `-98-99.jpg` | Owner-supplied two-page spreads (960px wide); spreads stack full width instead of sitting in a row |

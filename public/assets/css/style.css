@@ -483,6 +483,7 @@ button { font: inherit; cursor: pointer; }
 .tearsheet:hover img { transform: scale(1.03); }
 .tearsheet:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .tearsheet .duo__cap { display: block; }
+.tearsheets--spreads { grid-template-columns: 1fr; }
 
 /* ============================================================
    About / timeline
