@@ -155,7 +155,7 @@ export default config({
   ui: {
     brand: { name: 'Quentin Fears site content' },
     navigation: {
-      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview', 'reynoldsInterview', 'goreskiInterview', 'goodwinInterview', 'atousaInterview', 'saweetieLook', 'duntonInterview', 'fitzgeraldInterview'],
+      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview', 'reynoldsInterview', 'goreskiInterview', 'goodwinInterview', 'saweetieLook', 'duntonInterview'],
       Shared: ['settings', 'galleries'],
     },
   },
@@ -787,13 +787,6 @@ export default config({
       schema: writtenInterview(),
     }),
 
-    atousaInterview: singleton({
-      label: "Writing: Go Avant Garde (Atousa G.)",
-      path: 'content/atousa-interview',
-      format: { data: 'yaml' },
-      schema: writtenInterview(),
-    }),
-
     saweetieLook: singleton({
       label: "Writing: Get the Look (Saweetie)",
       path: 'content/saweetie-look',
@@ -804,13 +797,6 @@ export default config({
     duntonInterview: singleton({
       label: "Writing: The Avenues of Design (I'sha Dunton)",
       path: 'content/dunton-interview',
-      format: { data: 'yaml' },
-      schema: writtenInterview(),
-    }),
-
-    fitzgeraldInterview: singleton({
-      label: "Writing: The Story of Latoia Fitzgerald",
-      path: 'content/fitzgerald-interview',
       format: { data: 'yaml' },
       schema: writtenInterview(),
     }),
