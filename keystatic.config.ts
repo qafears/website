@@ -155,7 +155,7 @@ export default config({
   ui: {
     brand: { name: 'Quentin Fears site content' },
     navigation: {
-      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview', 'reynoldsInterview', 'goreskiInterview', 'goodwinInterview', 'saweetieLook', 'duntonInterview'],
+      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview', 'reynoldsInterview', 'goreskiInterview', 'goodwinInterview', 'duntonInterview'],
       Shared: ['settings', 'galleries'],
     },
   },
@@ -783,13 +783,6 @@ export default config({
     goodwinInterview: singleton({
       label: "Writing: The Power of Gold (Alicia Goodwin)",
       path: 'content/goodwin-interview',
-      format: { data: 'yaml' },
-      schema: writtenInterview(),
-    }),
-
-    saweetieLook: singleton({
-      label: "Writing: Get the Look (Saweetie)",
-      path: 'content/saweetie-look',
       format: { data: 'yaml' },
       schema: writtenInterview(),
     }),
