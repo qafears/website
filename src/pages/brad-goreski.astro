@@ -1,0 +1,19 @@
+---
+// It's a Brad Brad World, Glitter Magazine, 2012. The printed pages show as
+// tear sheets, credited to the magazine and its photographers.
+import WrittenInterview from '../components/WrittenInterview.astro';
+import { reader } from '../lib/content';
+
+const page = await reader.singletons.goreskiInterview.readOrThrow();
+---
+<WrittenInterview
+  page={page}
+  pagePath="brad-goreski"
+  headline={`${page.hero.heading}: Brad Goreski`}
+  subjects={[
+    { slug: 'brad-goreski', name: 'Brad Goreski', jobTitle: 'Celebrity stylist and television personality', sameAs: ['https://en.wikipedia.org/wiki/Brad_Goreski'] },
+  ]}
+  mentions={['Rachel Zoe', 'Gary Janetti', 'Jessica Alba', 'Demi Moore', 'Rashida Jones', 'Abigail Spencer', 'Christina Ricci', 'Shay Mitchell', 'Emma Watson', 'Kristen Wiig', 'Chloë Grace Moretz', 'Elle Fanning']}
+  publishedIn={{ '@type': 'Periodical', name: 'Glitter Magazine' }}
+  datePublished="2012"
+/>
