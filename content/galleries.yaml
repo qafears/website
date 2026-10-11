@@ -41,9 +41,14 @@ sets:
         images:
           - { src: "assets/img/gallery/garcelle-beauvais-printed-ball-gown.jpg", cap: "Garcelle Beauvais in a printed ball gown with a bow shoulder" }
       - slug: "evening-wear"
-        title: "Evening wear"
+        title: "Azazie campaign"
         images:
-          - { src: "assets/img/gallery/g-commercial-4.jpg", cap: "Evening wear campaign, navy sequin gowns on the terrace" }
+          - { src: "assets/img/gallery/g-commercial-4.jpg", cap: "Azazie campaign, navy sequin gowns on the terrace" }
+          - { src: "assets/img/gallery/azazie-bridal-lace-gown-in-the-azaleas.jpg", cap: "Azazie campaign, a lace bridal gown in front of blooming azaleas" }
+          - { src: "assets/img/gallery/azazie-dusty-blue-bridesmaid-gowns.jpg", cap: "Azazie campaign, dusty blue bridesmaid gowns in the garden" }
+          - { src: "assets/img/gallery/azazie-marigold-and-mauve-gowns.jpg", cap: "Azazie campaign, marigold and mauve chiffon at golden hour" }
+          - { src: "assets/img/gallery/azazie-halter-and-one-shoulder-chiffon-gowns.jpg", cap: "Azazie campaign, a dusty rose halter and a cream one-shoulder gown" }
+          - { src: "assets/img/gallery/azazie-blush-chiffon-flutter-sleeve-gown.jpg", cap: "Azazie campaign, a blush flutter-sleeve gown by a carved stone urn" }
       - slug: "studio-lookbook"
         title: "Studio lookbook"
         images:
