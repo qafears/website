@@ -1,0 +1,62 @@
+seo:
+  title: "I'sha Dunton of Izayla Interview | Quentin Fears"
+  description: "Designer I'sha Dunton on Izayla, her Los Angeles line built on sustainability and female empowerment. Interviewed by Quentin Fears for Sheen Magazine."
+  ogTitle: "The Avenues of Design: I'sha Dunton of Izayla | Quentin Fears"
+  ogDescription: "I'sha Dunton on sustainability, sophistication, and building Izayla, interviewed by Quentin Fears for Sheen Magazine."
+  ogType: "article"
+hero:
+  eyebrow: "Interview | Sheen Magazine, March/April 2020"
+  heading: "The Avenues of Design"
+  intro: "I'sha Dunton aims to tell the story of women empowerment, self-confidence, and financial freedom through fashion. By Quentin Fears."
+source: "Originally published in Sheen Magazine, March/April 2020 (the Clean Living Issue), as \"The Avenues of Design,\" by Quentin Fears."
+cover:
+  image:
+    alt: ""
+    tag: ""
+    label: ""
+  caption: ""
+tearsheets:
+  heading: "From the magazine"
+  credit: "Sheen Magazine, March/April 2020, the Clean Living Issue: \"The Avenues of Design,\" page 30, by Quentin Fears. Images provided by I'sha Dunton."
+  pages:
+    - src: "assets/img/gallery/the-avenues-of-design-isha-dunton-izayla-sheen-page-30.jpg"
+      alt: "The Avenues of Design, page 30 of Sheen Magazine: a model in a white Izayla suit, with portraits of I'sha Dunton and Jeannie Mai beside the interview"
+      caption: "Page 30"
+essay: |
+  Not only does designer I'sha Dunton create an intelligent yet chic line called Izayla, based in Los Angeles, but I'sha also has two missions in mind: sustainability and female empowerment. This line has been thoroughly thought out, from the pattern making process to the locally sourced manufacturing. I'sha prides herself on "made to order" garments that ensure waste is kept to a minimum. This is truly hard to find with so many trend-based brands looking to make a quick buck off poorly constructed one-time use garments. This is definitely not the case with Izayla. We spoke to I'sha about what all of this means to her and how she became her own boss.
+qa:
+  - question: "What made you want to become a designer?"
+    answer: |
+      Designing is one avenue, but my dream has always been to be the boss.
+  - question: "What makes your clothing so timeless?"
+    answer: |
+      Izayla is timeless because of the craftsmanship, aesthetic, and quality of the clothing.
+  - question: "You seem to work with a lot of plaids, linens, and tweeds. Why did you make this choice when it comes to picking fabrics?"
+    answer: |
+      Plaids, linens, and tweeds were selected because I want my customer to identify that this is Izayla. The three fabrications represent the brand as a collective of comfortability and versatility.
+  - question: "In your mission you mention how your line is for the sophisticated and conservative woman. What is sophistication to you?"
+    answer: |
+      A sophisticated woman knows what she wants for herself and does the work. She is a woman you fear to get in the way of, a woman that holds her own, and a woman that speaks up not only for herself, but for all women. That's sophistication.
+  - question: "We've seen TV host Kristine Leahy and The Real's Jeannie Mai in your clothing. How did this come about, and why do you think Izayla speaks to them?"
+    answer: |
+      My publicist Jade made this happen for me. I would say Izayla spoke to Kristine Leahy and Jeannie Mai because it is effortless, luxurious, and comfortable.
+  - question: "Where do you see your line going, and how do you go about starting a new collection for your line?"
+    answer: |
+      Izayla will be a brand, not just a line or boutique. The plan is to grow Izayla to compete with the big name luxury brands. With starting a new line, I look at what styles sold the best and what didn't work. I see if I want to carry over styles from the previous season into the new season and change the fabrication for the appropriate season. This method actually helps a lot with being sustainable and relying on old patterns without having to make a completely new pattern. It saves time, saves money, and remains sustainable.
+  - question: "In your mission statement you talk about sustainability. What is your approach to making your line more sustainable?"
+    answer: |
+      The approaches to make Izayla more sustainable are continuing to make silhouettes that are versatile for the customer, keeping the standards of high, outstanding quality, and remaining cautious of waste while having a selective inventory on hand.
+  - question: "Who are some other prominent designers that you are inspired by?"
+    answer: |
+      Chanel's use of fabrication and attention to detail are inspirational. I appreciate Victoria Beckham's use of suiting. Tory Burch inspires me through her foundation, Embrace Ambition, which empowers women.
+  - question: "Your line seems to have a bit of a menswear inspiration because of the blazers and suiting. Why is that?"
+    answer: |
+      I like combining masculine and feminine elements together. It makes a statement and adds a mysterious vibe to the clothing.
+  - question: "Would you ever consider creating a menswear line?"
+    answer: |
+      It's something I think about...
+cta:
+  heading: "Conversations like this one, on stage."
+  body: "I bring the same curiosity to panels, interviews, and hosting."
+  buttonLabel: "Speaking & hosting"
+  buttonHref: "speak"

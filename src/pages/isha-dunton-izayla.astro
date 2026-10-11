@@ -1,0 +1,19 @@
+---
+// The Avenues of Design, Sheen Magazine, March/April 2020. The printed page
+// shows as a tear sheet, credited to the magazine and the images' source.
+import WrittenInterview from '../components/WrittenInterview.astro';
+import { reader } from '../lib/content';
+
+const page = await reader.singletons.duntonInterview.readOrThrow();
+---
+<WrittenInterview
+  page={page}
+  pagePath="isha-dunton-izayla"
+  headline={`${page.hero.heading}: I'sha Dunton of Izayla`}
+  subjects={[
+    { slug: 'isha-dunton', name: "I'sha Dunton", jobTitle: 'Fashion designer, founder of Izayla', sameAs: ['https://izayla.us'] },
+  ]}
+  mentions={['Kristine Leahy', 'Jeannie Mai', 'Victoria Beckham', 'Tory Burch']}
+  publishedIn={{ '@type': 'PublicationIssue', name: 'March/April 2020', isPartOf: { '@type': 'Periodical', name: 'Sheen Magazine' } }}
+  datePublished="2020-03"
+/>

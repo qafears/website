@@ -123,11 +123,11 @@ const jsonLd = {
       {tears.length > 0 && (
         <figure class="reveal">
           {page.tearsheets.heading && <p class="eyebrow">{page.tearsheets.heading}</p>}
-          <div class:list={["tearsheets", { "tearsheets--spreads": spreads }]}>
+          <div class:list={["tearsheets", { "tearsheets--spreads": spreads, "tearsheets--single": tears.length === 1 }]}>
             {tears.map((t: { src: string; alt: string; caption: string }) => (
               <a class="tearsheet" href={t.src} aria-label={`${t.alt} (full size)`}>
                 <span class="ph" style={spreads ? ratio(t.src) : undefined} data-tag="">
-                  <Picture src={t.src} alt={t.alt} sizes={spreads ? '(min-width: 760px) 680px, 92vw' : '(min-width: 760px) 220px, 30vw'} />
+                  <Picture src={t.src} alt={t.alt} sizes={spreads ? '(min-width: 760px) 680px, 92vw' : tears.length === 1 ? '(min-width: 480px) 420px, 92vw' : '(min-width: 760px) 220px, 30vw'} />
                 </span>
                 {t.caption && <span class="duo__cap">{t.caption}</span>}
               </a>

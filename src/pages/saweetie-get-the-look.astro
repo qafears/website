@@ -1,0 +1,19 @@
+---
+// Get the Look, Sheen Magazine, May/June 2021: Quentin's styling column on
+// Saweetie's corseted look. The printed page shows as a tear sheet.
+import WrittenInterview from '../components/WrittenInterview.astro';
+import { reader } from '../lib/content';
+
+const page = await reader.singletons.saweetieLook.readOrThrow();
+---
+<WrittenInterview
+  page={page}
+  pagePath="saweetie-get-the-look"
+  headline={`Get the Look: ${page.hero.heading}`}
+  subjects={[
+    { slug: 'saweetie', name: 'Saweetie', jobTitle: 'Rapper', sameAs: ['https://en.wikipedia.org/wiki/Saweetie'] },
+  ]}
+  mentions={['Caresse Crosby']}
+  publishedIn={{ '@type': 'PublicationIssue', name: 'May/June 2021', isPartOf: { '@type': 'Periodical', name: 'Sheen Magazine' } }}
+  datePublished="2021-05"
+/>
