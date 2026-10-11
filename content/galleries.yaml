@@ -29,13 +29,13 @@ sets:
     title: "Campaign & commercial"
     shoots:
       - slug: "swim-campaign"
-        title: "Swim campaign"
+        title: "Speedo campaign"
         images:
-          - { src: "assets/img/gallery/g-commercial-1.jpg", cap: "Swim campaign, two swimmers in an empty competition pool" }
-          - { src: "assets/img/gallery/g-commercial-2.jpg", cap: "Swim campaign, poolside in racing suits" }
-          - { src: "assets/img/gallery/g-commercial-3.jpg", cap: "Swim campaign, mid-stroke from overhead" }
-          - { src: "assets/img/gallery/g-commercial-6.jpg", cap: "Swim campaign, red and black racing suits in studio" }
-          - { src: "assets/img/gallery/g-commercial-7.jpg", cap: "Swim campaign, kids jumping in wearing float vests" }
+          - { src: "assets/img/gallery/g-commercial-1.jpg", cap: "Speedo campaign, two swimmers in an empty competition pool" }
+          - { src: "assets/img/gallery/g-commercial-2.jpg", cap: "Speedo campaign, poolside in racing suits" }
+          - { src: "assets/img/gallery/g-commercial-3.jpg", cap: "Speedo campaign, mid-stroke from overhead" }
+          - { src: "assets/img/gallery/g-commercial-6.jpg", cap: "Speedo campaign, red and black racing suits in studio" }
+          - { src: "assets/img/gallery/g-commercial-7.jpg", cap: "Speedo campaign, kids jumping in wearing float vests" }
       - slug: "print-commercial"
         title: "Print & commercial"
         images:
