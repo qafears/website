@@ -358,6 +358,33 @@
       1080
     ]
   },
+  "assets/img/gallery/industry-magazine-floral-crop-top-polka-dot-skirt.jpg": {
+    "height": 678,
+    "width": 1080,
+    "widths": [
+      400,
+      800,
+      1080
+    ]
+  },
+  "assets/img/gallery/industry-magazine-floral-trousers-embellished-crop-top.jpg": {
+    "height": 1280,
+    "width": 1026,
+    "widths": [
+      400,
+      800,
+      1026
+    ]
+  },
+  "assets/img/gallery/industry-magazine-gold-snakeskin-skirt-red-sequin-jacket.jpg": {
+    "height": 1280,
+    "width": 1026,
+    "widths": [
+      400,
+      800,
+      1026
+    ]
+  },
   "assets/img/gallery/industry-magazine-navy-fringe-mini.jpg": {
     "height": 1354,
     "width": 1080,
@@ -391,6 +418,15 @@
       400,
       800,
       1037
+    ]
+  },
+  "assets/img/gallery/industry-magazine-ruffled-print-blouse-purple-leopard-mini.jpg": {
+    "height": 1280,
+    "width": 1026,
+    "widths": [
+      400,
+      800,
+      1026
     ]
   },
   "assets/img/gallery/industry-magazine-sequin-gown-flowing-train.jpg": {
@@ -427,6 +463,15 @@
       400,
       800,
       1037
+    ]
+  },
+  "assets/img/gallery/industry-magazine-zebra-blouse-leopard-faux-fur.jpg": {
+    "height": 1280,
+    "width": 1026,
+    "widths": [
+      400,
+      800,
+      1026
     ]
   },
   "assets/img/gallery/jon-magazine-strange-memories-car-interior.jpg": {
