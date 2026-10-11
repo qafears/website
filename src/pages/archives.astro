@@ -26,7 +26,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Cta from '../components/Cta.astro';
 import Picture from '../components/Picture.astro';
 import { reader, SITE_ORIGIN } from '../lib/content';
-import { personMinimal, breadcrumb } from '../lib/jsonld';
+import { personMinimal, breadcrumb, headSafe } from '../lib/jsonld';
 
 const archives = await reader.singletons.archives.readOrThrow();
 const O = SITE_ORIGIN;
@@ -74,7 +74,7 @@ const jsonLd = {
       hasPart: filled.flatMap((s) =>
         s.shoots.map((sh) => ({
           '@type': 'ImageGallery',
-          name: `${s.title}: ${sh.title}`,
+          name: headSafe(`${s.title}: ${sh.title}`),
           image: sh.images.map((im) => `${O}/${im.src}`),
         }))
       ),
