@@ -103,6 +103,35 @@ const jsonLd = {
     </Fragment>
   )}
 
+  <!-- WRITING: pieces Quentin wrote, each a card linking to the full text -->
+  {ideas.writing && ideas.writing.items.length > 0 && (
+    <Fragment>
+      <hr class="rule">
+      <section class="section">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <p class="eyebrow">{ideas.writing.eyebrow}</p>
+            <h2>{ideas.writing.heading}</h2>
+          </div>
+          <div class="notes">
+            {ideas.writing.items.map((w) => (
+              <div class="note reveal">
+                <div>
+                  <p class="eyebrow eyebrow--muted">{w.publication}</p>
+                  <h3>{w.title}</h3>
+                </div>
+                <div>
+                  <p>{w.dek}</p>
+                  <p style="margin-top:1.2rem"><a class="btn" href={w.href}>Read it <span class="btn__arrow">&rarr;</span></a></p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </Fragment>
+  )}
+
   <hr class="rule">
 
   <!-- CLOSET CLEANSE THESIS -->

@@ -116,7 +116,7 @@ export default config({
   ui: {
     brand: { name: 'Quentin Fears site content' },
     navigation: {
-      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams'],
+      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview'],
       Shared: ['settings', 'galleries'],
     },
   },
@@ -440,6 +440,22 @@ export default config({
           },
           { label: 'Second press feature (under TIME)' }
         ),
+        writing: fields.object(
+          {
+            eyebrow: fields.text({ label: 'Eyebrow' }),
+            heading: fields.text({ label: 'Heading' }),
+            items: fields.array(
+              fields.object({
+                publication: fields.text({ label: 'Publication', description: 'e.g. Visionarios Magazine' }),
+                title: fields.text({ label: 'Headline' }),
+                dek: fields.text({ label: 'One-line summary', multiline: true }),
+                href: fields.text({ label: 'Link', description: 'A page on this site, e.g. arthur-and-sophie-elgort, or a full URL' }),
+              }),
+              { label: 'Pieces (empty hides the section)', itemLabel: (p) => p.fields.title.value || 'Piece' }
+            ),
+          },
+          { label: 'Writing (pieces by Quentin)' }
+        ),
         thesis: fields.object(
           {
             eyebrow: fields.text({ label: 'Eyebrow' }),
@@ -699,6 +715,26 @@ export default config({
             href: fields.text({ label: 'Button link', description: 'e.g. work#on-the-floor' }),
           },
           { label: 'Closing link' }
+        ),
+        cta: cta(),
+      },
+    }),
+
+    elgortInterview: singleton({
+      label: 'The Painter and the Light (Elgort interview)',
+      path: 'content/elgort-interview',
+      format: { data: 'yaml' },
+      schema: {
+        seo: seo(),
+        hero: eyebrowHeadingIntro(),
+        source: fields.text({ label: 'Source line', description: 'Where it was published' }),
+        essay: fields.text({ label: 'Opening essay (blank line between paragraphs)', multiline: true }),
+        qa: fields.array(
+          fields.object({
+            question: fields.text({ label: 'Question', multiline: true }),
+            answer: fields.text({ label: 'Answer (blank line between paragraphs)', multiline: true }),
+          }),
+          { label: 'Questions and answers', itemLabel: (p) => p.fields.question.value.slice(0, 60) }
         ),
         cta: cta(),
       },

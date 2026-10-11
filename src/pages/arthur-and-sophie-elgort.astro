@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Cta from '../components/Cta.astro';
+import { reader, SITE_ORIGIN } from '../lib/content';
+import { personMinimal, breadcrumb, PERSON_ID } from '../lib/jsonld';
+
+const page = await reader.singletons.elgortInterview.readOrThrow();
+const O = SITE_ORIGIN;
+const URL_ = `${O}/arthur-and-sophie-elgort`;
+
+// Multiline text is plain; a blank line starts a new paragraph.
+const paras = (text: string) => text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+
+// Text only on purpose: the printed spread's photographs are Arthur Elgort's
+// work, not Quentin's to republish. The names do the search work instead, in
+// the copy and in `about` / `mentions` below.
+const arthur = {
+  '@type': 'Person',
+  '@id': `${URL_}#arthur-elgort`,
+  name: 'Arthur Elgort',
+  jobTitle: 'Fashion photographer',
+  sameAs: ['https://en.wikipedia.org/wiki/Arthur_Elgort'],
+};
+const sophie = {
+  '@type': 'Person',
+  '@id': `${URL_}#sophie-elgort`,
+  name: 'Sophie Elgort',
+  jobTitle: 'Fashion photographer',
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${URL_}#webpage`,
+      url: URL_,
+      name: page.seo.ogTitle,
+      isPartOf: { '@id': `${O}/#website` },
+      mainEntity: { '@id': `${URL_}#article` },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'Article',
+      '@id': `${URL_}#article`,
+      headline: `${page.hero.heading}: Arthur and Sophie Elgort`,
+      description: page.seo.description,
+      author: { '@id': PERSON_ID },
+      about: [{ '@id': arthur['@id'] }, { '@id': sophie['@id'] }],
+      mentions: ['Christy Turlington', 'Linda Evangelista', 'Kate Moss', 'Cindy Crawford', 'Karlie Kloss'].map(
+        (name) => ({ '@type': 'Person', name })
+      ),
+      isPartOf: { '@type': 'Periodical', name: 'Visionarios Magazine' },
+      mainEntityOfPage: { '@id': `${URL_}#webpage` },
+      inLanguage: 'en',
+    },
+    arthur,
+    sophie,
+    personMinimal(),
+    breadcrumb([
+      { name: 'Home', item: `${O}/` },
+      { name: 'Ideas', item: `${O}/ideas` },
+      { name: page.hero.heading, item: URL_ },
+    ]),
+  ],
+};
+---
+<BaseLayout
+  pagePath="arthur-and-sophie-elgort"
+  title={page.seo.title}
+  description={page.seo.description}
+  ogTitle={page.seo.ogTitle}
+  ogDescription={page.seo.ogDescription}
+  ogType={page.seo.ogType}
+  navCurrent="ideas"
+  jsonLd={jsonLd}
+>
+
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <div class="interview-hero">
+        <p class="eyebrow">{page.hero.eyebrow}</p>
+        <h1>{page.hero.heading}</h1>
+        <p>{page.hero.intro}</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section section--tight">
+    <div class="wrap interview">
+      <div class="prose reveal">
+        {paras(page.essay).map((p) => <p>{p}</p>)}
+      </div>
+
+      {page.qa.map((item) => (
+        <div class="qa__item reveal">
+          <h2>{item.question}</h2>
+          <div class="prose">
+            {paras(item.answer).map((p) => <p>{p}</p>)}
+          </div>
+        </div>
+      ))}
+
+      <p class="attribution reveal">{page.source}</p>
+    </div>
+  </section>
+
+  <Cta
+    heading={page.cta.heading}
+    body={page.cta.body}
+    buttonLabel={page.cta.buttonLabel}
+    buttonHref={page.cta.buttonHref}
+  />
+
+</BaseLayout>
