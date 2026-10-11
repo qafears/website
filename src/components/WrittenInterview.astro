@@ -1,6 +1,7 @@
 ---
 // A magazine interview Quentin wrote, rendered as one reading column: the
-// optional issue cover, his opening essay, then the Q&A. Each page passes its
+// optional issue cover, the optional tear sheets (the printed pages, each
+// linking to its full-size scan), his opening essay, then the Q&A. Each page passes its
 // singleton plus the structured data that lets it rank for the subjects' names
 // (`subjects` become the Article's `about`, `mentions` its named people).
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -35,6 +36,11 @@ const ratio = (src: string) => {
   return v ? `aspect-ratio:${v.width}/${v.height}` : undefined;
 };
 const cover = page.cover?.image?.src ? page.cover : null;
+const tears = (page.tearsheets?.pages ?? []).filter((p: { src: string | null }) => p.src);
+// Two-page spreads are landscape: they stack full width at their own shape.
+// Single pages sit in a row, boxed to one height so the row lines up.
+const vmap = variants as Record<string, { width: number; height: number }>;
+const spreads = tears.length > 0 && tears.every((t: { src: string }) => vmap[t.src] && vmap[t.src].width > vmap[t.src].height);
 
 const people = subjects.map((s) => ({
   '@type': 'Person',
@@ -111,6 +117,23 @@ const jsonLd = {
             <Picture src={cover.image.src} alt={cover.image.alt} loading="eager" sizes="(min-width: 480px) 420px, 92vw" onerror="this.remove()" />
           </div>
           <figcaption class="attribution duo__cap">{cover.caption} <slot name="cover-link" /></figcaption>
+        </figure>
+      )}
+
+      {tears.length > 0 && (
+        <figure class="reveal">
+          {page.tearsheets.heading && <p class="eyebrow">{page.tearsheets.heading}</p>}
+          <div class:list={["tearsheets", { "tearsheets--spreads": spreads }]}>
+            {tears.map((t: { src: string; alt: string; caption: string }) => (
+              <a class="tearsheet" href={t.src} aria-label={`${t.alt} (full size)`}>
+                <span class="ph" style={spreads ? ratio(t.src) : undefined} data-tag="">
+                  <Picture src={t.src} alt={t.alt} sizes={spreads ? '(min-width: 760px) 680px, 92vw' : '(min-width: 760px) 220px, 30vw'} />
+                </span>
+                {t.caption && <span class="duo__cap">{t.caption}</span>}
+              </a>
+            ))}
+          </div>
+          {page.tearsheets.credit && <figcaption class="attribution duo__cap">{page.tearsheets.credit}</figcaption>}
         </figure>
       )}
 

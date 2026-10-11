@@ -15,9 +15,11 @@ Interviews Quentin wrote (`arthur-and-sophie-elgort`, `marcellas-reynolds`) each
 built from `src/components/WrittenInterview.astro` and a singleton using the shared
 `writtenInterview()` schema, and are listed in the Ideas page's Writing block
 (`writing.items`, newest first). Their job is to rank for the subjects' names, so keep
-those names in the title, copy, and JSON-LD `about`/`mentions`. Show a cover only when it
-is Quentin's own work (the Visionarios Issue 2 cover story); a spread's photos belong to
-their photographers and stay off the site.
+those names in the title, copy, and JSON-LD `about`/`mentions`. The owner wants each
+piece shown with its tear sheets (`tearsheets.pages`: scans of the printed pages, each
+linking to its full scan) above the full text, credited to the magazine and its
+photographers; never lift a spread's photos out as standalone images. The separate
+`cover` slot is only for a cover that is Quentin's own work (Visionarios Issue 2).
 
 It is built with **Astro**, and all copy lives in editable content files managed by a
 **Keystatic** admin, so the site is maintainable with no code. Astro renders the

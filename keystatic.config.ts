@@ -124,6 +124,21 @@ const writtenInterview = () => ({
     },
     { label: 'Issue cover (optional; leave the photo empty to hide it)' }
   ),
+  tearsheets: fields.object(
+    {
+      heading: fields.text({ label: 'Heading', description: 'e.g. From the magazine' }),
+      credit: fields.text({ label: 'Credit line', description: 'Who the pages and their photos belong to' }),
+      pages: fields.array(
+        fields.object({
+          src: imageUpload('Page scan', '/gallery', 'A clean scan or photo of the printed page, no watermarks.'),
+          alt: fields.text({ label: 'Alt text (accessibility)' }),
+          caption: fields.text({ label: 'Caption', description: 'e.g. Page 40' }),
+        }),
+        { label: 'Pages, in print order', itemLabel: (p) => p.fields.caption.value || 'Page' }
+      ),
+    },
+    { label: 'Tear sheets (the printed pages; leave empty to hide)' }
+  ),
   essay: fields.text({ label: 'Opening essay (blank line between paragraphs)', multiline: true }),
   qa: fields.array(
     fields.object({

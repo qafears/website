@@ -15,6 +15,19 @@ cover:
     tag: ""
     label: ""
   caption: ""
+tearsheets:
+  heading: "From the magazine"
+  credit: "Sheen Magazine, July/August 2020, the Summer Love issue: the cover, and \"Supreme Force\" on pages 40 and 41. Photographs belong to their photographers and Sheen Magazine, as credited on the page."
+  pages:
+    - src: "assets/img/gallery/sheen-magazine-july-august-2020-cover.jpg"
+      alt: "Sheen Magazine July/August 2020 cover with Jordyn Woods, with Marcellas Reynolds among the cover lines"
+      caption: "Cover"
+    - src: "assets/img/gallery/supreme-force-marcellas-reynolds-sheen-page-40.jpg"
+      alt: "Supreme Force by Quentin Fears, page 40 of Sheen Magazine: the opening page with a portrait of Marcellas Reynolds"
+      caption: "Page 40"
+    - src: "assets/img/gallery/supreme-force-marcellas-reynolds-sheen-page-41.jpg"
+      alt: "Supreme Force, page 41 of Sheen Magazine: the Supreme Models book cover, Roshumba Williams, and the interview's close"
+      caption: "Page 41"
 essay: |
   Marcellas Reynolds is a true force of nature. He's someone who doesn't go unnoticed. When he steps into a room, all eyes are on him, from his chic sense of style to his bigger than life persona. He's appeared on The Tyra Banks Show and Million Dollar Matchmaker, where I first met him as a contestant and was one of his top three picks.
 

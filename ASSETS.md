@@ -145,3 +145,11 @@ API key. Submissions are emailed to the address in the form's `action`
 | Newsletter clipping | `assets/img/press-behind-the-seams.jpg` | 722×452 crop of the BAARG newsletter header (headline and photos); replace with a higher-resolution copy if one turns up |
 | Answer photos | `popup-free-assembly.jpg`, `popup-plaid-and-denim.jpg` (360×540), `popup-storefront.jpg`, `popup-main-floor.jpg` (540×360) | Owner-supplied; small, so shown in pairs at native size. Swap in larger originals if they turn up |
 | Closing pair | `work-popup-shop.jpg`, `work-popup-team.jpg` | Reused from the Work page video posters |
+
+## Written interviews (`content/reynolds-interview.yaml`, `content/elgort-interview.yaml`)
+
+| Slot | File | Notes |
+|---|---|---|
+| Elgort issue cover | `gallery/visionarios-issue-2-cover-paisley-jacket.jpg` | Quentin's own cover story, so shown uncropped above the text |
+| Reynolds tear sheets | `gallery/sheen-magazine-july-august-2020-cover.jpg`, `gallery/supreme-force-marcellas-reynolds-sheen-page-40.jpg`, `-page-41.jpg` | Owner-supplied scans of the printed Sheen July/August 2020 pages (~800px); each thumbnail links to its full scan. Swap in larger scans if they turn up |
+| Elgort tear sheets | `gallery/painter-and-the-light-elgort-visionarios-pages-94-95.jpg`, `-96-97.jpg`, `-98-99.jpg` | Owner-supplied two-page spreads (960px wide); spreads stack full width instead of sitting in a row |
