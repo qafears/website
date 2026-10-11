@@ -1,0 +1,19 @@
+---
+// The Power of Gold, Sheen Magazine, September/October 2019. The printed page
+// shows as a tear sheet, credited to the magazine and the photographs' source.
+import WrittenInterview from '../components/WrittenInterview.astro';
+import { reader } from '../lib/content';
+
+const page = await reader.singletons.goodwinInterview.readOrThrow();
+---
+<WrittenInterview
+  page={page}
+  pagePath="alicia-goodwin-lingua-nigra"
+  headline={`${page.hero.heading}: Alicia Goodwin of Lingua Nigra`}
+  subjects={[
+    { slug: 'alicia-goodwin', name: 'Alicia Goodwin', jobTitle: 'Jewelry designer, founder of Lingua Nigra', sameAs: ['https://linguanigra.com'] },
+  ]}
+  mentions={[]}
+  publishedIn={{ '@type': 'PublicationIssue', name: 'September/October 2019', isPartOf: { '@type': 'Periodical', name: 'Sheen Magazine' } }}
+  datePublished="2019-09"
+/>

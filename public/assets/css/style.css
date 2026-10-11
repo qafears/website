@@ -484,6 +484,7 @@ button { font: inherit; cursor: pointer; }
 .tearsheet:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .tearsheet .duo__cap { display: block; }
 .tearsheets--spreads { grid-template-columns: 1fr; }
+.tearsheets--single { grid-template-columns: 1fr; max-width: 420px; }
 
 /* ============================================================
    About / timeline

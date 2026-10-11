@@ -155,7 +155,7 @@ export default config({
   ui: {
     brand: { name: 'Quentin Fears site content' },
     navigation: {
-      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview', 'reynoldsInterview', 'goreskiInterview'],
+      Pages: ['home', 'work', 'archives', 'ideas', 'speak', 'about', 'contact', 'behindTheSeams', 'elgortInterview', 'reynoldsInterview', 'goreskiInterview', 'goodwinInterview', 'atousaInterview', 'saweetieLook', 'duntonInterview', 'fitzgeraldInterview'],
       Shared: ['settings', 'galleries'],
     },
   },
@@ -776,6 +776,41 @@ export default config({
     goreskiInterview: singleton({
       label: "Writing: It's a Brad Brad World (Brad Goreski)",
       path: 'content/goreski-interview',
+      format: { data: 'yaml' },
+      schema: writtenInterview(),
+    }),
+
+    goodwinInterview: singleton({
+      label: "Writing: The Power of Gold (Alicia Goodwin)",
+      path: 'content/goodwin-interview',
+      format: { data: 'yaml' },
+      schema: writtenInterview(),
+    }),
+
+    atousaInterview: singleton({
+      label: "Writing: Go Avant Garde (Atousa G.)",
+      path: 'content/atousa-interview',
+      format: { data: 'yaml' },
+      schema: writtenInterview(),
+    }),
+
+    saweetieLook: singleton({
+      label: "Writing: Get the Look (Saweetie)",
+      path: 'content/saweetie-look',
+      format: { data: 'yaml' },
+      schema: writtenInterview(),
+    }),
+
+    duntonInterview: singleton({
+      label: "Writing: The Avenues of Design (I'sha Dunton)",
+      path: 'content/dunton-interview',
+      format: { data: 'yaml' },
+      schema: writtenInterview(),
+    }),
+
+    fitzgeraldInterview: singleton({
+      label: "Writing: The Story of Latoia Fitzgerald",
+      path: 'content/fitzgerald-interview',
       format: { data: 'yaml' },
       schema: writtenInterview(),
     }),

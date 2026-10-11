@@ -1,0 +1,18 @@
+---
+// Go Avant Garde This Holiday Season, Sheen Magazine. The printed page shows
+// as a tear sheet, credited to the magazine and the photographs' source.
+import WrittenInterview from '../components/WrittenInterview.astro';
+import { reader } from '../lib/content';
+
+const page = await reader.singletons.atousaInterview.readOrThrow();
+---
+<WrittenInterview
+  page={page}
+  pagePath="atousa-g-a-line-called-k"
+  headline={`${page.hero.heading}: Atousa G. of A Line Called K`}
+  subjects={[
+    { slug: 'atousa-g', name: 'Atousa G.', jobTitle: 'Fashion designer, founder of A Line Called K', sameAs: ['https://alinecalledk.com'] },
+  ]}
+  mentions={['DJ Tennis', 'Acid Pauli', 'Coco Chanel', 'Christian Dior', 'Yves Saint Laurent', 'Yohji Yamamoto']}
+  publishedIn={{ '@type': 'Periodical', name: 'Sheen Magazine' }}
+/>
