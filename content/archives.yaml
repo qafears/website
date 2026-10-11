@@ -34,6 +34,24 @@ sections:
           - src: "assets/img/gallery/g-celebrity-4.jpg"
             alt: "Actor Norman Reedus in a black leather jacket and grey tee, styled by Quentin Fears"
             cap: "Norman Reedus"
+      - slug: "elisabeth-rohm"
+        title: "Elisabeth Röhm"
+        images:
+          - src: "assets/img/gallery/elisabeth-rohm-jejune-magazine-cover.jpg"
+            alt: "Elisabeth Röhm on the cover of Jejune Magazine issue 21, Women for Women, in a cobalt satin wrap dress, styled by Quentin Fears"
+            cap: "Elisabeth Röhm, Jejune Magazine cover"
+          - src: "assets/img/gallery/elisabeth-rohm-jejune-black-turtleneck.jpg"
+            alt: "Elisabeth Röhm in a black strong-shouldered turtleneck dress against a white curtain for Jejune Magazine, styled by Quentin Fears"
+            cap: "Elisabeth Röhm for Jejune Magazine"
+          - src: "assets/img/gallery/elisabeth-rohm-jejune-rust-satin-dress.jpg"
+            alt: "Elisabeth Röhm in a rust satin dress reclining on a green velvet sofa for Jejune Magazine, styled by Quentin Fears"
+            cap: "Elisabeth Röhm for Jejune Magazine"
+          - src: "assets/img/gallery/elisabeth-rohm-jejune-velvet-blazer.jpg"
+            alt: "Elisabeth Röhm in profile wearing a paint-splashed burgundy velvet blazer and a gold necklace for Jejune Magazine, styled by Quentin Fears"
+            cap: "Elisabeth Röhm for Jejune Magazine"
+          - src: "assets/img/gallery/elisabeth-rohm-jejune-sequin-set.jpg"
+            alt: "Elisabeth Röhm in a black and silver sequin set on a chrome chair for Jejune Magazine, styled by Quentin Fears"
+            cap: "Elisabeth Röhm for Jejune Magazine"
       - slug: "amy-weber"
         title: "Amy Weber"
         images:
@@ -249,7 +267,7 @@ sections:
     shoots: []
 clients:
   label: "Selected clients"
-  names: "Alfre Woodard, Norman Reedus, Garcelle Beauvais, Tahj Mowry, Amy Weber, Macy Gray, Rachael Harris, Patricia Velásquez, Isis King, Skai Jackson, Kristina Arielle, Ray Santiago, Loren Lott, Keesha Sharp, EJ Johnson"
+  names: "Alfre Woodard, Norman Reedus, Garcelle Beauvais, Elisabeth Röhm, Tahj Mowry, Amy Weber, Macy Gray, Rachael Harris, Patricia Velásquez, Isis King, Skai Jackson, Kristina Arielle, Ray Santiago, Loren Lott, Keesha Sharp, EJ Johnson"
 footnote: "A selection from a decade of work. The full archive is available on request."
 cta:
   heading: "I take on a few brand projects at a time."
