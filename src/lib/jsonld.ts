@@ -8,6 +8,15 @@ const O = SITE_ORIGIN;
 export const PERSON_ID = `${O}/#person`;
 export const WEBSITE_ID = `${O}/#website`;
 
+// Employer names may appear in visible copy (a shoot title, say) but never in
+// structured data; keep in sync with DISALLOWED_IN_HEAD in tools/seo_check.py.
+const EMPLOYER_NAMES = /\bwalmart('s)?\b[\s,:]*/gi;
+
+/** Strip employer names from editor text before it goes into JSON-LD. */
+export function headSafe(text: string) {
+  return text.replace(EMPLOYER_NAMES, '').trim();
+}
+
 /** The minimal Person node used on subpages. */
 export function personMinimal(extra: Record<string, unknown> = {}) {
   return { '@type': 'Person', '@id': PERSON_ID, name: 'Quentin Fears', url: `${O}/`, ...extra };

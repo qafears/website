@@ -136,7 +136,9 @@ Three build shapes from one project (see the header comment in
   representative in metadata or structured data: machine-readable employer claims
   (`worksFor`, an employer name inside `<head>`) are out. `tools/seo_check.py` fails if
   a flagged company name appears in any page `<head>`, so keep such terms in body
-  content only (never in a `seo.*` field, since those render into `<head>`).
+  content only (never in a `seo.*` field, since those render into `<head>`). The owner
+  approved visible Archives shoot titles naming Walmart work; any editor text that also
+  feeds JSON-LD goes through `headSafe()` in `src/lib/jsonld.ts`, which strips the name.
 - "Don't just wear clothes, wear confidence" survives only as a secondary tagline
   (the footer), not the headline.
 
