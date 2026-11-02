@@ -139,6 +139,14 @@
       "reason": "tools/instagram_new_since.py exits 3 again: i.instagram.com refuses the CONNECT tunnel at this environment's egress proxy (403 Forbidden). reviewed_through left unchanged at 2026-06-19 so a run with working access re-checks from that point. No new posts could be considered.",
       "critical_review": "Built the site (npm run build); validate_site and seo_check pass clean. Budgets: archives 7/8/4/0 shoots (celebrity/editorial/commercial/red-carpet; commercial is under the 5 floor but the content is strong, red-carpet correctly skipped empty); ideas notes 5, reels 4; work cases 5 (Spring Awakening exception recorded 2026-09-14). Grepped content/ for stale recent/upcoming language: only a 'recently released' inside the archived Marcellas Reynolds interview text, which is the original published piece and stays. Writing-block additions since the last run (Brad Goreski, Sheen pieces, tear sheets) read correctly; two Writing pieces were already removed by the owner. No trim made. Gallery categories 3/8/13 images: commercial is over the 8 ceiling because the owner added five Azazie photos in #66; owner-driven, not undone by the unattended run, flagged for the owner to trim if wanted.",
       "content_changes": 0
+    },
+    {
+      "date": "2026-11-02",
+      "trigger": "scheduled weekly run",
+      "detection": "blocked",
+      "reason": "tools/instagram_new_since.py exits 3 again: i.instagram.com refuses the CONNECT tunnel at this environment's egress proxy (403 Forbidden). reviewed_through left unchanged at 2026-06-19 so the next run with working access re-checks from that point. No new posts could be considered.",
+      "critical_review": "Skimmed content/*.yaml against the brief and grepped for stale recent/upcoming language: only the archived Reynolds interview's original 'recently released', which stays. No new owner changes needed trimming; no redundancy or filler found. Existing known overages (commercial gallery above 8, work cases above 4) are owner-driven and not undone by the unattended run. No trim made.",
+      "content_changes": 0
     }
   ]
 }
