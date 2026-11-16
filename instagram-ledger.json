@@ -147,6 +147,14 @@
       "reason": "tools/instagram_new_since.py exits 3 again: i.instagram.com refuses the CONNECT tunnel at this environment's egress proxy (403 Forbidden). reviewed_through left unchanged at 2026-06-19 so the next run with working access re-checks from that point. No new posts could be considered.",
       "critical_review": "Skimmed content/*.yaml against the brief and grepped for stale recent/upcoming language: only the archived Reynolds interview's original 'recently released', which stays. No new owner changes needed trimming; no redundancy or filler found. Existing known overages (commercial gallery above 8, work cases above 4) are owner-driven and not undone by the unattended run. No trim made.",
       "content_changes": 0
+    },
+    {
+      "date": "2026-11-16",
+      "trigger": "scheduled weekly run",
+      "detection": "blocked",
+      "reason": "tools/instagram_new_since.py exits 3 again: i.instagram.com refuses the CONNECT tunnel at this environment's egress proxy (403 Forbidden). reviewed_through left unchanged at 2026-06-19 so a run with working access re-checks from that point. No new posts could be considered.",
+      "critical_review": "Built the site; validate_site (26 pages) and seo_check (13 pages, 13 stubs) pass clean. No content has changed on main since the 2026-11-02 run. Grepped page copy for lapsed recent/upcoming/dated claims: none beyond the archived Reynolds interview's original wording, which stays. Budgets: archives 7/8/4/0, galleries celebrity-women 3, editorial 8, commercial 13, notes 5, reels 4, work cases 5; the commercial and work overages are owner-driven and not undone by the unattended run. No redundancy or filler found. No trim made.",
+      "content_changes": 0
     }
   ]
 }
